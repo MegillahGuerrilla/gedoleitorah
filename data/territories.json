@@ -1,0 +1,757 @@
+{
+ "themes": [
+  {
+   "id": "halacha",
+   "c": "--t-halacha",
+   "he": "שאלה הלכתית, לא מדינית",
+   "en": "A question of halacha, not politics",
+   "dhe": "החזקת הארץ נקבעת על פי ההלכה, ולא לפי שיקולים מדיניים.",
+   "den": "Holding the Land is decided by halacha, not by political calculation.",
+   "ahe": "כשאומרים לך ש״זו שאלה פוליטית״ — הרב ז׳ולטי ענה: זו שאלה הלכתית.",
+   "aen": "When someone says “that’s a political question,” Rabbi Zolty answered: it is a halachic one."
+  },
+  {
+   "id": "life",
+   "c": "--t-life",
+   "he": "פיקוח נפש",
+   "en": "Saving lives (pikuach nefesh)",
+   "dhe": "מסירת שטחים מסכנת חיי יהודים, ולכן היא אסורה.",
+   "den": "Giving up land endangers Jewish lives, and so it is forbidden.",
+   "ahe": "כשאומרים ש״שטחים תמורת שלום מצילים חיים״ — פוסקים רבים ענו שפיקוח נפש הוא דווקא הסיבה לא למסור.",
+   "aen": "When someone says “land for peace saves lives,” many authorities answered that saving lives is exactly the reason not to give land away."
+  },
+  {
+   "id": "land",
+   "c": "--t-land",
+   "he": "אין לוותר על שעל",
+   "en": "Not a single foot of land",
+   "dhe": "ארץ ישראל שלנו, ואין לאיש רשות למסור ממנה.",
+   "den": "The Land of Israel is ours, and no one has the authority to hand any of it over.",
+   "ahe": "כשאומרים ש״הממשלה החליטה״ — הראשון לציון הרב יצחק ניסים ענה: אין לממשלה רשות.",
+   "aen": "When someone says “the government decided,” Rishon LeZion Rabbi Yitzhak Nissim answered: the government has no such authority."
+  },
+  {
+   "id": "peace",
+   "c": "--t-peace",
+   "he": "שלום של שקר",
+   "en": "A false peace",
+   "dhe": "הבטחות ״שלום״ אינן מצדיקות ויתור, ואין לסמוך על נס.",
+   "den": "Promises of “peace” do not justify concessions, and we may not rely on a miracle.",
+   "ahe": "כשאומרים ״נחזיר עכשיו, ואם צריך ניקח בחזרה״ — הרב נתן צבי פרידמן ענה: אסור לסמוך על נס.",
+   "aen": "When someone says “we’ll give it back now and retake it if we must,” Rabbi Natan Zvi Friedman answered: we may not rely on a miracle."
+  },
+  {
+   "id": "duty",
+   "c": "--t-duty",
+   "he": "חובה לפעול",
+   "en": "A duty to act",
+   "dhe": "כל יחיד וכל ציבור חייבים לפעול למניעת החזרת שטחים.",
+   "den": "Every individual and every community must act to prevent giving up land.",
+   "ahe": "כשאומרים ״זה לא תלוי בי״ — הרב יאלעס ענה: החובה מוטלת על כל יחיד.",
+   "aen": "When someone says “it’s not up to me,” Rabbi Yolles answered: the duty rests on every individual."
+  }
+ ],
+ "rabbis": {
+  "halberstam": {
+   "key": "halberstam",
+   "slug": "yekusiel-yehuda-halberstam",
+   "community": "hasidic",
+   "born": null,
+   "served": [
+    "cluj",
+    "williamsburg",
+    "netanya"
+   ],
+   "he_name": "האדמו״ר מצאנז־קלויזנבורג, רבי יקותיאל יהודה הלברשטאם זצ״ל",
+   "en_name": "The Klausenburger Rebbe, Rabbi Yekusiel Yehuda Halberstam",
+   "he_short": "האדמו״ר מקלויזנבורג",
+   "en_short": "The Klausenburger Rebbe",
+   "years": "1905–1994",
+   "he_bio": "גאון אדיר ומגדולי האדמו״רים בדורנו. מקים עולה של תורה לאחר השואה הנוראה באירופא, מיסד רשת מוסדות תורה בארה״ק ובארה״ב, שעוריו ההלכתיים קנו להם שם בין כל לומדי התורה מכל השכבות. דבריו המובאים פה נאמרו בפני אלפי ישראל בעיה״ק ירושלים ת״ו בהופעתו כבוד בשעריה בקיץ תשל״ח.",
+   "en_bio": "A towering Torah genius and one of the greatest Hasidic rebbes of our generation. After the terrible Holocaust in Europe he raised up the yoke of Torah again, founding a network of Torah institutions in the Holy Land and the United States. His halachic lectures won renown among Torah scholars of every background. The words quoted here were spoken before thousands of Jews in the holy city of Jerusalem during his visit there in the summer of 5738 (1978).",
+   "he_context": "",
+   "en_context": ""
+  },
+  "ehrenberg": {
+   "key": "ehrenberg",
+   "slug": "yehoshua-menachem-ehrenberg",
+   "community": "courts",
+   "born": null,
+   "served": [
+    "telaviv"
+   ],
+   "he_name": "הרב יהושע מנחם אהרנברג זצ״ל",
+   "en_name": "Rabbi Yehoshua Menachem Ehrenberg",
+   "he_short": "הרב אהרנברג",
+   "en_short": "Rabbi Ehrenberg",
+   "years": "1904–1976",
+   "he_bio": "אב״ד ת״א יפו, מחבר הספרים הענקיים ״דבר יהושע״ על ארבעת חלקי שו״ע. משרידי גאוני גאליציה ומגדולי תלמידיו של גאון הדור רבי מאיר אריק זצ״ל בעל ״אמרי יושר״. מראשי חסידי בעלזא ומקורב מאד למרן האדמו״ר מבעלזא זיע״א.",
+   "en_bio": "Head of the rabbinical court of Tel Aviv–Jaffa and author of the monumental Devar Yehoshua on all four sections of the Shulchan Aruch. One of the last of the great Torah scholars of Galicia and a leading disciple of the gaon of his generation, Rabbi Meir Arik, author of Imrei Yosher. A leading Belz Hasid, very close to the Belzer Rebbe.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "hedaya": {
+   "key": "hedaya",
+   "slug": "ovadia-hedaya",
+   "community": "sephardi",
+   "born": null,
+   "served": [
+    "jerusalem"
+   ],
+   "he_name": "הרב עובדיה הדאיה זצ״ל",
+   "en_name": "Rabbi Ovadia Hedaya",
+   "he_short": "הרב הדאיה",
+   "en_short": "Rabbi Hedaya",
+   "years": "",
+   "he_bio": "ראש וראשון לגאוני הספרדים בדורו. חבר הבד״צ לעדת הספרדים בירושלים ולאחר מכן חבר בית הדין הגדול לערעורים. מח״ס שו״ת ״ישכיל עבדי״ ד״ח וספר ״דעה והשכל״ בעניני קבלה. היה נערץ ומקובל על כל חוגי הרבנים. מהם הגאון המקובל רבי דוד יונגרייז זצ״ל ראב״ד העדה החרדית בירושלים שנו״נ אתו הרבה בעניני הלכה.",
+   "en_bio": "Foremost among the Sephardi Torah giants of his generation. A member of the rabbinical court of the Sephardi community in Jerusalem and later of the Great Rabbinical Court of Appeals. Author of the responsa Yaskil Avdi and of Deah VeHaskel on Kabbalah. He was revered and accepted by rabbis of every circle, among them the kabbalist Rabbi David Jungreis, head of the Edah HaChareidis court in Jerusalem, who corresponded with him extensively on halacha.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "hirschprung": {
+   "key": "hirschprung",
+   "slug": "pinchas-hirschprung",
+   "community": "diaspora",
+   "born": "dukla",
+   "served": [
+    "montreal"
+   ],
+   "he_name": "הרב פנחס הירשפרונג זצ״ל",
+   "en_name": "Rabbi Pinchas Hirschprung",
+   "he_short": "הרב הירשפרונג",
+   "en_short": "Rabbi Hirschprung",
+   "years": "1912–1998",
+   "he_bio": "גאב״ד מונטריאול הרב הראשי ליהדות קנדה. משרידי העילויים של פולין. תלמיד מובהק לגאוני פולין שהסמיכוהו. מגדולי הבקיאים בדורנו. נחשב לאחד מראשי רבני קנדה וארה״ב ועומד בראשות ובנשיאות מוסדות ומפעלי תורה רבים.",
+   "en_bio": "Head of the rabbinical court of Montreal and Chief Rabbi of Canadian Jewry. One of the last of the prodigies of Poland and a close disciple of the Polish Torah giants who ordained him. One of the most encyclopedic scholars of our generation. Considered one of the leading rabbis of Canada and the United States, he heads many Torah institutions and projects.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "hecht": {
+   "key": "hecht",
+   "slug": "avraham-hecht",
+   "community": "diaspora",
+   "born": null,
+   "served": [
+    "brooklyn"
+   ],
+   "he_name": "הרב אברהם הכט זצ״ל",
+   "en_name": "Rabbi Avraham Hecht",
+   "he_short": "הרב הכט",
+   "en_short": "Rabbi Hecht",
+   "years": "1922–2017",
+   "he_bio": "נשיא איגוד הרבנים באמריקה. רבם ומנהיגם של עדות המזרח בארה״ב ואב״ד קהילת ״שערי ציון״ בניו־יורק. מגדולי מנהיגי עולם הרבנות בארה״ב.",
+   "en_bio": "President of the Rabbinical Alliance of America. Rabbi and leader of the Sephardi and Mizrahi communities in the United States and head of the rabbinical court of Congregation Shaare Zion in New York. One of the foremost leaders of the American rabbinate.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "werner": {
+   "key": "werner",
+   "slug": "shmuel-baruch-werner",
+   "community": "courts",
+   "born": null,
+   "served": [
+    "telaviv"
+   ],
+   "he_name": "הרב שמואל ברוך וורנר",
+   "en_name": "Rabbi Shmuel Baruch Werner",
+   "he_short": "הרב וורנר",
+   "en_short": "Rabbi Werner",
+   "years": "",
+   "he_bio": "אב״ד תל אביב. מח״ס שו״ת משפטי שמואל. מחשובי הדיינים בארץ. חתנו של הגרי״מ חרל״פ זצ״ל בעל ״בית זבול״.",
+   "en_bio": "Head of the Tel Aviv rabbinical court and author of the responsa Mishpetei Shmuel. One of the most distinguished rabbinical judges in Israel. Son-in-law of Rabbi Yaakov Moshe Charlap, author of Beit Zevul.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "zevin": {
+   "key": "zevin",
+   "slug": "shlomo-yosef-zevin",
+   "community": "hasidic",
+   "born": null,
+   "served": [
+    "jerusalem"
+   ],
+   "he_name": "הרב שלמה יוסף זוין זצ״ל",
+   "en_name": "Rabbi Shlomo Yosef Zevin",
+   "he_short": "הרב זוין",
+   "en_short": "Rabbi Zevin",
+   "years": "1888–1978",
+   "he_bio": "מראשי גדולי התורה בדור. עורך האנציקלופדיה התלמודית. תלמיד מובהק לגאונים בעל ״ערוך השלחן״ ובעל ״שמן למאור״ והוסמך על ידם. נו״נ בהלכה עם הגאונים רא״מ שטיינברג מברוד זצ״ל ור״ש שקאפ זצ״ל. מחבר ספרים הרבה ונודע בגאונותו וגדולתו המיוחדת במינה.",
+   "en_bio": "One of the leading Torah giants of the generation and editor of the Encyclopedia Talmudit. A close disciple of the authors of Aruch HaShulchan and Shemen LaMaor, who ordained him. He corresponded on halacha with Rabbi Avraham Menachem Steinberg of Brody and Rabbi Shimon Shkop. Author of many books, renowned for his brilliance and singular greatness.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "zolty": {
+   "key": "zolty",
+   "slug": "yaakov-betzalel-zolty",
+   "community": "courts",
+   "born": null,
+   "served": [
+    "jerusalem"
+   ],
+   "he_name": "הרב יעקב בצלאל ז׳ולטי זצ״ל",
+   "en_name": "Rabbi Yaakov Betzalel Zolty",
+   "he_short": "הרב ז׳ולטי",
+   "en_short": "Rabbi Zolty",
+   "years": "1920–1982",
+   "he_bio": "רב ואב״ד ירושלים ת״ו. חבר בית הדין הגדול. מח״ס ״משנת יעב״ץ״ על או״ח יו״ד וחו״מ. מגדולי מרביצי התורה ומראשי הרבנים בארץ.",
+   "en_bio": "Rabbi and head of the rabbinical court of Jerusalem and a member of the Great Rabbinical Court. Author of Mishnat Yaavetz on Orach Chaim, Yoreh De'ah and Choshen Mishpat. One of the great teachers of Torah and leading rabbis in Israel.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "trebnik": {
+   "key": "trebnik",
+   "slug": "nachum-trebnik",
+   "community": "hasidic",
+   "born": null,
+   "served": [
+    "kfarchabad"
+   ],
+   "he_name": "הרב נחום טרעבניק",
+   "en_name": "Rabbi Nachum Trebnik",
+   "he_short": "הרב טרעבניק",
+   "en_short": "Rabbi Trebnik",
+   "years": "",
+   "he_bio": "רב ואב״ד כפר חב״ד, מראשי בית הדין של חסידי חב״ד בארץ, ומראשי ישיבות תומכי תמימים. חתנו של הגרש״ז גרליק זצ״ל גאב״ד כפר חב״ד ולאחר פטירתו נתמנה לממלא מקומו. נחשב לאחד מגדולי הרבנים בארץ.",
+   "en_bio": "Rabbi and head of the rabbinical court of Kfar Chabad, one of the heads of the Chabad rabbinical court in Israel and of the Tomchei Temimim yeshivas. Son-in-law of Rabbi Shneur Zalman Garelik, head of the Kfar Chabad court, whom he succeeded after his passing. Considered one of the leading rabbis in Israel.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "yolles": {
+   "key": "yolles",
+   "slug": "ephraim-eliezer-yolles",
+   "community": "diaspora",
+   "born": null,
+   "served": [
+    "philadelphia"
+   ],
+   "he_name": "הרב אפרים אליעזר הכהן יאלעס",
+   "en_name": "Rabbi Ephraim Eliezer HaKohen Yolles",
+   "he_short": "הרב יאלעס",
+   "en_short": "Rabbi Yolles",
+   "years": "",
+   "he_bio": "גאב״ד פילדלפיה; נשיא הכבוד של אגודת הרבנים לארה״ב וקנדה; דור אחר דור לרבנים גדולי הוראה מפורסמים; מגדולי הפוסקים באמריקה; מח״ס קצה ההר.",
+   "en_bio": "Head of the rabbinical court of Philadelphia and honorary president of the Agudath HaRabbonim of the United States and Canada. Descended from generation after generation of renowned halachic authorities, he is one of the leading decisors of halacha in America and author of Ketzeh HaHar.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "yosef": {
+   "key": "yosef",
+   "slug": "ovadia-yosef",
+   "community": "sephardi",
+   "born": "baghdad",
+   "served": [
+    "jerusalem"
+   ],
+   "he_name": "הראשון לציון הרב עובדיה יוסף זצ״ל",
+   "en_name": "Rishon LeZion Rabbi Ovadia Yosef",
+   "he_short": "הרב עובדיה יוסף",
+   "en_short": "Rabbi Ovadia Yosef",
+   "years": "1920–2013",
+   "he_bio": "הרב הראשי לישראל, ראשון לציון. מח״ס ״יביע אומר״ ששה חלקים על כל חלקי השו״ע. מראשי הרבנים בדורנו.",
+   "en_bio": "Chief Rabbi of Israel, Rishon LeZion. Author of Yabia Omer, six volumes on all sections of the Shulchan Aruch. One of the leading rabbis of our generation.",
+   "he_context": "פסיקתו של הרב עובדיה תלויה בשיקולי פיקוח נפש. בפסקו הידוע משנת 1979 כתב שההכרעה תלויה בהערכת אנשי הביטחון: היכן שמסירת שטחים מסכנת חיים, היא אסורה.",
+   "en_context": "Rav Ovadia's ruling turns on pikuach nefesh. In his well-known 1979 ruling he held that the decision depends on the judgment of security experts: where giving up territory endangers lives, it is forbidden."
+  },
+  "yisraeli": {
+   "key": "yisraeli",
+   "slug": "shaul-yisraeli",
+   "community": "courts",
+   "born": null,
+   "served": [
+    "jerusalem"
+   ],
+   "he_name": "הרב שאול ישראלי זצ״ל",
+   "en_name": "Rabbi Shaul Yisraeli",
+   "he_short": "הרב שאול ישראלי",
+   "en_short": "Rabbi Yisraeli",
+   "years": "1909–1995",
+   "he_bio": "חבר בית הדין הגדול. מראשי הדיינים בארץ. מחבר ספרים הרבה. כיום אחד מחשובי גדולי התורה בירושלים.",
+   "en_bio": "Member of the Great Rabbinical Court and one of Israel's leading rabbinical judges. Author of many books, he is today one of the most distinguished Torah authorities in Jerusalem.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "nissim": {
+   "key": "nissim",
+   "slug": "yitzhak-nissim",
+   "community": "sephardi",
+   "born": "baghdad",
+   "served": [
+    "jerusalem"
+   ],
+   "he_name": "הראשון לציון הרב יצחק ניסים זצ״ל",
+   "en_name": "Rishon LeZion Rabbi Yitzhak Nissim",
+   "he_short": "הרב יצחק ניסים",
+   "en_short": "Rabbi Nissim",
+   "years": "1896–1981",
+   "he_bio": "ראשון לציון ולשעבר הרב הראשי לארץ ישראל. מח״ס ״יין הטוב״ ו״כנגה צדקה״. הו״ל את ״שו״ת מהרש״א״ להגאון הגדול מהרש״א אלפנדרי זיע״א.",
+   "en_bio": "Rishon LeZion and former Chief Rabbi of the Land of Israel. Author of Yayin HaTov and Kenogah Tzedakah. He published the responsa of the great Rabbi Shlomo Eliezer Alfandari (the Maharsha Alfandari).",
+   "he_context": "",
+   "en_context": ""
+  },
+  "sawitzki": {
+   "key": "sawitzki",
+   "slug": "mordechai-sawitzki",
+   "community": "diaspora",
+   "born": null,
+   "served": [
+    "boston"
+   ],
+   "he_name": "הרב מרדכי סאוויצקי",
+   "en_name": "Rabbi Mordechai Sawitzki",
+   "he_short": "הרב סאוויצקי",
+   "en_short": "Rabbi Sawitzki",
+   "years": "",
+   "he_bio": "גאב״ד בוסטון ארה״ב. אחד מראשי וגדולי התורה בדורנו. מח״ס ״מים אדירים״ ״מראה אש״ ו״בריכת ירושלים״ על הבבלי והירושלמי ו״בריכת המלך״ על מנין המצות להרמב״ם. תלמיד מובהק למרן החפץ חיים זצ״ל ולמרן הרוגטשובי זצ״ל שאת תשובותיו אליו קיבץ בספר מיוחד ״נר אברהם״.",
+   "en_bio": "Head of the rabbinical court of Boston. One of the leading Torah giants of our generation. Author of Mayim Adirim, Mar'eh Esh and Berechat Yerushalayim on the Babylonian and Jerusalem Talmuds, and Berechat HaMelech on Maimonides' count of the commandments. A close disciple of the Chafetz Chaim and of the Rogatchover Gaon, whose responsa to him he collected in a separate volume, Ner Avraham.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "sorotzkin": {
+   "key": "sorotzkin",
+   "slug": "baruch-sorotzkin",
+   "community": "diaspora",
+   "born": null,
+   "served": [
+    "cleveland"
+   ],
+   "he_name": "הרב ברוך סורוצקין זצ״ל",
+   "en_name": "Rabbi Baruch Sorotzkin",
+   "he_short": "הרב סורוצקין",
+   "en_short": "Rabbi Sorotzkin",
+   "years": "1917–1979",
+   "he_bio": "ראש ישיבת טלז בקליוולאנד ארה״ב ומראשי מועצת גדולי התורה באמריקה. מגדולי מרביצי התורה בדורנו. בנו של הגאון מהר״ז סורוצקין זצ״ל יו״ר מועצת גדולי התורה באר״י.",
+   "en_bio": "Rosh yeshiva of Telshe in Cleveland and one of the leaders of the Moetzes Gedolei HaTorah in America. One of the great Torah teachers of our generation. Son of Rabbi Zalman Sorotzkin, chairman of the Moetzes Gedolei HaTorah in the Land of Israel.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "friedman": {
+   "key": "friedman",
+   "slug": "natan-zvi-friedman",
+   "community": "eretz",
+   "born": null,
+   "served": [
+    "bneibrak"
+   ],
+   "he_name": "הרב נתן צבי פרידמן",
+   "en_name": "Rabbi Natan Zvi Friedman",
+   "he_short": "הרב פרידמן",
+   "en_short": "Rabbi Friedman",
+   "years": "",
+   "he_bio": "מרבני בני ברק. מח״ס שו״ת ״נצר מטעי״ ושאר ספרים.",
+   "en_bio": "One of the rabbis of Bnei Brak. Author of the responsa Netzer Mata'ai and other books.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "shapira": {
+   "key": "shapira",
+   "slug": "avraham-elkana-kahana-shapira",
+   "community": "courts",
+   "born": null,
+   "served": [
+    "jerusalem"
+   ],
+   "he_name": "הרב אברהם אלקנה כהנא שפירא זצ״ל",
+   "en_name": "Rabbi Avraham Elkana Kahana Shapira",
+   "he_short": "הרב אברהם שפירא",
+   "en_short": "Rabbi Avraham Shapira",
+   "years": "1914–2007",
+   "he_bio": "כיהן הרבה שנים כאב״ד ירושלים וכיום חבר בית הדין הגדול. מגדולי מרביצי התורה ותלמיד מובהק לגאוני ירושלים בדור העבר זצ״ל.",
+   "en_bio": "Served for many years as head of the Jerusalem rabbinical court and is today a member of the Great Rabbinical Court. One of the great teachers of Torah and a close disciple of the Jerusalem Torah giants of the previous generation.",
+   "he_context": "",
+   "en_context": ""
+  },
+  "nachshoni": {
+   "key": "nachshoni",
+   "slug": "yehuda-nachshoni",
+   "community": "eretz",
+   "born": null,
+   "served": [],
+   "he_name": "הרב יהודה נחשוני",
+   "en_name": "Rabbi Yehuda Nachshoni",
+   "he_short": "הרב נחשוני",
+   "en_short": "Rabbi Nachshoni",
+   "years": "",
+   "he_bio": "",
+   "en_bio": "",
+   "he_context": "",
+   "en_context": ""
+  },
+  "klausner": {
+   "key": "klausner",
+   "slug": "yissachar-dov-klausner",
+   "community": "eretz",
+   "born": null,
+   "served": [],
+   "he_name": "הרב ישכר דוד קלויזנר",
+   "en_name": "Rabbi Yissachar Dov Klausner",
+   "he_short": "הרב קלויזנר",
+   "en_short": "Rabbi Klausner",
+   "years": "",
+   "he_bio": "",
+   "en_bio": "",
+   "he_context": "",
+   "en_context": ""
+  }
+ },
+ "sayings": [
+  {
+   "n": 1,
+   "rabbi": "halberstam",
+   "page": 13,
+   "appendix": false,
+   "theme": "land",
+   "he_quote": "ארץ ישראל תהא שלנו כל זמן שהעולם קיים",
+   "en_quote": "The Land of Israel will be ours for as long as the world exists.",
+   "he_note": "נאמר בפני אלפי ישראל בירושלים, קיץ תשל״ח.",
+   "en_note": "Spoken before thousands of Jews in Jerusalem, summer 5738 (1978)."
+  },
+  {
+   "n": 2,
+   "rabbi": "ehrenberg",
+   "page": 19,
+   "appendix": false,
+   "theme": "halacha",
+   "he_quote": "דעת הפוסקים ברורה שאסור להחזיר שטחים",
+   "en_quote": "The view of the halachic authorities is clear: it is forbidden to return territories.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 3,
+   "rabbi": "hedaya",
+   "page": 26,
+   "appendix": false,
+   "theme": "land",
+   "he_quote": "אסור להוציא מתחת ידינו שום שטח מארץ ישראל",
+   "en_quote": "It is forbidden to let any part of the Land of Israel leave our hands.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 4,
+   "rabbi": "hirschprung",
+   "page": 29,
+   "appendix": false,
+   "theme": "life",
+   "he_quote": "פקוח נפש דוחה החזרת שטחים",
+   "en_quote": "Saving lives (pikuach nefesh) overrides the return of territories.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 5,
+   "rabbi": "hecht",
+   "page": 40,
+   "appendix": false,
+   "theme": "land",
+   "he_quote": "אסור לוותר על שעל מארצנו",
+   "en_quote": "It is forbidden to give up a single foot of our land.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 6,
+   "rabbi": "werner",
+   "page": 41,
+   "appendix": false,
+   "theme": "halacha",
+   "he_quote": "אוטונומיה לעם אחר בארץ ישראל – בניגוד להלכה",
+   "en_quote": "Autonomy for another people in the Land of Israel is contrary to halacha.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 7,
+   "rabbi": "zevin",
+   "page": 42,
+   "appendix": false,
+   "theme": "land",
+   "he_quote": "ההגנה על שטחי ארץ ישראל – מלחמת מצוה",
+   "en_quote": "Defending the territories of the Land of Israel is a milchemet mitzvah, a commanded war.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 8,
+   "rabbi": "zevin",
+   "page": 50,
+   "appendix": false,
+   "theme": "life",
+   "he_quote": "החזרת השטחים סכנה גמורה ח״ו לקיום העם והארץ",
+   "en_quote": "Returning the territories is a grave danger, Heaven forbid, to the survival of the people and the land.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 9,
+   "rabbi": "zolty",
+   "page": 51,
+   "appendix": false,
+   "theme": "halacha",
+   "he_quote": "החזקת השטחים אינה שאלה מדינית אלא הלכתית",
+   "en_quote": "Holding the territories is not a political question but a halachic one.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 10,
+   "rabbi": "trebnik",
+   "page": 69,
+   "appendix": false,
+   "theme": "life",
+   "he_quote": "אסור לקרב את אויבינו לגבול ישראל",
+   "en_quote": "It is forbidden to bring our enemies closer to Israel's border.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 11,
+   "rabbi": "yolles",
+   "page": 71,
+   "appendix": false,
+   "theme": "duty",
+   "he_quote": "חוב גמור על כל יחיד וציבור לפעול למניעת החזרת השטחים",
+   "en_quote": "Every individual and every community has an absolute duty to act to prevent the return of the territories.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 12,
+   "rabbi": "yosef",
+   "page": 72,
+   "appendix": false,
+   "theme": "life",
+   "he_quote": "ההלכה אוסרת החזרת שטחים במידה שיש פקוח נפש בדבר",
+   "en_quote": "Halacha forbids returning territories wherever lives are at stake.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 13,
+   "rabbi": "yisraeli",
+   "page": 73,
+   "appendix": false,
+   "theme": "land",
+   "he_quote": "יש להחזיק בשטחים ששוחררו בכל תוקף",
+   "en_quote": "The liberated territories must be held with full force.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 14,
+   "rabbi": "nissim",
+   "page": 75,
+   "appendix": false,
+   "theme": "land",
+   "he_quote": "אין רשות לממשלה להחזיר אף שעל אדמה אחד",
+   "en_quote": "The government has no authority to return even a single foot of land.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 15,
+   "rabbi": "sawitzki",
+   "page": 76,
+   "appendix": false,
+   "theme": "life",
+   "he_quote": "החזרת שטחים – תסכן את הארץ ויושביה",
+   "en_quote": "Returning territories will endanger the land and those who live in it.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 16,
+   "rabbi": "sorotzkin",
+   "page": 79,
+   "appendix": false,
+   "theme": "peace",
+   "he_quote": "הדיבורים בנוגע ל״שלום״ המה מזויפים ומוליכי שולל",
+   "en_quote": "The talk of “peace” is false and misleading.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 17,
+   "rabbi": "friedman",
+   "page": 83,
+   "appendix": false,
+   "theme": "peace",
+   "he_quote": "אסור להחזיר שטחים ולסמוך על נס שיחזרו אלינו",
+   "en_quote": "It is forbidden to return territories and rely on a miracle to bring them back to us.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 18,
+   "rabbi": "shapira",
+   "page": 92,
+   "appendix": false,
+   "theme": "life",
+   "he_quote": "חישובי פקוח נפש אוסרים את הנסיגה מהשטחים",
+   "en_quote": "Considerations of pikuach nefesh forbid withdrawing from the territories.",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 19,
+   "rabbi": "nachshoni",
+   "page": 99,
+   "appendix": true,
+   "theme": "duty",
+   "he_quote": "היש מקום לחילוקי דעות ביחס לחיינו וחיי בנינו?",
+   "en_quote": "Can there be any room for disagreement when our lives and our children's lives are at stake?",
+   "he_note": "",
+   "en_note": ""
+  },
+  {
+   "n": 20,
+   "rabbi": "klausner",
+   "page": 108,
+   "appendix": true,
+   "theme": "halacha",
+   "he_quote": "פינוי ישוב יהודי מתושביו – איסור הלכתי",
+   "en_quote": "Uprooting a Jewish community from its homes is forbidden by halacha.",
+   "he_note": "",
+   "en_note": ""
+  }
+ ],
+ "opening": [
+  {
+   "kind": "decl",
+   "hhe": "מדברי מועצת גדולי התורה משנת תרצ״ז",
+   "hen": "From the Council of Torah Sages, 5697 (1937)",
+   "p": 3,
+   "he": "מועצת גדולי התורה מצהירה שגבולי ארצנו הקדושה תחומים על ידי מנחיל ארצות בתורתו הקדושה והקבועים לדורות עולם. בלתי אפשרי משום כך שהעם היהודי מצדו יוותר באיזה צורה שהיא על הגבולות האלה. כל ויתור שכזה אין לו שום ערך.",
+   "en": "The Council of Torah Sages declares that the borders of our Holy Land were set by the One who apportions the lands, in His holy Torah, and are fixed for all generations. It is therefore impossible for the Jewish people, for its part, to give up these borders in any form whatsoever. Any such concession has no validity at all."
+  },
+  {
+   "kind": "members",
+   "hhe": "חברי מועצת גדולי התורה בשנת תרצ״ז — הכנסיה הגדולה השלישית",
+   "hen": "Members of the Council of Torah Sages in 5697 (1937), at the Third Knessia Gedola",
+   "plhe": "כריכה אחורית",
+   "plen": "Back cover",
+   "list": [
+    [
+     "האדמו״ר רבי אברהם מרדכי אלתר מגור",
+     "The Gerer Rebbe, Rabbi Avraham Mordechai Alter"
+    ],
+    [
+     "האדמו״ר רבי יצחק מנחם דנציגר מאלכסנדר",
+     "The Alexander Rebbe, Rabbi Yitzchak Menachem Danziger"
+    ],
+    [
+     "האדמו״ר רבי דוד בורנשטיין מסוכטשוב",
+     "The Sochatchover Rebbe, Rabbi Dovid Bornstein"
+    ],
+    [
+     "האדמו״ר רבי אברהם יעקב פרידמן מסדיגורא",
+     "The Sadigura Rebbe, Rabbi Avraham Yaakov Friedman"
+    ],
+    [
+     "האדמו״ר רבי מרדכי שלום יוסף פרידמן מסדיגורא — פשמישל",
+     "The Sadigura–Przemyśl Rebbe, Rabbi Mordechai Shalom Yosef Friedman"
+    ],
+    [
+     "הגאון רבי אהרון לוין מרישא",
+     "Rabbi Aharon Levin of Reisha (Rzeszów)"
+    ],
+    [
+     "הגאון רבי אלחנן וואסרמאן מברנוביץ",
+     "Rabbi Elchanan Wasserman of Baranovich"
+    ],
+    [
+     "הגאון רבי אהרון קוטלר מקלצק",
+     "Rabbi Aharon Kotler of Kletsk"
+    ],
+    [
+     "הגאון רבי בנציון יועזר אב״ד טורדה, ונשיא לשכת התאחדות הקהלות החרדיות ברומניה",
+     "Rabbi Ben-Zion Yoezer, head of the rabbinical court of Turda and president of the bureau of the Union of Orthodox Communities in Romania"
+    ],
+    [
+     "הגאון רבי דוב בער אב״ד אוז׳רקוב",
+     "Rabbi Dov Ber, head of the rabbinical court of Ozorków"
+    ],
+    [
+     "הגאון רבי משה בלום אב״ד זמושץ",
+     "Rabbi Moshe Blum, head of the rabbinical court of Zamość"
+    ],
+    [
+     "הגאון רבי זלמן סורוצקין אב״ד לוצק",
+     "Rabbi Zalman Sorotzkin, head of the rabbinical court of Lutsk"
+    ],
+    [
+     "הגאון רבי יהודה לב צירלסון אב״ד קישינוב",
+     "Rabbi Yehuda Leib Tsirelson, head of the rabbinical court of Kishinev"
+    ],
+    [
+     "הגאון רבי יוסף צבי דושינסקי מירושלים",
+     "Rabbi Yosef Tzvi Dushinsky of Jerusalem"
+    ],
+    [
+     "הגאון רבי מנחם זמבה מוורשא",
+     "Rabbi Menachem Ziemba of Warsaw"
+    ],
+    [
+     "הגאון רבי מרדכי רוטנברג אב״ד אנטוורפן",
+     "Rabbi Mordechai Rottenberg, head of the rabbinical court of Antwerp"
+    ],
+    [
+     "הגאון רבי עקיבא סופר אבד״ק פרשבורג",
+     "Rabbi Akiva Sofer, head of the rabbinical court of Pressburg"
+    ],
+    [
+     "הגאון רבי שמואל דוד אונגר אב״ד נייטרא",
+     "Rabbi Shmuel Dovid Ungar, head of the rabbinical court of Nitra"
+    ]
+   ],
+   "nhe": "אחרי הכנסיה הגדולה השלישית פירסם הגרח״ע גרודז׳ינסקי ״קריאת קודש״:",
+   "nen": "After the Third Knessia Gedola, Rabbi Chaim Ozer Grodzinski published a “Holy Call”:",
+   "he": "— ״הכנסיה הגדולה השלישית שהיתה זה עתה במרינבד, השמיעה כלפי כל העולם כולו את עמדתה של היהדות החרדית המאורגנת לכל השאלות המנסרות בעולמנו...\nחברים! הכנסיה הגדולה התוותה לכם את הדרך אשר תלכו בה ואת המעשה אשר תעשון. ואתם לכו בכוחה זו ולאורה הגדול והושעתם את ישראל, תורתו וארצו״.\nבשם מועצת גדולי התורה — חיים עוזר גראדזענסקי",
+   "en": "“The Third Knessia Gedola, just held in Marienbad, declared before the whole world the position of organized Orthodox Jewry on all the questions that trouble our world...\nFriends! The Knessia Gedola has marked out for you the path you shall walk and the deeds you shall do. Go in this strength and by its great light, and you will save Israel, its Torah and its Land.”\nIn the name of the Council of Torah Sages — Chaim Ozer Grodzinski"
+  },
+  {
+   "kind": "quote",
+   "hhe": "הגאון הקדוש ר׳ מנחם זעמבא זצוקללה״ה הי״ד",
+   "hen": "Rabbi Menachem Ziemba, may God avenge his blood",
+   "nhe": "אמר בנאומו בכנסיה",
+   "nen": "From his speech at the Knessia Gedola",
+   "p": 3,
+   "he": "רק אנשים כאלה אשר להם העוז המר לקרוע גזרים מתורתנו התמימה והקדושה — הם הם אשר ירהבו בנפשם לקרוע גם את ארצנו לגזרים. אבל אנחנו שומרי התורה והחרדים על דבר ה׳ של תורה שבכתב ושבע״פ מראשו עד סופו מוסרים את נפשינו על כל אות ואות ועל כל מנהג שבישראל — בשום אופן לא נוכל להסכים לוותר אפילו על צעד ושעל אחד מארצנו הקדושה.",
+   "en": "Only people who have the bitter audacity to tear pieces out of our perfect and holy Torah are the ones who will dare to tear our Land to pieces as well. But we, who keep the Torah and tremble at the word of God in the Written and Oral Torah from beginning to end, who give our lives for every single letter and every custom in Israel, can in no way agree to give up even a single step or a single foot of our Holy Land."
+  },
+  {
+   "kind": "quote",
+   "hhe": "הגאון ר׳ אליעזר סילווער זצ״ל",
+   "hen": "Rabbi Eliezer Silver",
+   "p": 3,
+   "he": "״הגזירה הרעה של חלוקת הארץ שכרעם נפל על עמנו, ואשר נכיר כגזל וחמס הנעשה לעמנו, וכמפיר שבועת ה׳ אשר נשבע לאבותינו״, וסיים: אשר ״לא ירים איש ידו לוותר אף כמלא שעל מארצנו״.",
+   "en": "“The evil decree of partitioning the Land, which has fallen on our people like thunder, and which we recognize as robbery and violence done to our people and as a breach of the oath God swore to our fathers.” He concluded that “no one may raise his hand to give up even a single foot of our Land.”"
+  },
+  {
+   "kind": "letter",
+   "hhe": "בקשה ותביעה מאת הגאון רבי משה פיינשטיין זצ״ל לכלל ישראל בכל אתר ואתר",
+   "hen": "A request and a demand from Rabbi Moshe Feinstein to all Jews everywhere",
+   "p": 4,
+   "he": "עם ישראל בהרבה מקומות מושבותיהם נתון בצרה וביגון. המצב הפרוע בכמה שטחי החיים של אחינו בני ישראל הולך ומתגבר מיום ליום. באמריקה נתרבו מעשי הרציחה והשוד ואנשים אשר לא עול בכפם נהרגים בחוצות, וההשתוללות עוברת כבר כל גבול אנושי.\nמספר חשוב של אחב״י נתפסו באיראן בתור בני הערובה ועונש מוות צפוי להם, חס ושלום.\nהמצב בארץ ישראל אינו משביע רצון. השלום מחריד וסופו מי ישורנו ומי יודע מה יולד יום. ע״כ עלינו לבא לפני השי״ת בתפלה ובתחנונים, שירחם על עם ישראל הנדכה.\nאנו קוראים בזה לכל יהודי ויהודי לומר בל״נ בכל יום ג׳ מזמורי תהלים (כ, ק״ל, קמ״ב) אחרי התפלה, בבוקר, ולשפוך שיחה לפני רבון העולמים שישלח עזרו מקודש ויראנו ניסים ונפלאות כבימי קדם.\nאגודת הרבנים דארה״ב וקנדה — הרב משה פיינשטיין, נשיא",
+   "en": "In many of the places where they live, the Jewish people is in trouble and grief. The lawlessness in many areas of our brethren's lives grows worse from day to day. In America murder and robbery have multiplied, innocent people are killed in the streets, and the rampage already exceeds every human limit.\nA significant number of our Jewish brethren have been seized in Iran as hostages, and the death penalty awaits them, Heaven forbid.\nThe situation in the Land of Israel is not satisfactory. The peace is frightening; who can foresee its end, and who knows what a day may bring? We must therefore come before God in prayer and supplication, that He have mercy on the downtrodden people of Israel.\nWe hereby call on every Jew to say, bli neder, three psalms every day (20, 130, 142) after the morning prayers, and to pour out their hearts before the Master of the world, that He send His help from the Sanctuary and show us wonders and miracles as in days of old.\nAgudath HaRabbonim of the United States and Canada — Rabbi Moshe Feinstein, President",
+   "bhe": "נשיא אגודת הרבנים לארה״ב וקנדה; ראש מועצת גדולי התורה באמריקה; נחשב אצל כל חוגי היהדות הדתית לגאון הדור וגדול הפוסקים; בעל שו״ת ״אגרות משה״, חדושי ״דברות משה״ על הש״ס ו״קול רם״ על התורה; ראש ישיבת תפארת ירושלים.",
+   "ben": "President of the Agudath HaRabbonim of the United States and Canada and head of the Moetzes Gedolei HaTorah in America. Regarded across Orthodox Jewry as the gaon of the generation and the greatest halachic decisor. Author of the responsa Igrot Moshe, Dibrot Moshe on the Talmud and Kol Ram on the Torah; rosh yeshiva of Tiferet Jerusalem."
+  }
+ ],
+ "appendix_docs": [
+  {
+   "he": "גילוי דעת — מאת כבוד רבני ארץ הקודש",
+   "en": "Public declaration by the rabbis of the Holy Land",
+   "p": 111
+  },
+  {
+   "he": "קריאה דחופה — מאת רבני ארה״ב וקנדה",
+   "en": "Urgent appeal by the rabbis of the United States and Canada",
+   "p": 113
+  }
+ ],
+ "pending_bio": {
+  "he": "הדברים מופיעים בנספחים לספר, ולא צורפה להם ביוגרפיה.",
+  "en": "This appears in the book's appendix, which doesn't include a biography."
+ }
+}

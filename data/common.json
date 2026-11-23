@@ -1,0 +1,504 @@
+{
+ "communities": [
+  {
+   "id": "sephardi",
+   "he": "ספרדים ועדות המזרח",
+   "en": "Sephardi and Mizrahi"
+  },
+  {
+   "id": "hasidic",
+   "he": "חצרות חסידים",
+   "en": "Hasidic courts"
+  },
+  {
+   "id": "edah",
+   "he": "העדה החרדית בירושלים",
+   "en": "The Edah HaChareidis of Jerusalem"
+  },
+  {
+   "id": "courts",
+   "he": "בתי הדין והרבנות הראשית",
+   "en": "Israel’s rabbinical courts and Chief Rabbinate"
+  },
+  {
+   "id": "diaspora",
+   "he": "רבני קהילות בתפוצות",
+   "en": "Rabbis of Diaspora communities"
+  },
+  {
+   "id": "eretz",
+   "he": "רבנים ותלמידי חכמים בארץ ישראל",
+   "en": "Rabbis and scholars in the Land of Israel"
+  }
+ ],
+ "places": {
+  "jerusalem": {
+   "he": "ירושלים",
+   "en": "Jerusalem",
+   "lat": 31.778,
+   "lon": 35.229
+  },
+  "sighet": {
+   "he": "סיגט",
+   "en": "Sighet",
+   "lat": 47.93,
+   "lon": 23.89
+  },
+  "ujfeherto": {
+   "he": "אויפעהערטא",
+   "en": "Újfehértó",
+   "lat": 47.8,
+   "lon": 21.68
+  },
+  "senta": {
+   "he": "זענטא",
+   "en": "Senta",
+   "lat": 45.93,
+   "lon": 20.08
+  },
+  "williamsburg": {
+   "he": "וויליאמסבורג",
+   "en": "Williamsburg, Brooklyn",
+   "lat": 40.708,
+   "lon": -73.957
+  },
+  "brooklyn": {
+   "he": "ברוקלין",
+   "en": "Brooklyn",
+   "lat": 40.645,
+   "lon": -73.98
+  },
+  "newyork": {
+   "he": "ניו יורק",
+   "en": "New York",
+   "lat": 40.76,
+   "lon": -73.98
+  },
+  "vilnius": {
+   "he": "וילנא",
+   "en": "Vilnius",
+   "lat": 54.687,
+   "lon": 25.28
+  },
+  "bocki": {
+   "he": "בוצק",
+   "en": "Boćki",
+   "lat": 52.65,
+   "lon": 23.04
+  },
+  "kalvarija": {
+   "he": "קלוואריה",
+   "en": "Kalvarija",
+   "lat": 54.41,
+   "lon": 23.23
+  },
+  "bolechow": {
+   "he": "באליחוב",
+   "en": "Bolechów",
+   "lat": 49.07,
+   "lon": 23.85
+  },
+  "oradea": {
+   "he": "גרוסוורדיין",
+   "en": "Oradea (Grosswardein)",
+   "lat": 47.07,
+   "lon": 21.93
+  },
+  "strasbourg": {
+   "he": "שטראסבורג",
+   "en": "Strasbourg",
+   "lat": 48.58,
+   "lon": 7.75
+  },
+  "baghdad": {
+   "he": "בגדאד",
+   "en": "Baghdad",
+   "lat": 33.31,
+   "lon": 44.36
+  },
+  "khust": {
+   "he": "חוסט",
+   "en": "Khust",
+   "lat": 48.17,
+   "lon": 23.29
+  },
+  "gorlice": {
+   "he": "גורליץ",
+   "en": "Gorlice",
+   "lat": 49.65,
+   "lon": 21.16
+  },
+  "przeworsk": {
+   "he": "פשעווארסק",
+   "en": "Przeworsk",
+   "lat": 50.06,
+   "lon": 22.49
+  },
+  "paris": {
+   "he": "פריז",
+   "en": "Paris",
+   "lat": 48.857,
+   "lon": 2.352
+  },
+  "antwerp": {
+   "he": "אנטוורפן",
+   "en": "Antwerp",
+   "lat": 51.22,
+   "lon": 4.4
+  },
+  "novezamky": {
+   "he": "נייהייזל",
+   "en": "Nové Zámky",
+   "lat": 47.99,
+   "lon": 18.16
+  },
+  "debrecen": {
+   "he": "דעברעצין",
+   "en": "Debrecen",
+   "lat": 47.53,
+   "lon": 21.63
+  },
+  "buenosaires": {
+   "he": "בואנוס איירס",
+   "en": "Buenos Aires",
+   "lat": -34.6,
+   "lon": -58.38
+  },
+  "sinwan": {
+   "he": "סינואן",
+   "en": "Sinwan (Sharab)",
+   "lat": 13.62,
+   "lon": 43.8
+  },
+  "aden": {
+   "he": "עדן",
+   "en": "Aden",
+   "lat": 12.79,
+   "lon": 45.03
+  },
+  "yehud": {
+   "he": "יהוד",
+   "en": "Yehud",
+   "lat": 32.03,
+   "lon": 34.89
+  },
+  "satumare": {
+   "he": "סאטמאר",
+   "en": "Satu Mare (Satmar)",
+   "lat": 47.79,
+   "lon": 22.88
+  },
+  "irshava": {
+   "he": "אורשיווא",
+   "en": "Irshava",
+   "lat": 48.32,
+   "lon": 23.04
+  },
+  "carei": {
+   "he": "קראלי",
+   "en": "Carei",
+   "lat": 47.69,
+   "lon": 22.47
+  },
+  "hodasz": {
+   "he": "האדאס",
+   "en": "Hodász",
+   "lat": 47.92,
+   "lon": 22.2
+  },
+  "orsova": {
+   "he": "אורשאווא",
+   "en": "Orșova",
+   "lat": 44.72,
+   "lon": 22.4
+  },
+  "deutschkreutz": {
+   "he": "צעהלים",
+   "en": "Deutschkreutz (Tzelem)",
+   "lat": 47.6,
+   "lon": 16.63
+  },
+  "wodzislaw": {
+   "he": "וואידיסלאוו",
+   "en": "Wodzisław",
+   "lat": 50.52,
+   "lon": 20.19
+  },
+  "rissani": {
+   "he": "ריסאני",
+   "en": "Rissani",
+   "lat": 31.28,
+   "lon": -4.26
+  },
+  "lod": {
+   "he": "לוד",
+   "en": "Lod",
+   "lat": 31.95,
+   "lon": 34.89
+  },
+  "netivot": {
+   "he": "נתיבות",
+   "en": "Netivot",
+   "lat": 31.42,
+   "lon": 34.59
+  },
+  "papa": {
+   "he": "פאפא",
+   "en": "Pápa",
+   "lat": 47.33,
+   "lon": 17.47
+  },
+  "szombathely": {
+   "he": "סאמבאטהעלי",
+   "en": "Szombathely",
+   "lat": 47.23,
+   "lon": 16.62
+  },
+  "samorin": {
+   "he": "שאמאש",
+   "en": "Šamorín (Samos)",
+   "lat": 48.03,
+   "lon": 17.31
+  },
+  "sculeni": {
+   "he": "סקולען",
+   "en": "Sculeni",
+   "lat": 47.33,
+   "lon": 27.62
+  },
+  "czernowitz": {
+   "he": "טשערנאוויץ",
+   "en": "Czernowitz",
+   "lat": 48.29,
+   "lon": 25.94
+  },
+  "sibiu": {
+   "he": "הערמאנשטאט",
+   "en": "Sibiu",
+   "lat": 45.79,
+   "lon": 24.15
+  },
+  "melbourne": {
+   "he": "מלבורן",
+   "en": "Melbourne",
+   "lat": -37.81,
+   "lon": 144.96
+  },
+  "vienna": {
+   "he": "וויען",
+   "en": "Vienna",
+   "lat": 48.21,
+   "lon": 16.37
+  },
+  "gabes": {
+   "he": "גאבס",
+   "en": "Gabès",
+   "lat": 33.88,
+   "lon": 10.1
+  },
+  "tunis": {
+   "he": "תוניס",
+   "en": "Tunis",
+   "lat": 36.8,
+   "lon": 10.18
+  },
+  "beersheba": {
+   "he": "באר שבע",
+   "en": "Beersheba",
+   "lat": 31.25,
+   "lon": 34.79
+  },
+  "dolyna": {
+   "he": "דאלינא",
+   "en": "Dolyna",
+   "lat": 48.97,
+   "lon": 24.01
+  },
+  "munkacs": {
+   "he": "מונקאטש",
+   "en": "Munkács",
+   "lat": 48.44,
+   "lon": 22.72
+  },
+  "manchester": {
+   "he": "מנצ׳סטר",
+   "en": "Manchester",
+   "lat": 53.48,
+   "lon": -2.24
+  },
+  "rakhiv": {
+   "he": "ראחוב",
+   "en": "Rakhiv (Rachov)",
+   "lat": 48.05,
+   "lon": 24.2
+  },
+  "lugano": {
+   "he": "לוגאנו",
+   "en": "Lugano",
+   "lat": 46.0,
+   "lon": 8.95
+  },
+  "botosani": {
+   "he": "באטשאן",
+   "en": "Botoșani",
+   "lat": 47.75,
+   "lon": 26.67
+  },
+  "ribnita": {
+   "he": "ריבניץ",
+   "en": "Rîbnița",
+   "lat": 47.77,
+   "lon": 29.0
+  },
+  "monsey": {
+   "he": "מונסי",
+   "en": "Monsey",
+   "lat": 41.11,
+   "lon": -74.07
+  },
+  "crasna": {
+   "he": "קראסנא",
+   "en": "Crasna",
+   "lat": 47.16,
+   "lon": 22.89
+  },
+  "landsberg": {
+   "he": "לנדסברג",
+   "en": "Landsberg",
+   "lat": 48.05,
+   "lon": 10.87
+  },
+  "safed": {
+   "he": "צפת",
+   "en": "Safed",
+   "lat": 32.97,
+   "lon": 35.5
+  },
+  "jasliska": {
+   "he": "יאסליסק",
+   "en": "Jaśliska",
+   "lat": 49.44,
+   "lon": 21.8
+  },
+  "wroclaw": {
+   "he": "ברעסלוי",
+   "en": "Wrocław",
+   "lat": 51.11,
+   "lon": 17.03
+  },
+  "frankfurt": {
+   "he": "פרנקפורט",
+   "en": "Frankfurt",
+   "lat": 50.11,
+   "lon": 8.68
+  },
+  "sopron": {
+   "he": "שאפראן",
+   "en": "Sopron",
+   "lat": 47.68,
+   "lon": 16.59
+  },
+  "krompachy": {
+   "he": "קראמפאך",
+   "en": "Krompachy",
+   "lat": 48.92,
+   "lon": 20.87
+  },
+  "nitra": {
+   "he": "ניטרא",
+   "en": "Nitra",
+   "lat": 48.31,
+   "lon": 18.09
+  },
+  "mountkisco": {
+   "he": "מאונט קיסקו",
+   "en": "Mount Kisco, NY",
+   "lat": 41.2,
+   "lon": -73.73
+  },
+  "kosice": {
+   "he": "קאשוי",
+   "en": "Košice (Kashau)",
+   "lat": 48.72,
+   "lon": 21.26
+  },
+  "michalovce": {
+   "he": "מיכאלאווץ",
+   "en": "Michalovce",
+   "lat": 48.75,
+   "lon": 21.92
+  },
+  "bedfordhills": {
+   "he": "בדפורד הילס",
+   "en": "Bedford Hills, NY",
+   "lat": 41.24,
+   "lon": -73.69
+  },
+  "szczakowa": {
+   "he": "שטשאקאווא",
+   "en": "Szczakowa",
+   "lat": 50.23,
+   "lon": 19.4
+  },
+  "cluj": {
+   "he": "קלויזנבורג",
+   "en": "Cluj (Klausenburg)",
+   "lat": 46.77,
+   "lon": 23.59
+  },
+  "netanya": {
+   "he": "נתניה (קרית צאנז)",
+   "en": "Netanya (Kiryat Sanz)",
+   "lat": 32.33,
+   "lon": 34.86
+  },
+  "telaviv": {
+   "he": "תל אביב–יפו",
+   "en": "Tel Aviv–Jaffa",
+   "lat": 32.07,
+   "lon": 34.78
+  },
+  "dukla": {
+   "he": "דוקלא",
+   "en": "Dukla",
+   "lat": 49.56,
+   "lon": 21.68
+  },
+  "montreal": {
+   "he": "מונטריאול",
+   "en": "Montreal",
+   "lat": 45.5,
+   "lon": -73.57
+  },
+  "kfarchabad": {
+   "he": "כפר חב״ד",
+   "en": "Kfar Chabad",
+   "lat": 31.99,
+   "lon": 34.85
+  },
+  "philadelphia": {
+   "he": "פילדלפיה",
+   "en": "Philadelphia",
+   "lat": 39.95,
+   "lon": -75.17
+  },
+  "boston": {
+   "he": "בוסטון",
+   "en": "Boston",
+   "lat": 42.36,
+   "lon": -71.06
+  },
+  "cleveland": {
+   "he": "קליוולנד",
+   "en": "Cleveland",
+   "lat": 41.5,
+   "lon": -81.69
+  },
+  "bneibrak": {
+   "he": "בני ברק",
+   "en": "Bnei Brak",
+   "lat": 32.08,
+   "lon": 34.83
+  }
+ }
+}
