@@ -460,10 +460,12 @@ function notFound(lang) {
 }
 
 // ---------- write ----------
+const VER = Object.fromEntries(['site.css', 'map.js', 'home.js'].map(a => [a, require('crypto').createHash('md5').update(fs.readFileSync(path.join(ROOT, 'assets', a))).digest('hex').slice(0, 8)]));
 const written = [];
 function out(rel, html) {
   const f = path.join(ROOT, rel);
   fs.mkdirSync(path.dirname(f), { recursive: true });
+  html = html.replace(/\/assets\/(site\.css|map\.js|home\.js)"/g, (m, a) => `/assets/${a}?v=${VER[a]}"`);
   fs.writeFileSync(f, rel.startsWith('en/') ? html.replace(/\bGod\b/g, 'G-d') : html);
   written.push(rel);
 }
