@@ -111,7 +111,7 @@ const bySlug = Object.fromEntries(people.map(p => [p.slug, p]));
 const collName = (lang, c) => c === 'territories' ? L[lang].terrTitle : L[lang].elTitle;
 
 // ---------- layout ----------
-function layout(lang, p, { title, desc, body, og, active, wide }) {
+function layout(lang, p, { title, desc, body, og, active, wide, bleed }) {
   const t = L[lang];
   const full = title ? `${title} | ${t.site}` : t.site;
   const navKeys = ['territories', 'elections', 'rabbis', 'map', 'connect', 'archive'];
@@ -147,7 +147,7 @@ ${og ? `<meta property="og:image" content="https://gedoleitorah.com${og}">\n` : 
     ${navKeys.map(k => `<a href="${url(lang, k + '/')}"${active === k ? ' aria-current="page"' : ''}>${esc0(t.nav[k])}</a>`).join('')}
   </nav>
 </header>
-<main id="main" class="wrap${wide ? ' wide' : ''}">
+<main id="main" class="${bleed ? 'bleed' : 'wrap' + (wide ? ' wide' : '')}">
 ${body}
 </main>
 <footer class="foot"><div class="wrap"><p>${esc0(t.footer)}</p><p><a href="${url(lang)}">${esc0(t.site)}</a> · gedoleitorah.com</p></div></footer>
@@ -177,19 +177,154 @@ function shortName(lang, p) {
 }
 
 // ---------- pages ----------
+// ---------- visual home: map + timeline ----------
+const H = {
+  he: {
+    kicker: 'דעת תורה, בלשון אומריה',
+    statR: 'רבנים', statC: 'חוגים וקהילות', statP: 'ערים', statK: 'יבשות',
+    mapH: 'מכל קצות העולם, תשובה אחת',
+    mapP: 'כל נקודה היא עיר שבה נולד אחד הרבנים או כיהן בה, וכל קו הוא דרכו של רב ממקום למקום. הצבע מסמן את החוג שלו. לחצו על נקודה.',
+    colls: 'אוסף', zoomIn: 'הגדלה', zoomOut: 'הקטנה', all: 'הכול',
+    tlH: 'ציר הזמן', tlP: 'מתי נאמרו הדברים, שנה אחר שנה. לחצו על דף כדי לקרוא אותו.',
+    oldest: 'מהישן לחדש', newest: 'מהחדש לישן', undated: 'ללא תאריך',
+    book1980: 'יוצא לאור ״גדולי תורה על החזרת שטחים״, ובו דברי תשעה־עשר רבנים:',
+    pamph2009: 'יוצא לאור בירושלים הקונטרס ״זכרון בספר״, המקבץ את דברי ארבעים ושניים הרבנים.',
+    toRabbi: 'לדף הרב', close: 'סגירה', twoQ: 'שתי השאלות', fullMap: 'למפה המלאה',
+    ctx: {
+      1937: [['w', 'ועדת פיל מציעה לחלק את הארץ; הכנסיה הגדולה השלישית מתכנסת במרינבד']],
+      1949: [['k', 'הבחירות לאספה המכוננת, הכנסת הראשונה (25 בינואר)']],
+      1951: [['k', 'הבחירות לכנסת השנייה (30 ביולי)']],
+      1955: [['k', 'הבחירות לכנסת השלישית (26 ביולי)']],
+      1959: [['k', 'הבחירות לכנסת הרביעית (3 בנובמבר)']],
+      1961: [['k', 'הבחירות לכנסת החמישית (15 באוגוסט)']],
+      1965: [['k', 'הבחירות לכנסת השישית (2 בנובמבר)']],
+      1967: [['w', 'מלחמת ששת הימים']],
+      1977: [['k', 'הבחירות לכנסת התשיעית (17 במאי); אגודת ישראל מצטרפת לקואליציה']],
+      1978: [['w', 'הסכמי קמפ דייוויד (ספטמבר)']],
+      1979: [['w', 'הסכם השלום עם מצרים (מרץ)']],
+      1982: [['w', 'הושלמה הנסיגה מסיני (אפריל)']],
+      1988: [['k', 'הבחירות לכנסת השתים־עשרה (1 בנובמבר)']],
+      1992: [['k', 'הבחירות לכנסת השלוש־עשרה (23 ביוני)']],
+      2003: [['k', 'הבחירות לכנסת השש־עשרה (28 בינואר)']],
+      2006: [['k', 'הבחירות לכנסת השבע־עשרה (28 במרץ)']],
+      2009: [['k', 'הבחירות לכנסת השמונה־עשרה (10 בפברואר, ט״ז בשבט תשס״ט)']],
+    },
+  },
+  en: {
+    kicker: 'Da’at Torah, in their own words',
+    statR: 'rabbis', statC: 'circles and communities', statP: 'cities', statK: 'continents',
+    mapH: 'From Every Corner of the World, One Answer',
+    mapP: 'Each point is a city where one of the rabbis was born or served, and each line is a rabbi’s path from place to place. The color marks his circle. Tap a point.',
+    colls: 'Collection', zoomIn: 'Zoom in', zoomOut: 'Zoom out', all: 'All',
+    tlH: 'Timeline', tlP: 'When the words were said, year by year. Tap a page to read it.',
+    oldest: 'Oldest first', newest: 'Newest first', undated: 'Undated',
+    book1980: 'Gedolei Torah al Hachzarat Shetachim is published, with the words of nineteen rabbis:',
+    pamph2009: 'The pamphlet Zichron BaSefer is published in Jerusalem, gathering the words of the forty-two rabbis.',
+    toRabbi: 'Open his page', close: 'Close', twoQ: 'The two questions', fullMap: 'Open the full map',
+    ctx: {
+      1937: [['w', 'The Peel Commission proposes partitioning the Land; the Third Knessia Gedola meets in Marienbad']],
+      1949: [['k', 'Elections to the Constituent Assembly, the first Knesset (January 25)']],
+      1951: [['k', 'Elections to the Second Knesset (July 30)']],
+      1955: [['k', 'Elections to the Third Knesset (July 26)']],
+      1959: [['k', 'Elections to the Fourth Knesset (November 3)']],
+      1961: [['k', 'Elections to the Fifth Knesset (August 15)']],
+      1965: [['k', 'Elections to the Sixth Knesset (November 2)']],
+      1967: [['w', 'The Six-Day War']],
+      1977: [['k', 'Elections to the Ninth Knesset (May 17); Agudath Israel joins the coalition']],
+      1978: [['w', 'The Camp David Accords (September)']],
+      1979: [['w', 'The peace treaty with Egypt (March)']],
+      1982: [['w', 'The withdrawal from Sinai is completed (April)']],
+      1988: [['k', 'Elections to the Twelfth Knesset (November 1)']],
+      1992: [['k', 'Elections to the Thirteenth Knesset (June 23)']],
+      2003: [['k', 'Elections to the Sixteenth Knesset (January 28)']],
+      2006: [['k', 'Elections to the Seventeenth Knesset (March 28)']],
+      2009: [['k', 'Elections to the Eighteenth Knesset (February 10; 16 Shevat 5769)']],
+    },
+  },
+};
+const usedPlaces = new Set(); people.forEach(p => { if (p.born) usedPlaces.add(p.born); p.served.forEach(s => usedPlaces.add(s)); });
+const usedComms = COMMON.communities.filter(c => people.some(p => p.comm === c.id));
+const plain = (lang, p) => lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '').replace(/\s*זצ״ל$/, '') : p.en.name;
+const thumbOf = p => p.sayings[0].scan ? `/img/zb/t/${p.sayings[0].scan}` : null;
+
+function mapBlock(lang, full) {
+  const t = L[lang], h = H[lang];
+  const data = {
+    lang, places: Object.fromEntries([...usedPlaces].map(k => [k, { name: PLACES[k][lang], lat: PLACES[k].lat, lon: PLACES[k].lon }])),
+    rabbis: people.map(p => ({ slug: p.slug, name: plain(lang, p), coll: p.coll, comm: p.comm, born: p.born, served: p.served, thumb: thumbOf(p) })),
+    comms: Object.fromEntries(usedComms.map(c => [c.id, c[lang]])),
+    t: { servedHere: t.servedHere, bornHere: t.bornHere, fail: t.mapFail, pick: t.mapPick, base: url(lang) },
+  };
+  return `<section class="mapband" id="rmap" aria-label="${esc0(h.mapH)}">
+  <div class="mapwrap">
+    <div class="maphead"><h2>${esc(h.mapH)}</h2><p>${esc(h.mapP)}</p></div>
+    <div id="rmap-legend" class="cbar" role="group">${usedComms.map(c => { const n = people.filter(p => p.comm === c.id).length; return `<button type="button" data-c="${c.id}" aria-pressed="true" style="flex-grow:${n};--cc:var(--c-${c.id})"><b>${n}</b> ${esc(c[lang])}</button>`; }).join('')}</div>
+    <div class="mapgrid">
+      <div class="mapbox"><svg id="rmap-svg" role="img" aria-label="${esc0(h.mapH)}"></svg>
+        <div id="rmap-views" role="group">${Object.entries(t.views).map(([k, v]) => `<button type="button" data-v="${k}" aria-pressed="false">${esc(v)}</button>`).join('')}</div>
+        <div class="zoombtns"><button type="button" id="rmap-in" aria-label="${esc0(h.zoomIn)}">+</button><button type="button" id="rmap-out" aria-label="${esc0(h.zoomOut)}">−</button></div>
+      </div>
+      <aside id="rmap-info" class="mapinfo" aria-live="polite"><p class="muted">${esc(t.mapPick)}</p></aside>
+    </div>
+    <div class="mapfoot"><div id="rmap-colls" role="group" aria-label="${esc0(h.colls)}"><button type="button" data-k="territories" aria-pressed="true">${esc(t.terrTitle)} · ${people.filter(p => p.coll === 'territories').length}</button><button type="button" data-k="elections" aria-pressed="true">${esc(t.elTitle)} · ${people.filter(p => p.coll === 'elections').length}</button></div>${full ? '' : `<a class="maplink" href="${url(lang, 'map/')}">${esc(h.fullMap)} ${lang === 'he' ? '←' : '→'}</a>`}</div>
+  </div>
+</section>
+<script>window.MAPDATA=${JSON.stringify(data)};</script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="/assets/map.js"></script>`;
+}
+
+function timeline(lang) {
+  const t = L[lang], h = H[lang];
+  const byYear = {};
+  const add = (y, e) => (byYear[y] ||= []).push(e);
+  const dlg = {};
+  for (const it of EL) {
+    const p = bySlug[it.slug], m = /(\d{4})\)?$/.exec(it.en_date) || /\((?:\w+ )?(\d{4})\)/.exec(it.en_date);
+    dlg[it.n] = { name: p[lang].name, title: p[lang].title, quote: lang === 'he' ? it.he_quote : it.en_quote, date: lang === 'he' ? it.he_date : it.en_date, img: `/img/zb/${it.scan}`, url: url(lang, 'rabbis/' + it.slug + '/'), comm: COMM[it.community][lang], c: it.community };
+    add(m ? +m[1] : 9999, { kind: 'el', n: it.n, p });
+  }
+  const decl = TR.opening.find(o => o.kind === 'decl');
+  add(1937, { kind: 'doc', title: lang === 'he' ? decl.hhe : decl.hen, quote: lang === 'he' ? decl.he : decl.en });
+  for (const s of TR.sayings) add(s.n === 1 ? 1978 : 1980, { kind: 'tr', s, p: people.find(x => x.coll === 'territories' && x.sayings.some(y => y.n === s.n)) });
+  const years = [...new Set([...Object.keys(byYear).map(Number), ...Object.keys(h.ctx).map(Number)])].sort((a, b) => a - b);
+  const elCard = e => `<button type="button" class="tcard c-${e.p.comm}" data-n="${e.n}"><img src="/img/zb/t/${e.p.sayings[0].scan}" alt="" loading="lazy" width="420" height="606"><span class="tn">${esc(plain(lang, e.p))}</span></button>`;
+  const trCard = e => `<a class="tcard text c-${e.p.comm}" href="${url(lang, 'rabbis/' + e.p.slug + '/')}"><span class="tq" lang="${lang}">${esc(lang === 'he' ? e.s.he_quote : e.s.en_quote)}</span><span class="tn">${esc(shortName(lang, e.p))}</span></a>`;
+  const sections = years.map(y => {
+    const es = byYear[y] || [], els = es.filter(e => e.kind === 'el'), trs = es.filter(e => e.kind === 'tr'), docs = es.filter(e => e.kind === 'doc');
+    const ctx = (y !== 9999 && h.ctx[y] || []).map(c => `<p class="ctx ctx-${c[0]}">${esc(c[1])}</p>`).join('');
+    const extra = y === 1980 ? `<p class="ctx ctx-w">${esc(h.book1980)}</p>` : y === 2009 ? `<p class="ctx ctx-k">${esc(h.pamph2009)}</p>` : '';
+    return `<section class="yr${es.length ? '' : ' quiet'}${y === 9999 ? ' undated' : ''}"><h3 class="y">${y === 9999 ? esc(h.undated) : y}</h3><div class="ybody">${ctx}${extra}
+      ${docs.map(d => `<a class="tdoc" href="${url(lang, 'territories/')}"><b>${esc(d.title)}</b><span lang="${lang}">${esc(d.quote)}</span></a>`).join('')}
+      ${trs.length ? `<div class="tgrid text">${trs.map(trCard).join('')}</div>` : ''}
+      ${els.length ? `<div class="tgrid">${els.map(elCard).join('')}</div>` : ''}</div></section>`;
+  }).join('');
+  return `<section class="wrap wide tlsec"><div class="tlhead"><div><h2>${esc(h.tlH)}</h2><p class="lede">${esc(h.tlP)}</p></div>
+    <div class="seg" role="group"><button type="button" id="tl-old" aria-pressed="true">${esc(h.oldest)}</button><button type="button" id="tl-new" aria-pressed="false">${esc(h.newest)}</button></div></div>
+    <div class="tl" id="tl">${sections}</div></section>
+<dialog id="tdlg" aria-labelledby="tdlg-name"><button type="button" class="dx" id="tdlg-x" aria-label="${esc0(h.close)}">×</button><div class="dgrid"><a id="tdlg-a" target="_blank" rel="noopener"><img id="tdlg-img" alt=""></a><div class="dtext"><span class="chip" id="tdlg-comm"></span><h3 id="tdlg-name"></h3><p class="ttl" id="tdlg-title"></p><blockquote class="q${lang === 'he' ? '' : ' en'}" lang="${lang}"><p id="tdlg-q"></p></blockquote><p class="src" id="tdlg-date"></p><a class="more" id="tdlg-url">${esc(h.toRabbi)} ${lang === 'he' ? '←' : '→'}</a></div></div></dialog>
+<script>window.TL=${JSON.stringify(dlg)};</script><script src="/assets/home.js"></script>`;
+}
+
 function home(lang) {
-  const t = L[lang];
+  const t = L[lang], h = H[lang];
   const card = (k, label, title, q, meta) => `<a class="qcard b-${k}" href="${url(lang, k + '/')}"><span class="qlabel">${esc(label)}</span><span class="qtitle">${esc(title)}</span><span class="qq">${esc(q)}</span><span class="qmeta">${esc(meta)}</span><span class="qgo">${esc(t.toCollection)} ${lang === 'he' ? '←' : '→'}</span></a>`;
-  const body = `
-<section class="hero"><h1>${esc(t.site)}</h1><p class="lede">${esc(t.homeLede)}</p>
-<div class="stats"><span><b>${people.length}</b> ${t.rabbisN}</span><span><b>${EL.length + TR.sayings.length}</b> ${t.sayingsN}</span><span><b>2</b> ${t.questionsN}</span></div></section>
-<section class="qcards">
+  const body = `<section class="wrap wide hero2"><p class="kicker">${esc(h.kicker)}</p><h1>${esc(t.site)}</h1>
+<div class="stats"><span><b>${people.length}</b> ${h.statR}</span><span><b>${usedComms.length}</b> ${h.statC}</span><span><b>${usedPlaces.size}</b> ${h.statP}</span><span><b>6</b> ${h.statK}</span></div></section>
+${mapBlock(lang, false)}
+${timeline(lang)}
+<section class="wrap wide"><h2>${esc(h.twoQ)}</h2><div class="qcards">
 ${card('territories', t.q1, t.terrTitle, t.terrQ, t.terrMeta)}
 ${card('elections', t.q2, t.elTitle, t.elQ, t.elMeta)}
-</section>
-<section class="prose"><h2>${esc(t.howTitle)}</h2>${t.how.map(x => `<p>${esc(x)}</p>`).join('')}
-<p><a class="more" href="${url(lang, 'connect/')}">${esc(t.connectTeaser)} ${lang === 'he' ? '←' : '→'}</a></p></section>`;
-  return layout(lang, '', { title: '', body, active: 'home' });
+</div>
+<div class="prose">${t.how.map(x => `<p>${esc(x)}</p>`).join('')}<p><a class="more" href="${url(lang, 'connect/')}">${esc(t.connectTeaser)} ${lang === 'he' ? '←' : '→'}</a></p></div></section>`;
+  return layout(lang, '', { title: '', body, active: 'home', bleed: true, og: '/img/zb/00a.jpg' });
+}
+
+function mapPage(lang) {
+  const t = L[lang];
+  return layout(lang, 'map/', { title: t.mapTitle, desc: t.mapLede, body: mapBlock(lang, true), active: 'map', bleed: true });
 }
 
 function territories(lang) {
@@ -264,27 +399,6 @@ function rabbisIndex(lang) {
   };
   const body = `<header class="phead"><h1>${esc(t.nav.rabbis)}</h1><p class="lede">${esc(t.rabbisLede)}</p></header><div class="rcols">${block('territories')}${block('elections')}</div>`;
   return layout(lang, 'rabbis/', { title: t.nav.rabbis, body, active: 'rabbis', wide: true });
-}
-
-function mapPage(lang) {
-  const t = L[lang];
-  const data = {
-    lang, places: Object.fromEntries(Object.entries(PLACES).map(([k, v]) => [k, { name: v[lang], lat: v.lat, lon: v.lon }])),
-    rabbis: people.map(p => ({ slug: p.slug, name: lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '') : p.en.name, coll: p.coll, born: p.born, served: p.served })),
-    colls: [{ id: 'territories', name: t.terrTitle }, { id: 'elections', name: t.elTitle }],
-    t: { views: t.views, servedHere: t.servedHere, bornHere: t.bornHere, fail: t.mapFail, pick: t.mapPick, base: url(lang) },
-  };
-  const body = `<header class="phead"><h1>${esc(t.mapTitle)}</h1><p class="lede">${esc(t.mapLede)}</p></header>
-<div id="rmap">
-  <div class="mapbar"><div id="rmap-views" role="group">${Object.entries(t.views).map(([k, v], i) => `<button type="button" data-v="${k}" aria-pressed="${i === 0}">${esc(v)}</button>`).join('')}</div>
-  <div id="rmap-legend" role="group">${data.colls.map(c => `<button type="button" class="b-${c.id}" data-c="${c.id}" aria-pressed="true"><i></i>${esc(c.name)}</button>`).join('')}</div></div>
-  <div class="mapgrid"><div class="mapbox"><svg id="rmap-svg" role="img" aria-label="${esc0(t.mapTitle)}"></svg></div><div id="rmap-info" class="mapinfo" aria-live="polite"><p class="muted">${esc(t.mapPick)}</p></div></div>
-</div>
-<script>window.MAPDATA=${JSON.stringify(data)};</script>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-<script src="/assets/map.js"></script>`;
-  return layout(lang, 'map/', { title: t.mapTitle, desc: t.mapLede, body, active: 'map', wide: true });
 }
 
 function connect(lang) {
