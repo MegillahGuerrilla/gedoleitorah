@@ -253,7 +253,7 @@ function mapBlock(lang, full) {
   const t = L[lang], h = H[lang];
   const data = {
     lang, places: Object.fromEntries([...usedPlaces].map(k => [k, { name: PLACES[k][lang], lat: PLACES[k].lat, lon: PLACES[k].lon }])),
-    rabbis: people.map(p => ({ slug: p.slug, name: plain(lang, p), coll: p.coll, comm: p.comm, born: p.born, served: p.served, thumb: thumbOf(p) })),
+    rabbis: people.map(p => ({ slug: p.slug, name: plain(lang, p), coll: p.coll, comm: p.comm, born: p.born, served: p.served, thumb: thumbOf(p), quote: lang === 'he' ? p.sayings[0].he : p.sayings[0].en })),
     comms: Object.fromEntries(usedComms.map(c => [c.id, c[lang]])),
     t: { servedHere: t.servedHere, bornHere: t.bornHere, fail: t.mapFail, pick: t.mapPick, base: url(lang) },
   };
@@ -275,6 +275,132 @@ function mapBlock(lang, full) {
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
 <script src="/assets/map.js"></script>`;
+}
+
+// ---------- chart of lives, in the manner of a year-by-year chart ----------
+const C = {
+  he: {
+    h: 'דור לדור: חייהם, זה לצד זה', p: 'כל פס הוא חייו של אחד הרבנים, מלידתו ועד פטירתו, בצבע החוג שלו. המעוין מסמן את השנה שבה אמר את דבריו. גללו לצדדים.',
+    lg: ['חיי הרב', 'השנה שבה אמר את דבריו', 'דבריו נדפסו בספר (תש״מ)', 'שנת בחירות לכנסת', 'שנת שמיטה'],
+    elections: 'הבחירות לכנסת', shmita: 'שמיטה', jewish: 'עם ישראל והארץ', world: 'בעולם', rule: 'השלטון בארץ',
+    eras: { ott: 'השלטון העות׳מאני', brit: 'השלטון הבריטי', lab: 'מפא״י, המערך והעבודה', lik: 'הליכוד', uni: 'ממשלות אחדות', kad: 'קדימה' },
+    ev: [[1881, 'פרעות ברוסיה'], [1897, 'הקונגרס הציוני הראשון'], [1912, 'ייסוד אגודת ישראל'], [1917, 'הצהרת בלפור'], [1937, 'ועדת פיל מציעה חלוקה'], [1939, 'השואה', 1945], [1947, 'החלטת החלוקה באו״ם'], [1948, 'הקמת המדינה'],
+      [1967, 'מלחמת ששת הימים'], [1973, 'מלחמת יום הכיפורים'], [1978, 'הסכמי קמפ דייוויד'], [1980, 'יוצא ״גדולי תורה על החזרת שטחים״', 0, 1], [1982, 'הושלמה הנסיגה מסיני'], [1993, 'הסכמי אוסלו'], [2005, 'הגירוש מגוש קטיף'], [2009, 'יוצא ״זכרון בספר״', 0, 1]],
+    wv: [[1914, 'מלחמת העולם הראשונה', 1918], [1917, 'המהפכה ברוסיה'], [1929, 'המשבר הכלכלי הגדול'], [1939, 'מלחמת העולם השנייה', 1945], [1969, 'האדם נוחת על הירח'], [1979, 'המהפכה באיראן'], [1989, 'נפילת חומת ברלין'], [1991, 'התפרקות ברית המועצות'], [2001, 'פיגועי 11 בספטמבר'], [2003, 'מלחמת עיראק']],
+  },
+  en: {
+    h: 'Generation to Generation: Their Lives, Side by Side', p: 'Each bar is one rabbi’s life, from birth to passing, in the color of his circle. The diamond marks the year he spoke. Scroll sideways.',
+    lg: ['A rabbi’s life', 'The year he spoke', 'His words printed in the 1980 book', 'Knesset election year', 'Shmita year'],
+    elections: 'Knesset elections', shmita: 'Shmita', jewish: 'The Jewish people and the Land', world: 'In the world', rule: 'Rule in the Land',
+    eras: { ott: 'Ottoman rule', brit: 'British rule', lab: 'Mapai, Alignment and Labor', lik: 'Likud', uni: 'Unity governments', kad: 'Kadima' },
+    ev: [[1881, 'Pogroms in Russia'], [1897, 'First Zionist Congress'], [1912, 'Agudath Israel founded'], [1917, 'Balfour Declaration'], [1937, 'Peel Commission proposes partition'], [1939, 'The Holocaust', 1945], [1947, 'UN partition vote'], [1948, 'The State is declared'],
+      [1967, 'Six-Day War'], [1973, 'Yom Kippur War'], [1978, 'Camp David Accords'], [1980, 'Gedolei Torah al Hachzarat Shetachim is published', 0, 1], [1982, 'Sinai withdrawal completed'], [1993, 'Oslo Accords'], [2005, 'Expulsion from Gush Katif'], [2009, 'Zichron BaSefer is published', 0, 1]],
+    wv: [[1914, 'World War I', 1918], [1917, 'Russian Revolution'], [1929, 'The Great Depression begins'], [1939, 'World War II', 1945], [1969, 'Man lands on the moon'], [1979, 'Revolution in Iran'], [1989, 'Fall of the Berlin Wall'], [1991, 'Soviet Union dissolves'], [2001, 'September 11 attacks'], [2003, 'Iraq War']],
+  },
+};
+const ELECTION_DATES = [[1949, 1], [1951, 7], [1955, 7], [1959, 11], [1961, 8], [1965, 11], [1969, 10], [1973, 12], [1977, 5], [1981, 6], [1984, 7], [1988, 11], [1992, 6], [1996, 5], [1999, 5], [2003, 1], [2006, 3], [2009, 2]];
+const ERAS = [['ott', 1858, 1917.95], ['brit', 1917.95, 1948.37], ['lab', 1948.37, 1977.47], ['lik', 1977.47, 1984.7], ['uni', 1984.7, 1990.45], ['lik', 1990.45, 1992.53], ['lab', 1992.53, 1996.46], ['lik', 1996.46, 1999.51], ['lab', 1999.51, 2001.18], ['lik', 2001.18, 2005.9], ['kad', 2005.9, 2009.25]];
+const GEM = { 'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9, 'י': 10, 'כ': 20, 'ך': 20, 'ל': 30, 'מ': 40, 'ם': 40, 'נ': 50, 'ן': 50, 'ס': 60, 'ע': 70, 'פ': 80, 'ף': 80, 'צ': 90, 'ץ': 90, 'ק': 100, 'ר': 200, 'ש': 300, 'ת': 400 };
+function hebDeathYear(s) { // "נלב״ע י״ז טבת תש״ל" -> civil year
+  const w = s.trim().split(/\s+/), last = w[w.length - 1];
+  if (!/^ת[שר]/.test(last)) return null;
+  const hy = 5000 + [...last].reduce((a, ch) => a + (GEM[ch] || 0), 0);
+  return hy - (/תשרי|חשון|כסלו/.test(s) ? 3761 : 3760);
+}
+const HEB_DECADE = { 5620: 'תר״ך', 5630: 'תר״ל', 5640: 'תר״ם', 5650: 'תר״ן', 5660: 'תר״ס', 5670: 'תר״ע', 5680: 'תר״ף', 5690: 'תר״ץ', 5700: 'ת״ש', 5710: 'תש״י', 5720: 'תש״ך', 5730: 'תש״ל', 5740: 'תש״ם', 5750: 'תש״ן', 5760: 'תש״ס', 5770: 'תש״ע', 5780: 'תש״ף' };
+
+const LIVES = people.map(p => {
+  let b = null, d = null, s = null;
+  if (p.coll === 'elections') {
+    const it = EL.find(x => x.slug === p.slug), bio = it.en_bio;
+    let m = /^(\d{4})–(\d{4})/.exec(bio);
+    if (m) { b = +m[1]; d = +m[2]; }
+    else {
+      d = hebDeathYear(it.he_death); m = /Born (\d{4})/.exec(bio); if (m) b = +m[1];
+      m = /Died (\d{4}), aged (\d+)/.exec(bio); if (m) b = +m[1] - +m[2];
+    }
+    m = /(\d{4})\)?$/.exec(it.en_date); if (m) s = +m[1];
+  } else {
+    const m = /^(\d{4})–(\d{4})/.exec(p.he.when || ''); if (m) { b = +m[1]; d = +m[2]; }
+    if (p.sayings.some(x => x.n === 1)) s = 1978;
+  }
+  return { p, b, d, s, book: p.coll === 'territories' };
+});
+
+function chart(lang) {
+  const c = C[lang], t = L[lang], rtl = lang === 'he';
+  const P = 8.5, Y0 = 1858, Y1 = 2022, PADE = 150, PADL = 26, RH = 19;
+  const W = PADE + (Y1 - Y0) * P + PADL;
+  const X = y => rtl ? W - PADE - (y - Y0) * P : PADE + (y - Y0) * P;
+  const span = (a, b) => [Math.min(X(a), X(b)), Math.abs(X(b) - X(a))];
+  const before = rtl ? 1 : -1;               // direction pointing to earlier years
+  const anchorBefore = rtl ? 'start' : 'end', anchorAfter = rtl ? 'end' : 'start';
+  const o = [], labels = [];
+  let y = 0;
+  // era band
+  const eraY = y; y += 18;
+  ERAS.forEach(([k, a, b]) => { const [x, w] = span(a, b); o.push(`<rect class="era era-${k}" x="${x.toFixed(1)}" y="${eraY}" width="${w.toFixed(1)}" height="16"><title>${esc0(c.eras[k])}</title></rect>`); if (w > c.eras[k].length * 6.2 + 8) o.push(`<text class="eral" x="${(x + w / 2).toFixed(1)}" y="${eraY + 12}" text-anchor="middle">${esc0(c.eras[k])}</text>`); });
+  labels.push([eraY, c.rule, 'lane']);
+  // scales
+  const scaleY = y; y += 40;
+  const gridTop = y;
+  const grid = [];
+  for (let hy = 5620; hy <= 5780; hy += 10) { const x = X(hy - 3761 + 0.72); o.push(`<text class="hy" x="${x.toFixed(1)}" y="${scaleY + 17}" text-anchor="middle">${rtl ? HEB_DECADE[hy] : hy}</text>`); }
+  for (let cy = 1860; cy <= 2020; cy += 10) { const x = X(cy); o.push(`<text class="cy" x="${x.toFixed(1)}" y="${scaleY + 33}" text-anchor="middle">${cy}</text>`); grid.push(x); }
+  const body = [];
+  // community bands
+  usedComms.forEach(cm => {
+    const rows = LIVES.filter(l => l.p.comm === cm.id).sort((a, b) => (a.b || (a.s || a.d || 1980) - 70) - (b.b || (b.s || b.d || 1980) - 70));
+    body.push(`<rect class="bandh" x="0" y="${y}" width="${W}" height="20" style="fill:var(--c-${cm.id})"/>`);
+    labels.push([y, `${rows.length} · ${cm[lang]}`, 'band', cm.id]); y += 22;
+    rows.forEach(l => {
+      const cy0 = y + RH / 2, name = plain(lang, l.p), col = `var(--c-${cm.id})`, g = [];
+      if (l.b && l.d) { const [x, w] = span(l.b, l.d + 0.99); g.push(`<rect class="life" x="${x.toFixed(1)}" y="${y + 3}" width="${w.toFixed(1)}" height="${RH - 6}" rx="3" style="fill:${col}"/>`); }
+      else if (l.d && l.s) { g.push(`<path class="tail" d="M${X(l.s + 0.5).toFixed(1)},${cy0}L${X(l.d + 0.5).toFixed(1)},${cy0}" style="stroke:${col}"/><path class="tail" d="M${X(l.d + 0.5).toFixed(1)},${y + 4}v${RH - 8}" style="stroke:${col}"/>`); }
+      const dia = (yr, cls) => { const x = X(yr + 0.5); return `<path class="${cls}" d="M${x.toFixed(1)},${y + 2.5}l6,7l-6,7l-6,-7z"/>`; };
+      if (l.book) g.push(dia(1980, 'dia open'));
+      if (l.s) g.push(dia(l.s, 'dia'));
+      g.push(`<text class="nm" x="${(X((l.s || 1980) + 0.5) + before * 10).toFixed(1)}" y="${y + 13.5}" text-anchor="${anchorBefore}">${esc0(name)}</text>`);
+      const tip = `${name}${l.b && l.d ? ` (${l.b}–${l.d})` : ''}`;
+      body.push(`<a href="${url(lang, 'rabbis/' + l.p.slug + '/')}"><title>${esc0(tip)}</title><rect class="rowhit" x="0" y="${y}" width="${W}" height="${RH}"/>${g.join('')}</a>`);
+      y += RH;
+    });
+    y += 6;
+  });
+  // elections row
+  const elY = y; labels.push([elY + 2, c.elections, 'lane']); y += 26;
+  const elCols = [];
+  ELECTION_DATES.forEach(([yr, mo], i) => { const x = X(yr + (mo - 0.5) / 12); elCols.push(`<rect class="elcol" x="${(x - P / 2).toFixed(1)}" y="${gridTop}" width="${P}" height="${elY - gridTop + 24}"/>`); body.push(`<circle class="eln" cx="${x.toFixed(1)}" cy="${elY + 12}" r="8"/><text class="elt" x="${x.toFixed(1)}" y="${elY + 15.5}" text-anchor="middle">${i + 1}</text>`); });
+  // shmita strip
+  const shY = y; labels.push([shY - 1, c.shmita, 'lane']); y += 20;
+  for (let hy = 5619; hy <= 5781; hy++) { const [x, w] = span(hy - 3761 + 0.72, hy - 3760 + 0.72); const sh = hy % 7 === 0; body.push(`<rect class="${sh ? 'shm on' : 'shm'}" x="${x.toFixed(1)}" y="${shY}" width="${w.toFixed(1)}" height="14"/>${sh ? `<text class="sht" x="${(x + w / 2).toFixed(1)}" y="${shY + 10.5}" text-anchor="middle">ש</text>` : ''}`); }
+  // event lanes
+  const lane = (title, evs, cls) => {
+    const top = y; labels.push([top, title, 'lane']); y += 22;
+    const rowsEnd = [];
+    const placed = evs.map(([yr, txt, end, gold]) => {
+      const x0 = X(yr + 0.5), wTxt = txt.length * (rtl ? 6.1 : 5.9) + 14;
+      const a = rtl ? x0 - wTxt : x0, b = rtl ? x0 : x0 + wTxt;
+      let r = 0; while (rowsEnd[r] && rowsEnd[r].some(([p, q]) => a < q + 6 && b > p - 6)) r++;
+      (rowsEnd[r] ||= []).push([a, b]);
+      return { yr, txt, end, gold, r, x0 };
+    });
+    placed.forEach(e => {
+      const ty = y + e.r * 17 + 12;
+      if (e.end) { const [x, w] = span(e.yr, e.end + 0.99); body.push(`<rect class="dur ${cls}" x="${x.toFixed(1)}" y="${top + 12}" width="${w.toFixed(1)}" height="5"/>`); }
+      body.push(`<path class="evl ${cls}" d="M${e.x0.toFixed(1)},${top + 17}V${ty - 3}h${-before * 6}"/><text class="evt${e.gold ? ' gold' : ''}" x="${(e.x0 - before * 9).toFixed(1)}" y="${ty}" text-anchor="${anchorAfter}">${esc0(e.txt)}</text>`);
+    });
+    y += rowsEnd.length * 17 + 10;
+  };
+  lane(c.jewish, c.ev, 'j'); lane(c.world, c.wv, 'w');
+  const H = y + 4;
+  const gridLines = grid.map(x => `<path class="grid" d="M${x.toFixed(1)},${gridTop}V${H}"/>`).join('');
+  const svg = `<svg class="lchart" width="${W.toFixed(0)}" height="${H}" viewBox="0 0 ${W.toFixed(0)} ${H}" role="img" aria-label="${esc0(c.h)}">${elCols.join('')}${gridLines}${o.join('')}${body.join('')}</svg>`;
+  const lab = labels.map(([top, txt, kind, id]) => `<span class="cl cl-${kind}" style="top:${top}px${id ? `;--cc:var(--c-${id})` : ''}">${esc(txt)}</span>`).join('');
+  const lg = `<ul class="clegend"><li><i class="k-life"></i>${esc(c.lg[0])}</li><li><i class="k-dia"></i>${esc(c.lg[1])}</li><li><i class="k-open"></i>${esc(c.lg[2])}</li><li><i class="k-el"></i>${esc(c.lg[3])}</li><li><i class="k-sh">ש</i>${esc(c.lg[4])}</li>${['lab', 'lik', 'uni', 'kad'].map(k => `<li><i class="k-era era-${k}"></i>${esc(c.eras[k])}</li>`).join('')}</ul>`;
+  return `<section class="wrap wide chartsec"><div class="tlhead"><div><h2>${esc(c.h)}</h2><p class="lede">${esc(c.p)}</p></div></div>
+<div class="cscroll${rtl ? ' rtl' : ''}" id="cscroll" dir="ltr" tabindex="0" data-focus="${(X(1964) / W).toFixed(4)}"><div class="cinner" style="width:${W.toFixed(0)}px"><div class="clabels" dir="${t.dir}">${lab}</div>${svg}</div></div>
+${lg}</section>`;
 }
 
 function timeline(lang) {
@@ -315,6 +441,7 @@ function home(lang) {
   const body = `<section class="heroband"><div class="wrap wide hero2"><p class="kicker">${esc(h.kicker)}</p><h1>${esc(t.site)}</h1>
 <div class="stats"><span><b>${people.length}</b> ${h.statR}</span><span><b>${usedComms.length}</b> ${h.statC}</span><span><b>${usedPlaces.size}</b> ${h.statP}</span><span><b>6</b> ${h.statK}</span></div></div></section>
 ${mapBlock(lang, false)}
+${chart(lang)}
 ${timeline(lang)}
 <section class="wrap wide"><h2>${esc(h.twoQ)}</h2><div class="qcards">
 ${card('territories', t.q1, t.terrTitle, t.terrQ, t.terrMeta)}

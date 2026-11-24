@@ -22,4 +22,8 @@
   });
   $('tdlg-x').addEventListener('click', () => d.close());
   d.addEventListener('click', ev => { if (ev.target === d) d.close(); });
+
+  // open the chart of lives on the decades where most of the statements fall
+  const cs = document.getElementById('cscroll');
+  if (cs) cs.scrollLeft = Math.max(0, cs.scrollWidth * parseFloat(cs.dataset.focus) - cs.clientWidth / 2);
 })();

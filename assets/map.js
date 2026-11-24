@@ -80,8 +80,8 @@
     gDots.selectAll('g.pt').classed('sel', d => d === p); rescale();
     const e = byPlace[p], box = document.getElementById('rmap-info');
     const served = e.served.filter(on), born = e.born.filter(r => on(r) && !served.includes(r));
-    const li = (r, how) => `<li><a href="${D.t.base}rabbis/${r.slug}/">${r.thumb ? `<img src="${r.thumb}" alt="" loading="lazy">` : `<span class="av" style="background:${col(r.comm)}"></span>`}<span><b>${r.name}</b><small><i style="background:${col(r.comm)}"></i>${D.comms[r.comm]} · ${how}</small></span></a></li>`;
-    box.innerHTML = `<h3>${P[p].name}</h3><p class="n">${served.length + born.length}</p><ul>${served.map(r => li(r, D.t.servedHere)).join('')}${born.map(r => li(r, D.t.bornHere)).join('')}</ul>`;
+    const li = (r, how) => `<li><a href="${D.t.base}rabbis/${r.slug}/">${r.thumb ? `<img src="${r.thumb}" alt="" loading="lazy">` : `<span class="av" style="background:${col(r.comm)}"></span>`}<span><b>${r.name}</b><small><i style="background:${col(r.comm)}"></i>${D.comms[r.comm]}${how ? ' · ' + how : ''}</small><q>${r.quote}</q></span></a></li>`;
+    box.innerHTML = `<h3>${P[p].name}</h3><p class="n">${served.length + born.length}</p><ul>${served.map(r => li(r, '')).join('')}${born.map(r => li(r, D.t.bornHere)).join('')}</ul>`;
     if (!quiet) box.scrollTop = 0;
   }
   function goto(v, instant) {

@@ -265,3 +265,57 @@ main.bleed>.wrap{padding-block:28px 8px}
 .phead h1::after{content:"";display:block;width:200px;max-width:70%;height:20px;margin-top:6px;background:url(/assets/flourish.svg) center/contain no-repeat}
 @media (prefers-color-scheme:dark){.yr .y{color:var(--goldb)}.tcard,.tcard img,.qcard,.tdoc{border-color:var(--line)}.maphead h2::after,.tlhead h2::after,.orn::after,.phead h1::after{filter:brightness(1.5)}}
 @media (max-width:640px){.heroband::before{background-size:auto 104%;background-position:center 40%}.heroband .hero2{min-height:430px}}
+
+/* map panel: quote under each name */
+.mapinfo li a{align-items:start}
+.mapinfo q{display:block;quotes:none;font-family:var(--serif);font-size:.98rem;line-height:1.4;color:#f3e7cc;margin-top:3px}
+.mapinfo li{padding-bottom:8px;border-bottom:1px solid rgba(227,191,98,.18)}
+.mapinfo li:last-child{border-bottom:0}
+
+/* chart of lives */
+.chartsec{padding-top:40px!important}
+.cscroll{overflow-x:auto;overflow-y:hidden;background:var(--surface);border:1px solid #cdb98a;border-radius:var(--r);-webkit-overflow-scrolling:touch}
+.cinner{position:relative}
+.clabels{position:sticky;left:0;width:0;height:0;z-index:2}
+.cscroll.rtl .clabels{left:100%}
+.cl{position:absolute;white-space:nowrap;font-size:.74rem;font-weight:500;line-height:18px;height:18px;padding:0 8px;border-radius:0 9px 9px 0;inset-inline-start:0;pointer-events:none}
+.cscroll.rtl .cl{border-radius:9px 0 0 9px}
+.cl-band{background:var(--cc);color:#fff}
+.cl-lane{background:var(--wood);color:var(--cream)}
+.lchart{display:block;font-family:var(--sans)}
+.lchart .grid{stroke:var(--line);stroke-width:1}
+.lchart .elcol{fill:var(--el);opacity:.1}
+.lchart .hy{font:700 15px var(--serif);fill:var(--ink)}
+.lchart .cy{font:500 10.5px var(--sans);fill:#a0402e}
+.lchart .era{stroke:var(--surface);stroke-width:1}
+.era-ott{fill:#b9ac93;background:#b9ac93}.era-brit{fill:#8d99ad;background:#8d99ad}.era-lab{fill:#b5564a;background:#b5564a}.era-lik{fill:#3f6fb5;background:#3f6fb5}.era-uni{fill:#7b6aa6;background:#7b6aa6}.era-kad{fill:#4d9a8a;background:#4d9a8a}
+.lchart .eral{font:500 10px var(--sans);fill:#fff}
+.lchart .bandh{opacity:.16}
+.lchart .life{opacity:.42}
+.lchart a:hover .life,.lchart a:focus-visible .life{opacity:.8}
+.lchart .rowhit{fill:transparent}
+.lchart a:hover .rowhit{fill:var(--soft);opacity:.6}
+.lchart .tail{stroke-width:1.6;stroke-dasharray:3 3;fill:none;opacity:.8}
+.lchart .nm{font:500 11.5px var(--sans);fill:var(--ink);paint-order:stroke;stroke:var(--surface);stroke-width:2.5px;stroke-opacity:.75}
+.lchart .dia{fill:var(--goldb);stroke:var(--wood);stroke-width:1.3}
+.lchart .dia.open{fill:var(--surface);stroke:var(--terr);stroke-width:1.5}
+.lchart .eln{fill:var(--el);stroke:var(--surface);stroke-width:1}
+.lchart .elt{font:700 9.5px var(--sans);fill:#fff}
+.lchart .shm{fill:none;stroke:var(--line);stroke-width:.8}
+.lchart .shm.on{fill:var(--goldb);stroke:var(--gold)}
+.lchart .sht{font:700 9px var(--sans);fill:var(--wood)}
+.lchart .evl{fill:none;stroke-width:1.2}
+.lchart .evl.j,.lchart .dur.j{stroke:var(--el)}.lchart .dur.j{fill:var(--el);stroke:none}
+.lchart .evl.w{stroke:var(--muted)}.lchart .dur.w{fill:var(--muted)}
+.lchart .evt{font:11.5px var(--sans);fill:var(--ink)}
+.lchart .evt.gold{font-weight:700;fill:var(--gold)}
+.clegend{list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0 0;padding:0;font-size:.86rem;color:var(--muted)}
+.clegend li{display:flex;align-items:center;gap:7px}
+.clegend i{display:inline-block;font-style:normal}
+.k-life{width:26px;height:10px;border-radius:3px;background:var(--c-hasidic);opacity:.5}
+.k-dia,.k-open{width:10px;height:10px;transform:rotate(45deg);background:var(--goldb);border:1.3px solid var(--wood)}
+.k-open{background:var(--surface);border-color:var(--terr)}
+.k-el{width:9px;height:14px;background:var(--el);opacity:.25}
+.k-sh{width:14px;height:14px;background:var(--goldb);color:var(--wood);font:700 9px/14px var(--sans);text-align:center}
+.k-era{width:18px;height:10px}
+@media (prefers-color-scheme:dark){.cscroll{border-color:var(--line)}.lchart .cy{fill:#f0a08f}.lchart .life{opacity:.5}.cl-band{color:#17100b}}
