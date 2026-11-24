@@ -299,7 +299,7 @@ const C = {
   he: {
     h: 'דור לדור: חייהם, זה לצד זה', p: 'כל פס הוא חייו של אחד הרבנים, מלידתו ועד פטירתו, בצבע החוג שלו. המעוין מסמן את השנה שבה אמר את דבריו. גללו לצדדים.',
     lg: ['חיי הרב', 'השנה שבה אמר את דבריו', 'דבריו נדפסו בספר (תש״מ)', 'שנת בחירות לכנסת', 'שנת שמיטה'],
-    elections: 'הבחירות לכנסת', shmita: 'שמיטה', jewish: 'עם ישראל והארץ', world: 'בעולם', rule: 'השלטון בארץ',
+    left: 'גלילה שמאלה', right: 'גלילה ימינה', hint: 'גללו לצדדים כדי לראות את כל השנים', elections: 'הבחירות לכנסת', shmita: 'שמיטה', jewish: 'עם ישראל והארץ', world: 'בעולם', rule: 'השלטון בארץ',
     eras: { ott: 'השלטון העות׳מאני', brit: 'השלטון הבריטי', lab: 'מפא״י, המערך והעבודה', lik: 'הליכוד', uni: 'ממשלות אחדות', kad: 'קדימה' },
     ev: [[1881, 'פרעות ברוסיה'], [1897, 'הקונגרס הציוני הראשון'], [1912, 'ייסוד אגודת ישראל'], [1917, 'הצהרת בלפור'], [1937, 'ועדת פיל מציעה חלוקה'], [1939, 'השואה', 1945], [1947, 'החלטת החלוקה באו״ם'], [1948, 'הקמת המדינה'],
       [1967, 'מלחמת ששת הימים'], [1973, 'מלחמת יום הכיפורים'], [1978, 'הסכמי קמפ דייוויד'], [1980, 'יוצא ״גדולי תורה על החזרת שטחים״', 0, 1], [1982, 'הושלמה הנסיגה מסיני'], [1993, 'הסכמי אוסלו'], [2005, 'הגירוש מגוש קטיף'], [2009, 'יוצא ״זכרון בספר״', 0, 1]],
@@ -308,7 +308,7 @@ const C = {
   en: {
     h: 'Generation to Generation: Their Lives, Side by Side', p: 'Each bar is one rabbi’s life, from birth to passing, in the color of his circle. The diamond marks the year he spoke. Scroll sideways.',
     lg: ['A rabbi’s life', 'The year he spoke', 'His words printed in the 1980 book', 'Knesset election year', 'Shmita year'],
-    elections: 'Knesset elections', shmita: 'Shmita', jewish: 'The Jewish people and the Land', world: 'In the world', rule: 'Rule in the Land',
+    left: 'Scroll left', right: 'Scroll right', hint: 'Scroll sideways to see all the years', elections: 'Knesset elections', shmita: 'Shmita', jewish: 'The Jewish people and the Land', world: 'In the world', rule: 'Rule in the Land',
     eras: { ott: 'Ottoman rule', brit: 'British rule', lab: 'Mapai, Alignment and Labor', lik: 'Likud', uni: 'Unity governments', kad: 'Kadima' },
     ev: [[1881, 'Pogroms in Russia'], [1897, 'First Zionist Congress'], [1912, 'Agudath Israel founded'], [1917, 'Balfour Declaration'], [1937, 'Peel Commission proposes partition'], [1939, 'The Holocaust', 1945], [1947, 'UN partition vote'], [1948, 'The State is declared'],
       [1967, 'Six-Day War'], [1973, 'Yom Kippur War'], [1978, 'Camp David Accords'], [1980, 'Gedolei Torah al Hachzarat Shetachim is published', 0, 1], [1982, 'Sinai withdrawal completed'], [1993, 'Oslo Accords'], [2005, 'Expulsion from Gush Katif'], [2009, 'Zichron BaSefer is published', 0, 1]],
@@ -416,7 +416,10 @@ function chart(lang) {
   const lab = labels.map(([top, txt, kind, id]) => `<span class="cl cl-${kind}" style="top:${top}px${id ? `;--cc:var(--c-${id})` : ''}">${esc(txt)}</span>`).join('');
   const lg = `<ul class="clegend"><li><i class="k-life"></i>${esc(c.lg[0])}</li><li><i class="k-dia"></i>${esc(c.lg[1])}</li><li><i class="k-open"></i>${esc(c.lg[2])}</li><li><i class="k-el"></i>${esc(c.lg[3])}</li><li><i class="k-sh">ש</i>${esc(c.lg[4])}</li>${['lab', 'lik', 'uni', 'kad'].map(k => `<li><i class="k-era era-${k}"></i>${esc(c.eras[k])}</li>`).join('')}</ul>`;
   return `<section class="wrap wide chartsec"><div class="tlhead"><div><h2>${esc(c.h)}</h2><p class="lede">${esc(c.p)}</p></div></div>
+${lg}
+<div class="cnav" dir="ltr"><button type="button" class="carrow" data-d="-1" aria-label="${esc0(c.left)}">◀</button><div class="ctrack" aria-hidden="true"><div class="cthumb"></div></div><button type="button" class="carrow" data-d="1" aria-label="${esc0(c.right)}">▶</button></div>
 <div class="cscroll${rtl ? ' rtl' : ''}" id="cscroll" dir="ltr" tabindex="0" data-focus="${(X(1964) / W).toFixed(4)}"><div class="cinner" style="width:${W.toFixed(0)}px"><div class="clabels" dir="${t.dir}">${lab}</div>${svg}</div></div>
+<div class="cnav" dir="ltr"><button type="button" class="carrow" data-d="-1" aria-label="${esc0(c.left)}">◀</button><div class="ctrack" aria-hidden="true"><div class="cthumb"></div></div><button type="button" class="carrow" data-d="1" aria-label="${esc0(c.right)}">▶</button></div>
 ${lg}</section>`;
 }
 
