@@ -5,15 +5,15 @@ You are the independent reviewer. Someone else translated the pack. You have not
 ## Files
 
 - `/home/claude/gedoleitorah/i18n/BRIEF.md`: the rules the translator was given. Read it first; they bind you too.
-- `/home/claude/gedoleitorah/i18n/source.json`: 591 items, `{"k", "he", "en"}`. The Hebrew is the original for the rabbis' words and for the 1980 book's biographies.
-- `/home/claude/gedoleitorah/i18n/<code>.json`: the translation to review. **Correct it in place.** Keep it one flat JSON object with all 591 keys.
+- `/home/claude/gedoleitorah/i18n/source.json`: 609 items, `{"k", "he", "en"}`. The Hebrew is the original for the rabbis' words and for the 1980 book's biographies.
+- `/home/claude/gedoleitorah/i18n/<code>.json`: the translation to review. **Correct it in place.** Keep it one flat JSON object with all 609 keys.
 - `node /home/claude/gedoleitorah/i18n/check.js <code>` must print `OK` when you finish.
 
 Do not edit any other file. Do not run the site build. Do not use git.
 
 ## How to review
 
-Go through **all 591 items in order**, comparing each translation with its Hebrew and English. Do not sample. For each item ask:
+Go through **all 609 items in order**, comparing each translation with its Hebrew and English. Do not sample. For each item ask:
 
 1. **Meaning.** Does it say what the Hebrew says: nothing added, nothing dropped, nothing softened or sharpened? For the rabbis' quotes (`el.N.quote`, `tr.say.N.quote`, `tr.open.N.text`, `more.*.quote`) check against the Hebrew word by word. A halachic ruling that becomes milder or harsher in translation is a serious error.
 2. **Facts.** Names, places, years, book titles, posts held: all match the source.
@@ -25,7 +25,7 @@ Fix what is wrong. Leave alone what is right: do not rewrite for taste.
 
 Known points about the source:
 - Where the Hebrew and English disagree on a fact, follow the **Hebrew** and list the key in your report.
-- Numbers on the site appear before a noun as "61 <rabbis>", "7 <circles>", "78 <cities>", "6 <continents>", "2 <questions>" (keys `home.statR`, `home.statC`, `home.statP`, `home.statK`, `ui.rabbisN`, `ui.sayingsN`, `ui.questionsN`). If your language needs a different noun form after these particular numbers, choose the form that is correct for the numbers given here (61, 7, 78, 6, 62, 2) and say so in your report.
+- Numbers on the site appear before a noun as "62 <rabbis>", "7 <circles>", "79 <cities>", "6 <continents>", "2 <questions>" (keys `home.statR`, `home.statC`, `home.statP`, `home.statK`, `ui.rabbisN`, `ui.sayingsN`, `ui.questionsN`). If your language needs a different noun form after these particular numbers, choose the form that is correct for the numbers given here (62, 7, 79, 6, 2) and say so in your report.
 
 ## What to hand back
 

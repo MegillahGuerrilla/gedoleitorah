@@ -13,8 +13,8 @@ The site exists in Hebrew and English. You are producing one more language. Read
 
 ## Files
 
-- **Read:** `/home/claude/gedoleitorah/i18n/source.json`. An array of 591 items: `{"k": key, "he": Hebrew text, "en": English text}`.
-- **Write:** `/home/claude/gedoleitorah/i18n/<code>.json`. One flat JSON object: `{"key": "translation", ...}` containing **every one of the 591 keys**, nothing else. Valid UTF-8 JSON. Write it in several steps if needed, but the final file must be one object.
+- **Read:** `/home/claude/gedoleitorah/i18n/source.json`. An array of 609 items: `{"k": key, "he": Hebrew text, "en": English text}`.
+- **Write:** `/home/claude/gedoleitorah/i18n/<code>.json`. One flat JSON object: `{"key": "translation", ...}` containing **every one of the 609 keys**, nothing else. Valid UTF-8 JSON. Write it in several steps if needed, but the final file must be one object.
 - **Check:** run `node /home/claude/gedoleitorah/i18n/check.js <code>` and fix everything it reports. Finish only when it prints `OK`.
 
 Do not edit any other file. Do not run the site build. Do not use git.
