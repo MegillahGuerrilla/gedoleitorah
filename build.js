@@ -4,7 +4,9 @@ const path = require('path');
 const ROOT = __dirname;
 const read = f => JSON.parse(fs.readFileSync(path.join(ROOT, 'data', f), 'utf8'));
 const COMMON = read('common.json');
-const EL = read('elections.json');
+// Entries marked hold are kept in the data but left off the site.
+const EL = read('elections.json').filter(x => !x.hold);
+EL.forEach((it, i) => { it.no = i + 1; });
 const TR = read('territories.json');
 const PLACES = COMMON.places;
 const COMM = Object.fromEntries(COMMON.communities.map(c => [c.id, c]));
@@ -22,7 +24,7 @@ const L = {
     terrTitle: 'החזרת שטחים', terrQ: 'האם מותר למסור חלק מארץ ישראל?',
     terrMeta: '20 מאמרים של 19 רבנים, מתוך ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980)',
     elTitle: 'הבחירות לכנסת', elQ: 'האם מותר להשתתף בבחירות לכנסת?',
-    elMeta: '42 רבנים, מתוך הקונטרס ״זכרון בספר״, ירושלים תשס״ט (2009)',
+    elMeta: EL.length + ' רבנים, מתוך הקונטרס ״זכרון בספר״, ירושלים תשס״ט (2009)',
     toCollection: 'לאוסף', rabbisN: 'רבנים', sayingsN: 'מאמרים', questionsN: 'שאלות',
     homeLede: 'כאן מרוכזים דברי גדולי התורה על שאלות שעמדו לפני עם ישראל, כל שאלה באוסף משלה: הדברים בלשון אומרם, עם המקור, התאריך והדף המקורי.',
     howTitle: 'איך לקרוא את האתר',
@@ -31,7 +33,7 @@ const L = {
     connectTeaser: 'שתי שאלות, נקודת מפגש אחת',
     together: 'מי עמד יחד', theSayings: 'הדברים', page: 'עמ׳', inAppendix: 'בנספחים',
     terrSource: 'מתוך הקובץ ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980). מספרי העמודים הם של הספר.',
-    elSource: 'מתוך הקונטרס ״זכרון בספר״: דברי ארבעים ושניים מגדולי ישראל נגד ההשתתפות בבחירות לכנסת. יצא לאור בירושלים על ידי ״דרכי רבותינו״, לקראת הבחירות של ט״ז בשבט תשס״ט (2009).',
+    elSource: 'מתוך הקונטרס ״זכרון בספר״: דברי גדולי ישראל נגד ההשתתפות בבחירות לכנסת. יצא לאור בירושלים על ידי ״דרכי רבותינו״, לקראת הבחירות של ט״ז בשבט תשס״ט (2009).',
     elOrder: 'הרבנים מובאים לפי סדר הקונטרס. תאריכי פטירה שנמסרו בקונטרס בטעות תוקנו כאן.',
     appendixDocs: 'בנספחי הספר', origPage: 'הדף המקורי', said: 'נאמר', died: 'נלב״ע',
     fromBook: 'מתוך הספר (תש״מ)', places: 'מקומות', born: 'נולד ב', served: 'כיהן ב',
@@ -56,7 +58,7 @@ const L = {
     terrTitle: 'Giving Up Land', terrQ: 'May any part of the Land of Israel be handed over?',
     terrMeta: '20 sayings by 19 rabbis, from Gedolei Torah al Hachzarat Shetachim, Bnei Brak 1980',
     elTitle: 'Knesset Elections', elQ: 'May a Jew take part in the Knesset elections?',
-    elMeta: '42 rabbis, from the pamphlet Zichron BaSefer, Jerusalem 2009',
+    elMeta: EL.length + ' rabbis, from the pamphlet Zichron BaSefer, Jerusalem 2009',
     toCollection: 'Open the collection', rabbisN: 'rabbis', sayingsN: 'sayings', questionsN: 'questions',
     homeLede: 'This site gathers what the Torah leaders said on questions that came before the Jewish people, each question in a collection of its own: their words as they said them, with the source, the date and the original page.',
     howTitle: 'How to read this site',
@@ -65,7 +67,7 @@ const L = {
     connectTeaser: 'Two questions, one meeting point',
     together: 'Who stood together', theSayings: 'The sayings', page: 'p.', inAppendix: 'appendix',
     terrSource: 'From the collection Gedolei Torah al Hachzarat Shetachim (Torah Greats on Returning Territories), Bnei Brak, 5740 (1980). Page numbers are the book’s. English translations were made for this site.',
-    elSource: 'From the pamphlet Zichron BaSefer: the words of forty-two Torah greats against taking part in the Knesset elections. Published in Jerusalem by Darkei Rabboseinu for the elections of 16 Shevat 5769 (2009). English translations were made for this site.',
+    elSource: 'From the pamphlet Zichron BaSefer: the words of Torah greats against taking part in the Knesset elections. Published in Jerusalem by Darkei Rabboseinu for the elections of 16 Shevat 5769 (2009). English translations were made for this site.',
     elOrder: 'The rabbis appear in the pamphlet’s order. Dates of death the pamphlet gave in error have been corrected here.',
     appendixDocs: 'In the book’s appendices', origPage: 'Original page', said: 'Said', died: 'Died',
     fromBook: 'From the book (1980)', places: 'Places', born: 'Born in', served: 'Served in',
@@ -93,7 +95,7 @@ for (const it of EL) {
     slug: it.slug, coll: 'elections', comm: it.community, born: it.born, served: it.served, n: it.n,
     he: { name: it.he_name, title: it.he_title, when: `${L.he.died} ${it.he_death.replace(/^נלב״ע\s*/, '')}`, bio: it.he_bio },
     en: { name: it.en_name, title: it.en_title, when: '', bio: it.en_bio },
-    sayings: [{ n: it.n, he: it.he_quote, en: it.en_quote, he_src: it.he_date, en_src: it.en_date, scan: it.scan }],
+    sayings: [{ n: it.n, no: it.no, he: it.he_quote, en: it.en_quote, he_src: it.he_date, en_src: it.en_date, scan: it.scan }],
     links: it.links, verify: it.verify,
   });
 }
@@ -188,7 +190,7 @@ const H = {
     tlH: 'ציר הזמן', tlP: 'מתי נאמרו הדברים, שנה אחר שנה. לחצו על דף כדי לקרוא אותו.',
     oldest: 'מהישן לחדש', newest: 'מהחדש לישן', undated: 'ללא תאריך',
     book1980: 'יוצא לאור ״גדולי תורה על החזרת שטחים״, ובו דברי תשעה־עשר רבנים:',
-    pamph2009: 'יוצא לאור בירושלים הקונטרס ״זכרון בספר״, המקבץ את דברי ארבעים ושניים הרבנים.',
+    pamph2009: 'יוצא לאור בירושלים הקונטרס ״זכרון בספר״, המקבץ את דברי הרבנים.',
     toRabbi: 'לדף הרב', close: 'סגירה', twoQ: 'שתי השאלות', fullMap: 'למפה המלאה',
     ctx: {
       1937: [['w', 'ועדת פיל מציעה לחלק את הארץ; הכנסיה הגדולה השלישית מתכנסת במרינבד']],
@@ -219,7 +221,7 @@ const H = {
     tlH: 'Timeline', tlP: 'When the words were said, year by year. Tap a page to read it.',
     oldest: 'Oldest first', newest: 'Newest first', undated: 'Undated',
     book1980: 'Gedolei Torah al Hachzarat Shetachim is published, with the words of nineteen rabbis:',
-    pamph2009: 'The pamphlet Zichron BaSefer is published in Jerusalem, gathering the words of the forty-two rabbis.',
+    pamph2009: 'The pamphlet Zichron BaSefer is published in Jerusalem, gathering the rabbis\u2019 words.',
     toRabbi: 'Open his page', close: 'Close', twoQ: 'The two questions', fullMap: 'Open the full map',
     ctx: {
       1937: [['w', 'The Peel Commission proposes partitioning the Land; the Third Knessia Gedola meets in Marienbad']],
@@ -295,7 +297,7 @@ function timeline(lang) {
     const es = byYear[y] || [], els = es.filter(e => e.kind === 'el'), trs = es.filter(e => e.kind === 'tr'), docs = es.filter(e => e.kind === 'doc');
     const ctx = (y !== 9999 && h.ctx[y] || []).map(c => `<p class="ctx ctx-${c[0]}">${esc(c[1])}</p>`).join('');
     const extra = y === 1980 ? `<p class="ctx ctx-w">${esc(h.book1980)}</p>` : y === 2009 ? `<p class="ctx ctx-k">${esc(h.pamph2009)}</p>` : '';
-    return `<section class="yr${es.length ? '' : ' quiet'}${y === 9999 ? ' undated' : ''}"><h3 class="y">${y === 9999 ? esc(h.undated) : y}</h3><div class="ybody">${ctx}${extra}
+    return `<section class="yr${es.length ? '' : ' quiet'}${y === 9999 ? ' undated' : ''}"><h3 class="y"${y === 9999 ? ' aria-hidden="true"' : ''}>${y === 9999 ? '' : y}</h3><div class="ybody">${ctx}${extra}
       ${docs.map(d => `<a class="tdoc" href="${url(lang, 'territories/')}"><b>${esc(d.title)}</b><span lang="${lang}">${esc(d.quote)}</span></a>`).join('')}
       ${trs.length ? `<div class="tgrid text">${trs.map(trCard).join('')}</div>` : ''}
       ${els.length ? `<div class="tgrid">${els.map(elCard).join('')}</div>` : ''}</div></section>`;
@@ -310,8 +312,8 @@ function timeline(lang) {
 function home(lang) {
   const t = L[lang], h = H[lang];
   const card = (k, label, title, q, meta) => `<a class="qcard b-${k}" href="${url(lang, k + '/')}"><span class="qlabel">${esc(label)}</span><span class="qtitle">${esc(title)}</span><span class="qq">${esc(q)}</span><span class="qmeta">${esc(meta)}</span><span class="qgo">${esc(t.toCollection)} ${lang === 'he' ? '←' : '→'}</span></a>`;
-  const body = `<section class="wrap wide hero2"><p class="kicker">${esc(h.kicker)}</p><h1>${esc(t.site)}</h1>
-<div class="stats"><span><b>${people.length}</b> ${h.statR}</span><span><b>${usedComms.length}</b> ${h.statC}</span><span><b>${usedPlaces.size}</b> ${h.statP}</span><span><b>6</b> ${h.statK}</span></div></section>
+  const body = `<section class="heroband"><div class="wrap wide hero2"><p class="kicker">${esc(h.kicker)}</p><h1>${esc(t.site)}</h1>
+<div class="stats"><span><b>${people.length}</b> ${h.statR}</span><span><b>${usedComms.length}</b> ${h.statC}</span><span><b>${usedPlaces.size}</b> ${h.statP}</span><span><b>6</b> ${h.statK}</span></div></div></section>
 ${mapBlock(lang, false)}
 ${timeline(lang)}
 <section class="wrap wide"><h2>${esc(h.twoQ)}</h2><div class="qcards">
@@ -356,7 +358,7 @@ function elections(lang) {
   const t = L[lang];
   const items = EL.map(it => {
     const p = bySlug[it.slug];
-    return `<li class="say" id="s${it.n}"><div class="saytop"><span class="num">${it.n}</span>${commChip(lang, it.community)}</div>
+    return `<li class="say" id="s${it.n}"><div class="saytop"><span class="num">${it.no}</span>${commChip(lang, it.community)}</div>
       ${quotes(lang, it.he_quote, it.en_quote)}
       <p class="who"><a href="${url(lang, 'rabbis/' + it.slug + '/')}">${esc(p[lang].name)}</a><span class="ttl">${esc(p[lang].title)}</span></p>
       <p class="src">${esc(lang === 'he' ? it.he_date : it.en_date)} · <a href="/img/zb/${it.scan}" target="_blank" rel="noopener">${esc(t.origPage)}</a>${it.verify ? ` · <em>${esc(t.verify)}</em>` : ''}</p></li>`;
@@ -376,7 +378,7 @@ function placeList(lang, p) {
 
 function rabbiPage(lang, p) {
   const t = L[lang], d = p[lang];
-  const says = p.sayings.map(s => `<div class="say solo">${quotes(lang, s.he, s.en)}<p class="src">${esc(lang === 'he' ? s.he_src : s.en_src)}${(lang === 'he' ? s.he_note : s.en_note) ? ' · ' + esc(lang === 'he' ? s.he_note : s.en_note) : ''} · <a href="${url(lang, p.coll + '/')}#s${s.n}">${esc(collName(lang, p.coll))}, ${s.n}</a>${p.verify ? ` · <em>${esc(t.verify)}</em>` : ''}</p>${s.scan ? `<a class="scan" href="/img/zb/${s.scan}" target="_blank" rel="noopener"><img src="/img/zb/t/${s.scan}" alt="${esc0(t.origPage)}" loading="lazy" width="420" height="606"><span>${esc(t.origPage)}</span></a>` : ''}</div>`).join('');
+  const says = p.sayings.map(s => `<div class="say solo">${quotes(lang, s.he, s.en)}<p class="src">${esc(lang === 'he' ? s.he_src : s.en_src)}${(lang === 'he' ? s.he_note : s.en_note) ? ' · ' + esc(lang === 'he' ? s.he_note : s.en_note) : ''} · <a href="${url(lang, p.coll + '/')}#s${s.n}">${esc(collName(lang, p.coll))}, ${s.no || s.n}</a>${p.verify ? ` · <em>${esc(t.verify)}</em>` : ''}</p>${s.scan ? `<a class="scan" href="/img/zb/${s.scan}" target="_blank" rel="noopener"><img src="/img/zb/t/${s.scan}" alt="${esc0(t.origPage)}" loading="lazy" width="420" height="606"><span>${esc(t.origPage)}</span></a>` : ''}</div>`).join('');
   const links = p.links.length ? `<section class="links"><h2>${esc(t.sources)}</h2><ul>${p.links.map(l => `<li><a href="${esc0(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a></li>`).join('')}</ul></section>` : '';
   const ctx = d.context ? `<aside class="context"><b>${esc(t.note)}</b> ${esc(d.context)}</aside>` : '';
   const when = d.when ? `<p class="when">${esc(d.when)}</p>` : '';
@@ -445,9 +447,9 @@ function archive(lang) {
   const t = L[lang];
   const cap = f => {
     if (f === '00a') return t.cover; if (f === '00b') return t.titlePage; if (f === '43') return t.note43; if (f === '44') return t.back;
-    const it = EL.find(x => x.n === +f); return `${+f}. ${lang === 'he' ? it.he_name.replace(/\s*זצוק״ל$/, '') : it.en_name}`;
+    const it = EL.find(x => x.n === +f); return `${it.no}. ${lang === 'he' ? it.he_name.replace(/\s*זצוק״ל$/, '') : it.en_name}`;
   };
-  const files = ['00a', '00b', ...Array.from({ length: 44 }, (_, i) => String(i + 1).padStart(2, '0'))];
+  const files = ['00a', '00b', ...EL.map(x => String(x.n).padStart(2, '0')), '43', '44'];
   const grid = files.map(f => `<figure><a href="/img/zb/${f}.jpg" target="_blank" rel="noopener"><img src="/img/zb/t/${f}.jpg" alt="${esc0(cap(f))}" loading="lazy" width="420" height="606"></a><figcaption>${esc(cap(f))}</figcaption></figure>`).join('');
   const body = `<header class="phead"><h1>${esc(t.archiveTitle)}</h1><p class="lede">${esc(t.archiveLede)}</p></header>
 <section><h2>${esc(t.zbArchive)}</h2><div class="scans">${grid}</div></section>

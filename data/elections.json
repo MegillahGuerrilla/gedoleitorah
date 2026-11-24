@@ -626,8 +626,9 @@
   "he_bio": "1889–1984. הבבא סאלי מנתיבות.",
   "en_bio": "1889–1984. The Baba Sali of Netivot.",
   "links": [],
-  "verify": true,
-  "scan": "21.jpg"
+  "verify": false,
+  "scan": "21.jpg",
+  "hold": true
  },
  {
   "n": 22,

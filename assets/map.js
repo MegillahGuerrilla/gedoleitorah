@@ -35,7 +35,7 @@
     gLand.selectAll('path').attr('stroke-width', 0.5 / k);
     gLinks.selectAll('path').attr('stroke-width', 1.25 / k);
     gDots.selectAll('g.pt').attr('transform', p => `translate(${XY[p][0]},${XY[p][1]}) scale(${1 / k})`)
-      .select('text').style('display', function (p) { return count(p) >= 3 || k > 3.2 || p === selected ? null : 'none'; });
+      .select('text').style('display', function (p) { return count(p) >= 3 || k > 8 || p === selected ? null : 'none'; });
   }
   const members = p => [...byPlace[p].born, ...byPlace[p].served].filter(on);
   const count = p => new Set(members(p).map(r => r.slug)).size;
