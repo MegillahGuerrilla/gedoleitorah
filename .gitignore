@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+# translation packs stay out of the repository until reviewed; approved ones are un-ignored below
+i18n/tmp-*/
+i18n/??.json

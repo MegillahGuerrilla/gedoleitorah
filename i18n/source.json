@@ -1,0 +1,2962 @@
+[
+ {
+  "k": "ui.site",
+  "he": "גדולי תורה בשאלות השעה",
+  "en": "Torah Leaders on the Questions of the Hour"
+ },
+ {
+  "k": "ui.tagline",
+  "he": "דברי גדולי התורה על השאלות שעמדו לפני עם ישראל, בלשונם, עם המקור והתאריך.",
+  "en": "What the Torah leaders said on the questions facing the Jewish people, in their own words, with source and date."
+ },
+ {
+  "k": "ui.nav.home",
+  "he": "ראשי",
+  "en": "Home"
+ },
+ {
+  "k": "ui.nav.territories",
+  "he": "החזרת שטחים",
+  "en": "Giving up land"
+ },
+ {
+  "k": "ui.nav.elections",
+  "he": "הבחירות לכנסת",
+  "en": "Knesset elections"
+ },
+ {
+  "k": "ui.nav.rabbis",
+  "he": "הרבנים",
+  "en": "The rabbis"
+ },
+ {
+  "k": "ui.nav.map",
+  "he": "מפה",
+  "en": "Map"
+ },
+ {
+  "k": "ui.nav.others",
+  "he": "עוד מגדולי ישראל",
+  "en": "More Torah leaders"
+ },
+ {
+  "k": "ui.nav.connect",
+  "he": "הקשר בין השאלות",
+  "en": "How they connect"
+ },
+ {
+  "k": "ui.nav.archive",
+  "he": "הדפים המקוריים",
+  "en": "Original pages"
+ },
+ {
+  "k": "ui.q1",
+  "he": "שאלה ראשונה",
+  "en": "First question"
+ },
+ {
+  "k": "ui.q2",
+  "he": "שאלה שנייה",
+  "en": "Second question"
+ },
+ {
+  "k": "ui.terrTitle",
+  "he": "החזרת שטחים",
+  "en": "Giving Up Land"
+ },
+ {
+  "k": "ui.terrQ",
+  "he": "האם מותר למסור חלק מארץ ישראל?",
+  "en": "May any part of the Land of Israel be handed over?"
+ },
+ {
+  "k": "ui.terrMeta",
+  "he": "20 מאמרים של 19 רבנים, מתוך ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980)",
+  "en": "20 sayings by 19 rabbis, from Gedolei Torah al Hachzarat Shetachim, Bnei Brak 1980"
+ },
+ {
+  "k": "ui.elTitle",
+  "he": "הבחירות לכנסת",
+  "en": "Knesset Elections"
+ },
+ {
+  "k": "ui.elQ",
+  "he": "האם מותר להשתתף בבחירות לכנסת?",
+  "en": "May a Jew take part in the Knesset elections?"
+ },
+ {
+  "k": "ui.elMeta",
+  "he": "{n} רבנים, מתוך הקונטרס ״זכרון בספר״, ירושלים תשס״ט (2009)",
+  "en": "{n} rabbis, from the pamphlet Zichron BaSefer, Jerusalem 2009"
+ },
+ {
+  "k": "ui.toCollection",
+  "he": "לאוסף",
+  "en": "Open the collection"
+ },
+ {
+  "k": "ui.rabbisN",
+  "he": "רבנים",
+  "en": "rabbis"
+ },
+ {
+  "k": "ui.sayingsN",
+  "he": "מאמרים",
+  "en": "sayings"
+ },
+ {
+  "k": "ui.questionsN",
+  "he": "שאלות",
+  "en": "questions"
+ },
+ {
+  "k": "ui.homeLede",
+  "he": "כאן מרוכזים דברי גדולי התורה על שאלות שעמדו לפני עם ישראל, כל שאלה באוסף משלה: הדברים בלשון אומרם, עם המקור, התאריך והדף המקורי.",
+  "en": "This site gathers what the Torah leaders said on questions that came before the Jewish people, each question in a collection of its own: their words as they said them, with the source, the date and the original page."
+ },
+ {
+  "k": "ui.howTitle",
+  "he": "איך לקרוא את האתר",
+  "en": "How to read this site"
+ },
+ {
+  "k": "ui.how.0",
+  "he": "כל אוסף עומד בפני עצמו. הוא מביא את דברי הרבנים שהשיבו על שאלה אחת, ואינו מייחס להם עמדה בשאלה האחרת. אין רב שמופיע בשני האוספים.",
+  "en": "Each collection stands on its own. It brings the words of the rabbis who answered one question and attributes to them no position on the other. No rabbi appears in both collections."
+ },
+ {
+  "k": "ui.how.1",
+  "he": "בכל אוסף מצוין מי עמד יחד: רבנים מקהילות ומחוגים שונים, מירושלים ועד התפוצות, שהגיעו לאותה תשובה.",
+  "en": "Each collection shows who stood together: rabbis of different communities and circles, from Jerusalem to the Diaspora, who reached the same answer."
+ },
+ {
+  "k": "ui.connectTeaser",
+  "he": "שתי שאלות, נקודת מפגש אחת",
+  "en": "Two questions, one meeting point"
+ },
+ {
+  "k": "ui.together",
+  "he": "מי עמד יחד",
+  "en": "Who stood together"
+ },
+ {
+  "k": "ui.theSayings",
+  "he": "הדברים",
+  "en": "The sayings"
+ },
+ {
+  "k": "ui.page",
+  "he": "עמ׳",
+  "en": "p."
+ },
+ {
+  "k": "ui.inAppendix",
+  "he": "בנספחים",
+  "en": "appendix"
+ },
+ {
+  "k": "ui.terrSource",
+  "he": "מתוך הקובץ ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980). מספרי העמודים הם של הספר.",
+  "en": "From the collection Gedolei Torah al Hachzarat Shetachim (Torah Greats on Returning Territories), Bnei Brak, 5740 (1980). Page numbers are the book’s. English translations were made for this site."
+ },
+ {
+  "k": "ui.elSource",
+  "he": "מתוך הקונטרס ״זכרון בספר״: דברי גדולי ישראל נגד ההשתתפות בבחירות לכנסת. יצא לאור בירושלים על ידי ״דרכי רבותינו״, לקראת הבחירות של ט״ז בשבט תשס״ט (2009).",
+  "en": "From the pamphlet Zichron BaSefer: the words of Torah greats against taking part in the Knesset elections. Published in Jerusalem by Darkei Rabboseinu for the elections of 16 Shevat 5769 (2009). English translations were made for this site."
+ },
+ {
+  "k": "ui.elOrder",
+  "he": "הרבנים מובאים לפי סדר הקונטרס. תאריכי פטירה שנמסרו בקונטרס בטעות תוקנו כאן.",
+  "en": "The rabbis appear in the pamphlet’s order. Dates of death the pamphlet gave in error have been corrected here."
+ },
+ {
+  "k": "ui.appendixDocs",
+  "he": "בנספחי הספר",
+  "en": "In the book’s appendices"
+ },
+ {
+  "k": "ui.origPage",
+  "he": "הדף המקורי",
+  "en": "Original page"
+ },
+ {
+  "k": "ui.said",
+  "he": "נאמר",
+  "en": "Said"
+ },
+ {
+  "k": "ui.died",
+  "he": "נלב״ע",
+  "en": "Died"
+ },
+ {
+  "k": "ui.fromBook",
+  "he": "מתוך הספר (תש״מ)",
+  "en": "From the book (1980)"
+ },
+ {
+  "k": "ui.places",
+  "he": "מקומות",
+  "en": "Places"
+ },
+ {
+  "k": "ui.born",
+  "he": "נולד ב",
+  "en": "Born in"
+ },
+ {
+  "k": "ui.served",
+  "he": "כיהן ב",
+  "en": "Served in"
+ },
+ {
+  "k": "ui.sources",
+  "he": "מקורות וקריאה נוספת",
+  "en": "Sources and further reading"
+ },
+ {
+  "k": "ui.verify",
+  "he": "מקור הדברים נמצא בבדיקה.",
+  "en": "The source of this statement is being verified."
+ },
+ {
+  "k": "ui.note",
+  "he": "הערה",
+  "en": "Note"
+ },
+ {
+  "k": "ui.collection",
+  "he": "אוסף",
+  "en": "Collection"
+ },
+ {
+  "k": "ui.allRabbis",
+  "he": "כל הרבנים",
+  "en": "All the rabbis"
+ },
+ {
+  "k": "ui.rabbisLede",
+  "he": "כל הרבנים שדבריהם מובאים באתר, לפי האוסף והקהילה.",
+  "en": "Every rabbi whose words appear on this site, by collection and community."
+ },
+ {
+  "k": "ui.mapTitle",
+  "he": "מאין באו ואיפה כיהנו",
+  "en": "Where They Came From and Where They Served"
+ },
+ {
+  "k": "ui.mapLede",
+  "he": "כל נקודה היא מקום שבו נולד אחד הרבנים או כיהן בו. לחצו על נקודה כדי לראות מי. מקומות שלא אומתו אינם מסומנים.",
+  "en": "Each point is a place where one of the rabbis was born or served. Tap a point to see who. Places that have not been verified are left off."
+ },
+ {
+  "k": "ui.views.europe",
+  "he": "אירופה והמזרח התיכון",
+  "en": "Europe & Middle East"
+ },
+ {
+  "k": "ui.views.israel",
+  "he": "ארץ ישראל",
+  "en": "Land of Israel"
+ },
+ {
+  "k": "ui.views.america",
+  "he": "צפון אמריקה",
+  "en": "North America"
+ },
+ {
+  "k": "ui.views.world",
+  "he": "כל העולם",
+  "en": "Whole world"
+ },
+ {
+  "k": "ui.servedHere",
+  "he": "כיהן כאן",
+  "en": "served here"
+ },
+ {
+  "k": "ui.bornHere",
+  "he": "נולד כאן",
+  "en": "born here"
+ },
+ {
+  "k": "ui.mapFail",
+  "he": "קווי המפה לא נטענו.",
+  "en": "The map outline could not load."
+ },
+ {
+  "k": "ui.mapPick",
+  "he": "בחרו נקודה במפה.",
+  "en": "Choose a point on the map."
+ },
+ {
+  "k": "ui.archiveTitle",
+  "he": "הדפים המקוריים",
+  "en": "Original Pages"
+ },
+ {
+  "k": "ui.archiveLede",
+  "he": "הדפים כפי שנדפסו, לעיון ולהשוואה.",
+  "en": "The pages as they were printed, for reading and comparison."
+ },
+ {
+  "k": "ui.zbArchive",
+  "he": "״זכרון בספר״ (תשס״ט)",
+  "en": "Zichron BaSefer (2009)"
+ },
+ {
+  "k": "ui.terrArchive",
+  "he": "״גדולי תורה על החזרת שטחים״ (תש״מ)",
+  "en": "Gedolei Torah al Hachzarat Shetachim (1980)"
+ },
+ {
+  "k": "ui.terrScans",
+  "he": "סריקות הספר יתווספו כאן.",
+  "en": "Scans of the book will be added here."
+ },
+ {
+  "k": "ui.cover",
+  "he": "כריכה קדמית",
+  "en": "Front cover"
+ },
+ {
+  "k": "ui.titlePage",
+  "he": "שער",
+  "en": "Title page"
+ },
+ {
+  "k": "ui.note43",
+  "he": "פתק בכתב יד, ט״ז שבט תשס״ט",
+  "en": "Handwritten note, 16 Shevat 5769"
+ },
+ {
+  "k": "ui.back",
+  "he": "כריכה אחורית",
+  "en": "Back cover"
+ },
+ {
+  "k": "ui.themes",
+  "he": "נושא",
+  "en": "Theme"
+ },
+ {
+  "k": "ui.back2",
+  "he": "חזרה",
+  "en": "Back"
+ },
+ {
+  "k": "ui.footer",
+  "he": "הדברים מובאים מתוך הספרים שנדפסו. התרגומים לאנגלית נעשו עבור אתר זה.",
+  "en": "The sayings are quoted from the printed books. The English translations were made for this site."
+ },
+ {
+  "k": "ui.opening",
+  "he": "בפתח הספר",
+  "en": "Opening the book"
+ },
+ {
+  "k": "ui.members",
+  "he": "חברי המועצה",
+  "en": "Members of the Council"
+ },
+ {
+  "k": "ui.skip",
+  "he": "דילוג לתוכן",
+  "en": "Skip to content"
+ },
+ {
+  "k": "ui.navLabel",
+  "he": "ניווט",
+  "en": "Main"
+ },
+ {
+  "k": "ui.notFound",
+  "he": "הדף לא נמצא",
+  "en": "Page not found"
+ },
+ {
+  "k": "ui.origLabel",
+  "he": "המקור בעברית",
+  "en": "Hebrew original"
+ },
+ {
+  "k": "ui.langLabel",
+  "he": "שפה",
+  "en": "Language"
+ },
+ {
+  "k": "home.kicker",
+  "he": "דעת תורה, בלשון אומריה",
+  "en": "Da’at Torah, in their own words"
+ },
+ {
+  "k": "home.statR",
+  "he": "רבנים",
+  "en": "rabbis"
+ },
+ {
+  "k": "home.statC",
+  "he": "חוגים וקהילות",
+  "en": "circles and communities"
+ },
+ {
+  "k": "home.statP",
+  "he": "ערים",
+  "en": "cities"
+ },
+ {
+  "k": "home.statK",
+  "he": "יבשות",
+  "en": "continents"
+ },
+ {
+  "k": "home.mapH",
+  "he": "מכל קצות העולם, תשובה אחת",
+  "en": "From Every Corner of the World, One Answer"
+ },
+ {
+  "k": "home.mapP",
+  "he": "כל נקודה היא עיר שבה נולד אחד הרבנים או כיהן בה, וכל קו הוא דרכו של רב ממקום למקום. הצבע מסמן את החוג שלו. לחצו על נקודה.",
+  "en": "Each point is a city where one of the rabbis was born or served, and each line is a rabbi’s path from place to place. The color marks his circle. Tap a point."
+ },
+ {
+  "k": "home.colls",
+  "he": "אוסף",
+  "en": "Collection"
+ },
+ {
+  "k": "home.zoomIn",
+  "he": "הגדלה",
+  "en": "Zoom in"
+ },
+ {
+  "k": "home.zoomOut",
+  "he": "הקטנה",
+  "en": "Zoom out"
+ },
+ {
+  "k": "home.all",
+  "he": "הכול",
+  "en": "All"
+ },
+ {
+  "k": "home.tlH",
+  "he": "ציר הזמן",
+  "en": "Timeline"
+ },
+ {
+  "k": "home.tlP",
+  "he": "מתי נאמרו הדברים, שנה אחר שנה. לחצו על דף כדי לקרוא אותו.",
+  "en": "When the words were said, year by year. Tap a page to read it."
+ },
+ {
+  "k": "home.oldest",
+  "he": "מהישן לחדש",
+  "en": "Oldest first"
+ },
+ {
+  "k": "home.newest",
+  "he": "מהחדש לישן",
+  "en": "Newest first"
+ },
+ {
+  "k": "home.undated",
+  "he": "ללא תאריך",
+  "en": "Undated"
+ },
+ {
+  "k": "home.book1980",
+  "he": "יוצא לאור ״גדולי תורה על החזרת שטחים״, ובו דברי תשעה־עשר רבנים:",
+  "en": "Gedolei Torah al Hachzarat Shetachim is published, with the words of nineteen rabbis:"
+ },
+ {
+  "k": "home.pamph2009",
+  "he": "יוצא לאור בירושלים הקונטרס ״זכרון בספר״, המקבץ את דברי הרבנים.",
+  "en": "The pamphlet Zichron BaSefer is published in Jerusalem, gathering the rabbis’ words."
+ },
+ {
+  "k": "home.toRabbi",
+  "he": "לדף הרב",
+  "en": "Open his page"
+ },
+ {
+  "k": "home.close",
+  "he": "סגירה",
+  "en": "Close"
+ },
+ {
+  "k": "home.twoQ",
+  "he": "שתי השאלות",
+  "en": "The two questions"
+ },
+ {
+  "k": "home.fullMap",
+  "he": "למפה המלאה",
+  "en": "Open the full map"
+ },
+ {
+  "k": "home.ctx.1937.0.1",
+  "he": "ועדת פיל מציעה לחלק את הארץ; הכנסיה הגדולה השלישית מתכנסת במרינבד",
+  "en": "The Peel Commission proposes partitioning the Land; the Third Knessia Gedola meets in Marienbad"
+ },
+ {
+  "k": "home.ctx.1949.0.1",
+  "he": "הבחירות לאספה המכוננת, הכנסת הראשונה (25 בינואר)",
+  "en": "Elections to the Constituent Assembly, the first Knesset (January 25)"
+ },
+ {
+  "k": "home.ctx.1951.0.1",
+  "he": "הבחירות לכנסת השנייה (30 ביולי)",
+  "en": "Elections to the Second Knesset (July 30)"
+ },
+ {
+  "k": "home.ctx.1955.0.1",
+  "he": "הבחירות לכנסת השלישית (26 ביולי)",
+  "en": "Elections to the Third Knesset (July 26)"
+ },
+ {
+  "k": "home.ctx.1959.0.1",
+  "he": "הבחירות לכנסת הרביעית (3 בנובמבר)",
+  "en": "Elections to the Fourth Knesset (November 3)"
+ },
+ {
+  "k": "home.ctx.1961.0.1",
+  "he": "הבחירות לכנסת החמישית (15 באוגוסט)",
+  "en": "Elections to the Fifth Knesset (August 15)"
+ },
+ {
+  "k": "home.ctx.1965.0.1",
+  "he": "הבחירות לכנסת השישית (2 בנובמבר)",
+  "en": "Elections to the Sixth Knesset (November 2)"
+ },
+ {
+  "k": "home.ctx.1967.0.1",
+  "he": "מלחמת ששת הימים",
+  "en": "The Six-Day War"
+ },
+ {
+  "k": "home.ctx.1977.0.1",
+  "he": "הבחירות לכנסת התשיעית (17 במאי); אגודת ישראל מצטרפת לקואליציה",
+  "en": "Elections to the Ninth Knesset (May 17); Agudath Israel joins the coalition"
+ },
+ {
+  "k": "home.ctx.1978.0.1",
+  "he": "הסכמי קמפ דייוויד (ספטמבר)",
+  "en": "The Camp David Accords (September)"
+ },
+ {
+  "k": "home.ctx.1979.0.1",
+  "he": "הסכם השלום עם מצרים (מרץ)",
+  "en": "The peace treaty with Egypt (March)"
+ },
+ {
+  "k": "home.ctx.1982.0.1",
+  "he": "הושלמה הנסיגה מסיני (אפריל)",
+  "en": "The withdrawal from Sinai is completed (April)"
+ },
+ {
+  "k": "home.ctx.1988.0.1",
+  "he": "הבחירות לכנסת השתים־עשרה (1 בנובמבר)",
+  "en": "Elections to the Twelfth Knesset (November 1)"
+ },
+ {
+  "k": "home.ctx.1992.0.1",
+  "he": "הבחירות לכנסת השלוש־עשרה (23 ביוני)",
+  "en": "Elections to the Thirteenth Knesset (June 23)"
+ },
+ {
+  "k": "home.ctx.2003.0.1",
+  "he": "הבחירות לכנסת השש־עשרה (28 בינואר)",
+  "en": "Elections to the Sixteenth Knesset (January 28)"
+ },
+ {
+  "k": "home.ctx.2006.0.1",
+  "he": "הבחירות לכנסת השבע־עשרה (28 במרץ)",
+  "en": "Elections to the Seventeenth Knesset (March 28)"
+ },
+ {
+  "k": "home.ctx.2009.0.1",
+  "he": "הבחירות לכנסת השמונה־עשרה (10 בפברואר, ט״ז בשבט תשס״ט)",
+  "en": "Elections to the Eighteenth Knesset (February 10; 16 Shevat 5769)"
+ },
+ {
+  "k": "chart.h",
+  "he": "דור לדור: חייהם, זה לצד זה",
+  "en": "Generation to Generation: Their Lives, Side by Side"
+ },
+ {
+  "k": "chart.p",
+  "he": "כל פס הוא חייו של אחד הרבנים, מלידתו ועד פטירתו, בצבע החוג שלו. המעוין מסמן את השנה שבה אמר את דבריו. גללו לצדדים.",
+  "en": "Each bar is one rabbi’s life, from birth to passing, in the color of his circle. The diamond marks the year he spoke. Scroll sideways."
+ },
+ {
+  "k": "chart.lg.0",
+  "he": "חיי הרב",
+  "en": "A rabbi’s life"
+ },
+ {
+  "k": "chart.lg.1",
+  "he": "השנה שבה אמר את דבריו",
+  "en": "The year he spoke"
+ },
+ {
+  "k": "chart.lg.2",
+  "he": "דבריו נדפסו בספר (תש״מ)",
+  "en": "His words printed in the 1980 book"
+ },
+ {
+  "k": "chart.lg.3",
+  "he": "שנת בחירות לכנסת",
+  "en": "Knesset election year"
+ },
+ {
+  "k": "chart.lg.4",
+  "he": "שנת שמיטה",
+  "en": "Shmita year"
+ },
+ {
+  "k": "chart.left",
+  "he": "גלילה שמאלה",
+  "en": "Scroll left"
+ },
+ {
+  "k": "chart.right",
+  "he": "גלילה ימינה",
+  "en": "Scroll right"
+ },
+ {
+  "k": "chart.hint",
+  "he": "גללו לצדדים כדי לראות את כל השנים",
+  "en": "Scroll sideways to see all the years"
+ },
+ {
+  "k": "chart.elections",
+  "he": "הבחירות לכנסת",
+  "en": "Knesset elections"
+ },
+ {
+  "k": "chart.shmita",
+  "he": "שמיטה",
+  "en": "Shmita"
+ },
+ {
+  "k": "chart.jewish",
+  "he": "עם ישראל והארץ",
+  "en": "The Jewish people and the Land"
+ },
+ {
+  "k": "chart.world",
+  "he": "בעולם",
+  "en": "In the world"
+ },
+ {
+  "k": "chart.rule",
+  "he": "השלטון בארץ",
+  "en": "Rule in the Land"
+ },
+ {
+  "k": "chart.eras.ott",
+  "he": "השלטון העות׳מאני",
+  "en": "Ottoman rule"
+ },
+ {
+  "k": "chart.eras.brit",
+  "he": "השלטון הבריטי",
+  "en": "British rule"
+ },
+ {
+  "k": "chart.eras.lab",
+  "he": "מפא״י, המערך והעבודה",
+  "en": "Mapai, Alignment and Labor"
+ },
+ {
+  "k": "chart.eras.lik",
+  "he": "הליכוד",
+  "en": "Likud"
+ },
+ {
+  "k": "chart.eras.uni",
+  "he": "ממשלות אחדות",
+  "en": "Unity governments"
+ },
+ {
+  "k": "chart.eras.kad",
+  "he": "קדימה",
+  "en": "Kadima"
+ },
+ {
+  "k": "chart.ev.0.1",
+  "he": "פרעות ברוסיה",
+  "en": "Pogroms in Russia"
+ },
+ {
+  "k": "chart.ev.1.1",
+  "he": "הקונגרס הציוני הראשון",
+  "en": "First Zionist Congress"
+ },
+ {
+  "k": "chart.ev.2.1",
+  "he": "ייסוד אגודת ישראל",
+  "en": "Agudath Israel founded"
+ },
+ {
+  "k": "chart.ev.3.1",
+  "he": "הצהרת בלפור",
+  "en": "Balfour Declaration"
+ },
+ {
+  "k": "chart.ev.4.1",
+  "he": "ועדת פיל מציעה חלוקה",
+  "en": "Peel Commission proposes partition"
+ },
+ {
+  "k": "chart.ev.5.1",
+  "he": "השואה",
+  "en": "The Holocaust"
+ },
+ {
+  "k": "chart.ev.6.1",
+  "he": "החלטת החלוקה באו״ם",
+  "en": "UN partition vote"
+ },
+ {
+  "k": "chart.ev.7.1",
+  "he": "הקמת המדינה",
+  "en": "The State is declared"
+ },
+ {
+  "k": "chart.ev.8.1",
+  "he": "מלחמת ששת הימים",
+  "en": "Six-Day War"
+ },
+ {
+  "k": "chart.ev.9.1",
+  "he": "מלחמת יום הכיפורים",
+  "en": "Yom Kippur War"
+ },
+ {
+  "k": "chart.ev.10.1",
+  "he": "הסכמי קמפ דייוויד",
+  "en": "Camp David Accords"
+ },
+ {
+  "k": "chart.ev.11.1",
+  "he": "יוצא ״גדולי תורה על החזרת שטחים״",
+  "en": "Gedolei Torah al Hachzarat Shetachim is published"
+ },
+ {
+  "k": "chart.ev.12.1",
+  "he": "הושלמה הנסיגה מסיני",
+  "en": "Sinai withdrawal completed"
+ },
+ {
+  "k": "chart.ev.13.1",
+  "he": "הסכמי אוסלו",
+  "en": "Oslo Accords"
+ },
+ {
+  "k": "chart.ev.14.1",
+  "he": "הגירוש מגוש קטיף",
+  "en": "Expulsion from Gush Katif"
+ },
+ {
+  "k": "chart.ev.15.1",
+  "he": "יוצא ״זכרון בספר״",
+  "en": "Zichron BaSefer is published"
+ },
+ {
+  "k": "chart.wv.0.1",
+  "he": "מלחמת העולם הראשונה",
+  "en": "World War I"
+ },
+ {
+  "k": "chart.wv.1.1",
+  "he": "המהפכה ברוסיה",
+  "en": "Russian Revolution"
+ },
+ {
+  "k": "chart.wv.2.1",
+  "he": "המשבר הכלכלי הגדול",
+  "en": "The Great Depression begins"
+ },
+ {
+  "k": "chart.wv.3.1",
+  "he": "מלחמת העולם השנייה",
+  "en": "World War II"
+ },
+ {
+  "k": "chart.wv.4.1",
+  "he": "האדם נוחת על הירח",
+  "en": "Man lands on the moon"
+ },
+ {
+  "k": "chart.wv.5.1",
+  "he": "המהפכה באיראן",
+  "en": "Revolution in Iran"
+ },
+ {
+  "k": "chart.wv.6.1",
+  "he": "נפילת חומת ברלין",
+  "en": "Fall of the Berlin Wall"
+ },
+ {
+  "k": "chart.wv.7.1",
+  "he": "התפרקות ברית המועצות",
+  "en": "Soviet Union dissolves"
+ },
+ {
+  "k": "chart.wv.8.1",
+  "he": "פיגועי 11 בספטמבר",
+  "en": "September 11 attacks"
+ },
+ {
+  "k": "chart.wv.9.1",
+  "he": "מלחמת עיראק",
+  "en": "Iraq War"
+ },
+ {
+  "k": "more.title",
+  "he": "עוד מגדולי ישראל",
+  "en": "More Torah Leaders"
+ },
+ {
+  "k": "more.label",
+  "he": "בכתביהם",
+  "en": "In their own writings"
+ },
+ {
+  "k": "more.q",
+  "he": "מה כתבו גדולי ישראל אחרים על אותן שאלות?",
+  "en": "What did other Torah leaders write on the same questions?"
+ },
+ {
+  "k": "more.meta",
+  "he": "דברים מתוך ספריהם ומכתביהם, עם המקור",
+  "en": "Passages from their books and letters, with the source"
+ },
+ {
+  "k": "more.src",
+  "he": "גדולי ישראל שאינם בשני האוספים, וכתבו על אותן שאלות בספריהם ובמכתביהם. הדברים מובאים בלשונם, עם שם הספר והעמוד. מקומם כאן נפרד, משום שאינם חלק מאחד משני הקבצים שנדפסו.",
+  "en": "Torah leaders who are not in the two collections and who wrote on the same questions in their own books and letters. Their words are given as they wrote them, with the book and page. They are kept separate here because they are not part of either printed collection."
+ },
+ {
+  "k": "connect.title",
+  "he": "שתי שאלות, נקודת מפגש אחת",
+  "en": "Two Questions, One Meeting Point"
+ },
+ {
+  "k": "connect.p1",
+  "he": "האוסף הראשון באתר עוסק בשאלה אם מותר למסור חלק מארץ ישראל. האוסף השני עוסק בשאלה אם מותר להשתתף בבחירות לכנסת. אלה שתי שאלות נפרדות, ושתי קבוצות שונות של רבנים השיבו עליהן. אף רב אינו מופיע בשני האוספים, ואין לייחס לאיש מהם עמדה בשאלה שלא השיב עליה.",
+  "en": "The first collection on this site asks whether any part of the Land of Israel may be handed over. The second asks whether a Jew may take part in the Knesset elections. These are separate questions, answered by two different groups of rabbis. No rabbi appears in both collections, and none of them should be credited with a position on a question he did not answer."
+ },
+ {
+  "k": "connect.p2",
+  "he": "ובכל זאת השאלות נפגשות בנקודה אחת: בבוחר עצמו.",
+  "en": "Even so, the questions meet at one point: the voter himself."
+ },
+ {
+  "k": "connect.h1",
+  "he": "הבוחר שולח שליח",
+  "en": "The voter sends an agent"
+ },
+ {
+  "k": "connect.p3",
+  "he": "הטיעון המרכזי של רבני ״זכרון בספר״ הוא השליחות. הנציג פועל בשם מי שבחר בו, ו[[שלוחו של אדם כמותו]]. מכאן שמי ששולח נציג לכנסת נעשה שותף למה שנעשה בה:",
+  "en": "The central argument of the Zichron BaSefer rabbis is agency. A representative acts in the name of those who chose him, and [[a person’s agent is like himself]]. So whoever sends a representative to the Knesset becomes a partner in what is done there:"
+ },
+ {
+  "k": "connect.p4",
+  "he": "יש שיענו ש[[אין שליח לדבר עבירה]]. אבל הרבנים האלה לא נשענו על השליחות בלבד. הם כתבו שהבוחר עצמו מודה בשלטון ונותן לו כוח, וזה מעשה שלו, לא של שלוחו:",
+  "en": "Some will answer that [[there is no agency for a transgression]]. But these rabbis did not rest on agency alone. They wrote that the voter himself acknowledges the regime and gives it strength, and that is his own act, not his agent’s:"
+ },
+ {
+  "k": "connect.h2",
+  "he": "והכנסת מחליטה על הארץ",
+  "en": "And the Knesset decides about the Land"
+ },
+ {
+  "k": "connect.p5",
+  "he": "רבני ״גדולי תורה על החזרת שטחים״ קבעו שאסור למסור שום חלק מארץ ישראל, ושאין לשום ממשלה רשות לעשות זאת:",
+  "en": "The rabbis of Gedolei Torah al Hachzarat Shetachim ruled that no part of the Land of Israel may be handed over, and that no government has the authority to do it:"
+ },
+ {
+  "k": "connect.p6",
+  "he": "ממשלה שמוסרת שטח מקבלת את כוחה מהכנסת, והכנסת מקבלת את כוחה מהבוחרים. מי שמקבל את שני הפסקים יחד, שמסירת הארץ אסורה ושהבוחר שותף למעשי נציגיו, אינו יכול לראות בקולו עניין פרטי. זו מסקנה של מי שקורא את שני האוספים זה לצד זה, ולא דבריו של רב מסוים.",
+  "en": "A government that hands over land draws its power from the Knesset, and the Knesset draws its power from the voters. Whoever accepts both rulings together, that handing over the Land is forbidden and that the voter is a partner in what his representatives do, cannot treat his vote as a private matter. That is the conclusion of a reader who sets the two collections side by side, not the words of any one rabbi."
+ },
+ {
+  "k": "connect.toTerr",
+  "he": "להחזרת שטחים",
+  "en": "Giving up land"
+ },
+ {
+  "k": "connect.toEl",
+  "he": "לבחירות לכנסת",
+  "en": "Knesset elections"
+ },
+ {
+  "k": "comm.sephardi",
+  "he": "ספרדים ועדות המזרח",
+  "en": "Sephardi and Mizrahi"
+ },
+ {
+  "k": "comm.hasidic",
+  "he": "חצרות חסידים",
+  "en": "Hasidic courts"
+ },
+ {
+  "k": "comm.edah",
+  "he": "העדה החרדית בירושלים",
+  "en": "The Edah HaChareidis of Jerusalem"
+ },
+ {
+  "k": "comm.yeshiva",
+  "he": "ראשי ישיבות ליטא",
+  "en": "Lithuanian yeshiva heads"
+ },
+ {
+  "k": "comm.courts",
+  "he": "בתי הדין והרבנות הראשית",
+  "en": "Israel’s rabbinical courts and Chief Rabbinate"
+ },
+ {
+  "k": "comm.diaspora",
+  "he": "רבני קהילות בתפוצות",
+  "en": "Rabbis of Diaspora communities"
+ },
+ {
+  "k": "comm.eretz",
+  "he": "רבנים ותלמידי חכמים בארץ ישראל",
+  "en": "Rabbis and scholars in the Land of Israel"
+ },
+ {
+  "k": "place.jerusalem",
+  "he": "ירושלים",
+  "en": "Jerusalem"
+ },
+ {
+  "k": "place.sighet",
+  "he": "סיגט",
+  "en": "Sighet"
+ },
+ {
+  "k": "place.ujfeherto",
+  "he": "אויפעהערטא",
+  "en": "Újfehértó"
+ },
+ {
+  "k": "place.senta",
+  "he": "זענטא",
+  "en": "Senta"
+ },
+ {
+  "k": "place.williamsburg",
+  "he": "וויליאמסבורג",
+  "en": "Williamsburg, Brooklyn"
+ },
+ {
+  "k": "place.brooklyn",
+  "he": "ברוקלין",
+  "en": "Brooklyn"
+ },
+ {
+  "k": "place.newyork",
+  "he": "ניו יורק",
+  "en": "New York"
+ },
+ {
+  "k": "place.vilnius",
+  "he": "וילנא",
+  "en": "Vilnius"
+ },
+ {
+  "k": "place.bocki",
+  "he": "בוצק",
+  "en": "Boćki"
+ },
+ {
+  "k": "place.kalvarija",
+  "he": "קלוואריה",
+  "en": "Kalvarija"
+ },
+ {
+  "k": "place.bolechow",
+  "he": "באליחוב",
+  "en": "Bolechów"
+ },
+ {
+  "k": "place.oradea",
+  "he": "גרוסוורדיין",
+  "en": "Oradea (Grosswardein)"
+ },
+ {
+  "k": "place.strasbourg",
+  "he": "שטראסבורג",
+  "en": "Strasbourg"
+ },
+ {
+  "k": "place.baghdad",
+  "he": "בגדאד",
+  "en": "Baghdad"
+ },
+ {
+  "k": "place.khust",
+  "he": "חוסט",
+  "en": "Khust"
+ },
+ {
+  "k": "place.gorlice",
+  "he": "גורליץ",
+  "en": "Gorlice"
+ },
+ {
+  "k": "place.przeworsk",
+  "he": "פשעווארסק",
+  "en": "Przeworsk"
+ },
+ {
+  "k": "place.paris",
+  "he": "פריז",
+  "en": "Paris"
+ },
+ {
+  "k": "place.antwerp",
+  "he": "אנטוורפן",
+  "en": "Antwerp"
+ },
+ {
+  "k": "place.novezamky",
+  "he": "נייהייזל",
+  "en": "Nové Zámky"
+ },
+ {
+  "k": "place.debrecen",
+  "he": "דעברעצין",
+  "en": "Debrecen"
+ },
+ {
+  "k": "place.buenosaires",
+  "he": "בואנוס איירס",
+  "en": "Buenos Aires"
+ },
+ {
+  "k": "place.sinwan",
+  "he": "סינואן",
+  "en": "Sinwan (Sharab)"
+ },
+ {
+  "k": "place.aden",
+  "he": "עדן",
+  "en": "Aden"
+ },
+ {
+  "k": "place.yehud",
+  "he": "יהוד",
+  "en": "Yehud"
+ },
+ {
+  "k": "place.satumare",
+  "he": "סאטמאר",
+  "en": "Satu Mare (Satmar)"
+ },
+ {
+  "k": "place.irshava",
+  "he": "אורשיווא",
+  "en": "Irshava"
+ },
+ {
+  "k": "place.carei",
+  "he": "קראלי",
+  "en": "Carei"
+ },
+ {
+  "k": "place.hodasz",
+  "he": "האדאס",
+  "en": "Hodász"
+ },
+ {
+  "k": "place.orsova",
+  "he": "אורשאווא",
+  "en": "Orșova"
+ },
+ {
+  "k": "place.deutschkreutz",
+  "he": "צעהלים",
+  "en": "Deutschkreutz (Tzelem)"
+ },
+ {
+  "k": "place.wodzislaw",
+  "he": "וואידיסלאוו",
+  "en": "Wodzisław"
+ },
+ {
+  "k": "place.papa",
+  "he": "פאפא",
+  "en": "Pápa"
+ },
+ {
+  "k": "place.szombathely",
+  "he": "סאמבאטהעלי",
+  "en": "Szombathely"
+ },
+ {
+  "k": "place.samorin",
+  "he": "שאמאש",
+  "en": "Šamorín (Samos)"
+ },
+ {
+  "k": "place.sculeni",
+  "he": "סקולען",
+  "en": "Sculeni"
+ },
+ {
+  "k": "place.czernowitz",
+  "he": "טשערנאוויץ",
+  "en": "Czernowitz"
+ },
+ {
+  "k": "place.sibiu",
+  "he": "הערמאנשטאט",
+  "en": "Sibiu"
+ },
+ {
+  "k": "place.melbourne",
+  "he": "מלבורן",
+  "en": "Melbourne"
+ },
+ {
+  "k": "place.vienna",
+  "he": "וויען",
+  "en": "Vienna"
+ },
+ {
+  "k": "place.gabes",
+  "he": "גאבס",
+  "en": "Gabès"
+ },
+ {
+  "k": "place.tunis",
+  "he": "תוניס",
+  "en": "Tunis"
+ },
+ {
+  "k": "place.beersheba",
+  "he": "באר שבע",
+  "en": "Beersheba"
+ },
+ {
+  "k": "place.dolyna",
+  "he": "דאלינא",
+  "en": "Dolyna"
+ },
+ {
+  "k": "place.munkacs",
+  "he": "מונקאטש",
+  "en": "Munkács"
+ },
+ {
+  "k": "place.manchester",
+  "he": "מנצ׳סטר",
+  "en": "Manchester"
+ },
+ {
+  "k": "place.rakhiv",
+  "he": "ראחוב",
+  "en": "Rakhiv (Rachov)"
+ },
+ {
+  "k": "place.lugano",
+  "he": "לוגאנו",
+  "en": "Lugano"
+ },
+ {
+  "k": "place.botosani",
+  "he": "באטשאן",
+  "en": "Botoșani"
+ },
+ {
+  "k": "place.ribnita",
+  "he": "ריבניץ",
+  "en": "Rîbnița"
+ },
+ {
+  "k": "place.monsey",
+  "he": "מונסי",
+  "en": "Monsey"
+ },
+ {
+  "k": "place.crasna",
+  "he": "קראסנא",
+  "en": "Crasna"
+ },
+ {
+  "k": "place.landsberg",
+  "he": "לנדסברג",
+  "en": "Landsberg"
+ },
+ {
+  "k": "place.safed",
+  "he": "צפת",
+  "en": "Safed"
+ },
+ {
+  "k": "place.jasliska",
+  "he": "יאסליסק",
+  "en": "Jaśliska"
+ },
+ {
+  "k": "place.wroclaw",
+  "he": "ברעסלוי",
+  "en": "Wrocław"
+ },
+ {
+  "k": "place.frankfurt",
+  "he": "פרנקפורט",
+  "en": "Frankfurt"
+ },
+ {
+  "k": "place.sopron",
+  "he": "שאפראן",
+  "en": "Sopron"
+ },
+ {
+  "k": "place.krompachy",
+  "he": "קראמפאך",
+  "en": "Krompachy"
+ },
+ {
+  "k": "place.nitra",
+  "he": "ניטרא",
+  "en": "Nitra"
+ },
+ {
+  "k": "place.mountkisco",
+  "he": "מאונט קיסקו",
+  "en": "Mount Kisco, NY"
+ },
+ {
+  "k": "place.kosice",
+  "he": "קאשוי",
+  "en": "Košice (Kashau)"
+ },
+ {
+  "k": "place.michalovce",
+  "he": "מיכאלאווץ",
+  "en": "Michalovce"
+ },
+ {
+  "k": "place.bedfordhills",
+  "he": "בדפורד הילס",
+  "en": "Bedford Hills, NY"
+ },
+ {
+  "k": "place.szczakowa",
+  "he": "שטשאקאווא",
+  "en": "Szczakowa"
+ },
+ {
+  "k": "place.cluj",
+  "he": "קלויזנבורג",
+  "en": "Cluj (Klausenburg)"
+ },
+ {
+  "k": "place.netanya",
+  "he": "נתניה (קרית צאנז)",
+  "en": "Netanya (Kiryat Sanz)"
+ },
+ {
+  "k": "place.telaviv",
+  "he": "תל אביב–יפו",
+  "en": "Tel Aviv–Jaffa"
+ },
+ {
+  "k": "place.dukla",
+  "he": "דוקלא",
+  "en": "Dukla"
+ },
+ {
+  "k": "place.montreal",
+  "he": "מונטריאול",
+  "en": "Montreal"
+ },
+ {
+  "k": "place.kfarchabad",
+  "he": "כפר חב״ד",
+  "en": "Kfar Chabad"
+ },
+ {
+  "k": "place.philadelphia",
+  "he": "פילדלפיה",
+  "en": "Philadelphia"
+ },
+ {
+  "k": "place.boston",
+  "he": "בוסטון",
+  "en": "Boston"
+ },
+ {
+  "k": "place.cleveland",
+  "he": "קליוולנד",
+  "en": "Cleveland"
+ },
+ {
+  "k": "place.bneibrak",
+  "he": "בני ברק",
+  "en": "Bnei Brak"
+ },
+ {
+  "k": "place.birzai",
+  "he": "בירז׳",
+  "en": "Biržai (Birzh)"
+ },
+ {
+  "k": "place.brisk",
+  "he": "בריסק",
+  "en": "Brest-Litovsk (Brisk)"
+ },
+ {
+  "k": "place.baranovich",
+  "he": "ברנוביץ׳",
+  "en": "Baranovich"
+ },
+ {
+  "k": "el.1.name",
+  "he": "רבי צבי הירש ראזענבוים זצוק״ל",
+  "en": "Rabbi Tzvi Hirsch Rosenbaum"
+ },
+ {
+  "k": "el.1.title",
+  "he": "אדמו״ר מקרעטשניף",
+  "en": "Kretshnif Rebbe"
+ },
+ {
+  "k": "el.1.quote",
+  "he": "...מבראשית ברא עד לעיני כל ישראל אין עוד איסור כהליכה לבחירות... כי כבר נתברר שעיקר כוונתם של הכופרים לעקור התורה וככל הגוים ב״י רח״ל.",
+  "en": "…From \"In the beginning G-d created\" to \"before the eyes of all Israel\" [i.e., in the entire Torah], there is no prohibition like going to the elections… for it has already become clear that the main aim of the heretics is to uproot the Torah and to make the House of Israel like all the nations, Heaven help us."
+ },
+ {
+  "k": "el.1.date",
+  "he": "מתוך דרשה כ״א סיון תשנ״ב",
+  "en": "From a sermon, 21 Sivan 5752 (1992)"
+ },
+ {
+  "k": "el.1.bio",
+  "he": "1920–2006. נולד בסיגט; הקים מחדש את חסידות קרעטשניף בארץ ישראל. היה מקורב לרבי מסאטמאר.",
+  "en": "1920–2006. Born in Sighet; rebuilt Kretshnif Hasidism in Israel (Kiryat Ata, Rehovot, Kiryat Gat, Bnei Brak, Jerusalem). Close to the Satmar Rav."
+ },
+ {
+  "k": "el.2.name",
+  "he": "רבי משה טייטלבוים זצוק״ל",
+  "en": "Rabbi Moshe Teitelbaum"
+ },
+ {
+  "k": "el.2.title",
+  "he": "אדמו״ר מסאטמאר, בעל ״ברך משה״",
+  "en": "Satmar Rebbe, author of Berach Moshe"
+ },
+ {
+  "k": "el.2.quote",
+  "he": "...ועל כל אחד ואחד להזהיר את ב״ב ואת אוהביו ומכיריו לא לחלל ש״ש ברבים ולא להכשל ח״ו בהשתתפות בבחירות האסורות.",
+  "en": "…Each and every person must warn his household, his friends and his acquaintances not to desecrate G-d's name in public, and not to stumble, Heaven forbid, by taking part in the forbidden elections."
+ },
+ {
+  "k": "el.2.date",
+  "he": "תמוז תשי״א",
+  "en": "Tammuz 5711 (1951)"
+ },
+ {
+  "k": "el.2.bio",
+  "he": "1914–2006. רב בסיגט, ומשנת 1947 האדמו״ר מסיגט בוויליאמסבורג; משנת 1980 האדמו״ר מסאטמאר. בעל ״ברך משה״.",
+  "en": "1914–2006. Rabbi of Sighet, then the Sigheter Rebbe in Williamsburg from 1947, and Satmar Rebbe from 1980. Author of Berach Moshe."
+ },
+ {
+  "k": "el.3.name",
+  "he": "רבי זעליג ראובן בענגיס זצוק״ל",
+  "en": "Rabbi Zelig Reuven Bengis"
+ },
+ {
+  "k": "el.3.title",
+  "he": "גאב״ד ירושלים",
+  "en": "Chief Rabbi of Jerusalem (Edah HaChareidis)"
+ },
+ {
+  "k": "el.3.quote",
+  "he": "...אסור לכל בר ישראל להשתתף לבחירות שלהם.",
+  "en": "…It is forbidden for any Jew to take part in their elections."
+ },
+ {
+  "k": "el.3.date",
+  "he": "תמוז תשי״א",
+  "en": "Tammuz 5711 (1951)"
+ },
+ {
+  "k": "el.3.bio",
+  "he": "1864–1953. רב בקלוואריה שבליטא; גאב״ד העדה החרדית משנת 1948. בעל ״לפלגות ראובן״.",
+  "en": "1864–1953. Rabbi of Kalvarija in Lithuania; head of the Edah HaChareidis court from 1948. Author of Leflagos Reuven."
+ },
+ {
+  "k": "el.4.name",
+  "he": "רבי אברהם דוד הורוויץ זצוק״ל",
+  "en": "Rabbi Avraham Dovid Horowitz"
+ },
+ {
+  "k": "el.4.title",
+  "he": "חבר הבד״ץ וגאב״ד שטראסבורג, בעל ״קנין תורה״",
+  "en": "Member of the Badatz; Chief Rabbi of Strasbourg; author of Kinyan Torah"
+ },
+ {
+  "k": "el.4.quote",
+  "he": "...עליו לדאוג מאחריות תוצאות השתתפותו בבית המינים המחרף ומגדף מערכות אלוקים חיים ולוחם נגד תורתינו הכתובה והמסורה.",
+  "en": "…He must answer for the consequences of his taking part in the house of heretics that reviles and blasphemes the armies of the living G-d and wages war against our Written and Oral Torah."
+ },
+ {
+  "k": "el.4.date",
+  "he": "חשון תשכ״א",
+  "en": "Cheshvan 5721 (1960)"
+ },
+ {
+  "k": "el.4.bio",
+  "he": "1911–2004. דיין ואב״ד בשטראסבורג משנת 1947; עלה לירושלים בשנת 1978 והצטרף לבד״ץ העדה החרדית בשנת 1980. בעל ״קנין תורה״.",
+  "en": "1911–2004. Rabbinical judge and head of the court in Strasbourg from 1947; moved to Jerusalem in 1978 and joined the Edah HaChareidis court in 1980. Author of Kinyan Torah."
+ },
+ {
+  "k": "el.5.name",
+  "he": "רבי צדקה חוצין זצוק״ל",
+  "en": "Rabbi Tzedaka Hutzin"
+ },
+ {
+  "k": "el.5.title",
+  "he": "גאב״ד העדה״ח הספרדית",
+  "en": "Chief Rabbi of the Sephardic Edah HaChareidis"
+ },
+ {
+  "k": "el.5.quote",
+  "he": "אסור לכל בר ישראל אשר רגלי אבותיו עמדו על הר סיני, שישתתף חלילה בבחירות לכנסת המינים, ואין שום כח בעולם אשר יתיר באיזה אופן שהוא תוקף האיסור הנורא הזה.",
+  "en": "It is forbidden for any Jew whose forefathers stood at Mount Sinai to take part, Heaven forbid, in the elections to the Knesset of heretics. There is no power in the world that can permit it in any way whatsoever; this terrible prohibition stands in full force."
+ },
+ {
+  "k": "el.5.date",
+  "he": "תמוז תשי״א",
+  "en": "Tammuz 5711 (1951)"
+ },
+ {
+  "k": "el.5.bio",
+  "he": "1876–1961. נולד בבגדאד; ייסד את בית המדרש ״שמש צדקה״ בשכונת גאולה בירושלים. בעל ״מקיץ נרדמים״.",
+  "en": "1876–1961. Born in Baghdad; founded the Shemesh Tzedakah study hall in Jerusalem's Geula. Author of Meqitz Nirdamim."
+ },
+ {
+  "k": "el.6.name",
+  "he": "רבי ישראל משה דושינסקיא זצוק״ל",
+  "en": "Rabbi Yisroel Moshe Dushinsky"
+ },
+ {
+  "k": "el.6.title",
+  "he": "גאב״ד ירושלים",
+  "en": "Chief Rabbi of Jerusalem (Edah HaChareidis)"
+ },
+ {
+  "k": "el.6.quote",
+  "he": "כבר הודענו נאמנה דע״ת בנידון הבחירות לכנסת השלטון כי אסור להשתתף בבחירות לכנסת בארה״ק.",
+  "en": "We have already faithfully made known the view of the Torah regarding the elections to the regime's Knesset: it is forbidden to take part in elections to the Knesset in the Holy Land."
+ },
+ {
+  "k": "el.6.date",
+  "he": "שבט תשס״ג",
+  "en": "Shevat 5763 (2003)"
+ },
+ {
+  "k": "el.6.bio",
+  "he": "1921–2003. האדמו״ר השני מדושינסקיא; חבר בד״ץ העדה החרדית משנת 1967, וגאב״ד בשנים 1996–2003.",
+  "en": "1921–2003. Second Dushinsky Rebbe; on the Edah HaChareidis court from 1967 and its head 1996–2003."
+ },
+ {
+  "k": "el.7.name",
+  "he": "רבי ישראל יצחק רייזמאן זצוק״ל",
+  "en": "Rabbi Yisroel Yitzchok Reisman"
+ },
+ {
+  "k": "el.7.title",
+  "he": "ראב״ד ירושלים",
+  "en": "Head of the Jerusalem Rabbinical Court (Edah HaChareidis)"
+ },
+ {
+  "k": "el.7.quote",
+  "he": "איסור גמור לכל בר ישראל, איש או אשה, קטן וגדול לקחת חבל בבחירות כאלה, והשומע ישכון בטח ושאנן.",
+  "en": "It is an absolute prohibition for every Jew, man or woman, young or old, to take any part in such elections; and whoever heeds will dwell secure and at ease."
+ },
+ {
+  "k": "el.7.date",
+  "he": "כ״ו סיון תשט״ו",
+  "en": "26 Sivan 5715 (1955)"
+ },
+ {
+  "k": "el.7.bio",
+  "he": "1889–1969. דיין בבד״ץ העדה החרדית משנת 1942; ממייסדי ישיבת ״שפת אמת״ בירושלים.",
+  "en": "1889–1969. Judge on the Edah HaChareidis court from 1942; helped found Yeshivat Sfas Emes in Jerusalem."
+ },
+ {
+  "k": "el.8.name",
+  "he": "רבי בנימין ראבינאוויטץ זצוק״ל",
+  "en": "Rabbi Binyomin Rabinowitz"
+ },
+ {
+  "k": "el.8.title",
+  "he": "חבר הבד״ץ ואדמו״ר ״משכנות הרעים״",
+  "en": "Member of the Badatz; Rebbe of Mishkenos HaRo'im"
+ },
+ {
+  "k": "el.8.quote",
+  "he": "כבר בבחירות הראשונות להכנסת הורו לאיסור חמור, והפסק דין שיסודו על פי תוה״ק הנצחית אין בכח מי שהוא לבטלו ח״ו.",
+  "en": "Already at the first elections to the Knesset they ruled it a severe prohibition, and a ruling founded on the eternal holy Torah — no one has the power to annul it, Heaven forbid."
+ },
+ {
+  "k": "el.8.date",
+  "he": "אייר תשל״ז",
+  "en": "Iyar 5737 (1977)"
+ },
+ {
+  "k": "el.8.bio",
+  "he": "1912–2002. נולד בעיר העתיקה בירושלים; ראש ישיבה בתולדות אהרן, חבר בד״ץ העדה החרדית משנת 1976 ומייסד ״משכנות הרועים״.",
+  "en": "1912–2002. Born in Jerusalem's Old City; rosh yeshiva at Toldos Aharon, judge on the Edah HaChareidis court from 1976, founder of Mishkenos HaRo'im."
+ },
+ {
+  "k": "el.9.name",
+  "he": "רבי פנחס עפשטיין זצוק״ל",
+  "en": "Rabbi Pinchas Epstein"
+ },
+ {
+  "k": "el.9.title",
+  "he": "ראב״ד ירושלים",
+  "en": "Head of the Jerusalem Rabbinical Court (Edah HaChareidis)"
+ },
+ {
+  "k": "el.9.quote",
+  "he": "המשתתף בבחירות אלו נותן יד לפושעים ועליו לדאוג מאחריות תוצאות השתתפותו בבית המינות המחרף ומגדף מערכות אלקים חיים.",
+  "en": "Whoever takes part in these elections lends a hand to transgressors, and he must answer for the consequences of his taking part in the house of heresy that reviles and blasphemes the armies of the living G-d."
+ },
+ {
+  "k": "el.9.date",
+  "he": "תמוז תשכ״א",
+  "en": "Tammuz 5721 (1961)"
+ },
+ {
+  "k": "el.9.bio",
+  "he": "חבר בד״ץ העדה החרדית. לפי אנציקלופדיה ״המכלול״, החזון איש שלח לחזק את עמידתו שלא להשתתף בבחירות.",
+  "en": "Member of the Edah HaChareidis court. The Hamichlol encyclopedia reports that the Chazon Ish sent word to strengthen his refusal to take part in elections."
+ },
+ {
+  "k": "el.10.name",
+  "he": "רבי בן ציון אבא שאול זצוק״ל",
+  "en": "Rabbi Ben Zion Abba Shaul"
+ },
+ {
+  "k": "el.10.title",
+  "he": "ראש ישיבת ״פורת יוסף״",
+  "en": "Rosh Yeshiva of Porat Yosef"
+ },
+ {
+  "k": "el.10.quote",
+  "he": "איסור הבחירות הוא איסור תורה כי יש בזה משום כפירה ומרים יד בתורת משה ולכן מי שמסופק בשל תורה הלך אחר המחמיר.",
+  "en": "The prohibition of the elections is a Torah prohibition, for it involves heresy and raising a hand against the Torah of Moses; therefore one who is in doubt — in a matter of Torah law, one follows the stricter view."
+ },
+ {
+  "k": "el.10.date",
+  "he": "מתוך הקלטה - משיעור שמסר בישיבה",
+  "en": "From a recording of a class he gave in the yeshiva"
+ },
+ {
+  "k": "el.10.bio",
+  "he": "1924–1998. ראש ישיבת ״פורת יוסף״ משנת 1983; בעל ״אור לציון״.",
+  "en": "1924–1998. Rosh yeshiva of Porat Yosef from 1983; author of Or LeZion."
+ },
+ {
+  "k": "el.11.name",
+  "he": "רבי משה יצחק גווירצמאן זצוק״ל",
+  "en": "Rabbi Moshe Yitzchok Gewirtzman"
+ },
+ {
+  "k": "el.11.title",
+  "he": "אדמו״ר מפשעווארסק",
+  "en": "Pshevorsker Rebbe"
+ },
+ {
+  "k": "el.11.quote",
+  "he": "...לבל ילכו להבחירות שלא לעבור ח״ו על האיסורים החמורים המסתעפים מזה.",
+  "en": "…Not to go to the elections, so as not to transgress, Heaven forbid, the severe prohibitions that branch out from it."
+ },
+ {
+  "k": "el.11.date",
+  "he": "אלול תשי״ט",
+  "en": "Elul 5719 (1959)"
+ },
+ {
+  "k": "el.11.bio",
+  "he": "1881–1976. ״רבי איציקל״ מפשעווארסק. הוגלה לסיביר, ישב אחר כך בפריז, ובשנת 1956 השתקע באנטוורפן. נפטר ביום הכיפורים.",
+  "en": "1881–1976 ('Reb Itzikl' of Pshevorsk). Exiled to Siberia, later in Paris; settled in Antwerp in 1956. Died on Yom Kippur."
+ },
+ {
+  "k": "el.12.name",
+  "he": "רבי משה שטערן זצוק״ל",
+  "en": "Rabbi Moshe Stern"
+ },
+ {
+  "k": "el.12.title",
+  "he": "אב״ד דעברעצין, מחבר שו״ת ״באר משה״",
+  "en": "Chief Rabbi of Debrecen; author of Responsa Be'er Moshe"
+ },
+ {
+  "k": "el.12.quote",
+  "he": "הם נושאים באחריות בכל מה שמחלטת ומבצעת ממשלת הכופרים, והקולר תלוי בצוארם.",
+  "en": "They bear responsibility for everything the government of heretics decides and carries out, and the yoke of guilt hangs on their necks."
+ },
+ {
+  "k": "el.12.date",
+  "he": "מנ״א תשל״ז",
+  "en": "Menachem Av 5737 (1977)"
+ },
+ {
+  "k": "el.12.bio",
+  "he": "1914–1997. דיין בדעברעצין, ולאחר מכן רב קהל ״יסודי התורה״ בניו יורק. בעל שו״ת ״באר משה״.",
+  "en": "1914–1997. Judge in Debrecen, later rav of Kahal Yesodei HaTorah in New York. Author of Responsa Be'er Moshe."
+ },
+ {
+  "k": "el.13.name",
+  "he": "רבי חיים סינואני זצוק״ל",
+  "en": "Rabbi Chaim Sinwani"
+ },
+ {
+  "k": "el.13.title",
+  "he": "אב״ד שרעב תימן",
+  "en": "Chief Rabbi of Sharab, Yemen"
+ },
+ {
+  "k": "el.13.quote",
+  "he": "...אסור להכנס לבית שנשמעים שם דברי מינות וכפירה, וכן אסור לשלוח שם שליחים, כי שליחו של אדם כמותו.",
+  "en": "…It is forbidden to enter a house where words of heresy and denial are heard, and likewise it is forbidden to send emissaries there, for a person's agent is as himself."
+ },
+ {
+  "k": "el.13.date",
+  "he": "אייר תשל״ז",
+  "en": "Iyar 5737 (1977)"
+ },
+ {
+  "k": "el.13.bio",
+  "he": "1897–1979. מקובל ודיין תימני; רב בסינואן וחבר בית הדין בעדן; עלה לארץ בשנת 1949 וגר ביהוד. בעל ״ארזי הלבנון״.",
+  "en": "1897–1979. Yemenite kabbalist and judge; rabbi of Sinwan, on the Aden court; came to Israel in 1949 and lived in Yehud. Author of Arzei HaLevanon."
+ },
+ {
+  "k": "el.14.name",
+  "he": "רבי משה ארי' פריינד זצוק״ל",
+  "en": "Rabbi Moshe Aryeh Freund"
+ },
+ {
+  "k": "el.14.title",
+  "he": "גאב״ד ירושלים",
+  "en": "Chief Rabbi of Jerusalem (Edah HaChareidis)"
+ },
+ {
+  "k": "el.14.quote",
+  "he": "...כל המשתתפים והמסייעים לאיזו מפלגה שהיא מסייעים ונעשים שותפים למלכות המינות, והקולר תלוי בצווארם.",
+  "en": "…All who take part in and help any party whatsoever are helping and becoming partners in the kingdom of heresy, and the guilt hangs on their necks."
+ },
+ {
+  "k": "el.14.date",
+  "he": "חשון תשמ״ט",
+  "en": "Cheshvan 5749 (1988)"
+ },
+ {
+  "k": "el.14.bio",
+  "he": "1904–1996. גדל בבית מדרשו של הרבי מסאטמאר; גאב״ד העדה החרדית משנת 1989.",
+  "en": "1904–1996. Trained in the Satmar Rebbe’s circle; head of the Edah HaChareidis court from 1989."
+ },
+ {
+  "k": "el.15.name",
+  "he": "רבי יואל טייטלבוים זצוק״ל",
+  "en": "Rabbi Yoel Teitelbaum"
+ },
+ {
+  "k": "el.15.title",
+  "he": "אדמו״ר מסאטמאר וגאב״ד ירושלים, בעל ״ויואל משה״",
+  "en": "Satmar Rebbe and Chief Rabbi of Jerusalem (Edah HaChareidis); author of Vayoel Moshe"
+ },
+ {
+  "k": "el.15.quote",
+  "he": "וממש איני רואה איסור חמור יותר בכל התורה כולה, כי ההשתתפות לכנסת היא השתתפות למינות וכפירה גמורה בהשי״ת ובתוה״ק.",
+  "en": "I truly see no prohibition more severe in the entire Torah, for taking part in the Knesset is taking part in heresy and in utter denial of G-d and of the holy Torah."
+ },
+ {
+  "k": "el.15.date",
+  "he": "אב תשכ״א",
+  "en": "Av 5721 (1961)"
+ },
+ {
+  "k": "el.15.bio",
+  "he": "1887–1979. האדמו״ר מסאטמאר ונשיא העדה החרדית בירושלים; בעל ״ויואל משה״.",
+  "en": "1887–1979. The Satmar Rebbe; nominal head of the Edah HaChareidis; author of Vayoel Moshe."
+ },
+ {
+  "k": "el.16.name",
+  "he": "רבי עזריאל יודא לעבאוויטש זצוק״ל",
+  "en": "Rabbi Azriel Yehuda Lebowitz"
+ },
+ {
+  "k": "el.16.title",
+  "he": "אב״ד וויען",
+  "en": "Chief Rabbi of Vienna"
+ },
+ {
+  "k": "el.16.quote",
+  "he": "...בעצם השתתפותם בכנסת המינים יש משום הסכמה לשלטון הכופרים ולחוקי הרשע והפשע שחקקו.",
+  "en": "…By the very act of taking part in the Knesset of heretics there is consent to the rule of the heretics and to the laws of wickedness and transgression they have enacted."
+ },
+ {
+  "k": "el.16.date",
+  "he": "אב תשל״ז",
+  "en": "Av 5737 (1977)"
+ },
+ {
+  "k": "el.16.bio",
+  "he": "נפטר בשנת 1991. רב קהל ״עדת יראים וויען״ בברוקלין משנת 1958; מייסד מתיבתא ״נחלת יעקב״; בעל ״עזר מיהודה״.",
+  "en": "Died 1991. Rav of Kehal Adas Yereim Vien in Brooklyn from 1958; founder of Mesivta Nachlas Yakov; author of Ezer MiYehuda."
+ },
+ {
+  "k": "el.17.name",
+  "he": "רבי לוי יצחק גרינוואלד זצוק״ל",
+  "en": "Rabbi Levi Yitzchok Greenwald"
+ },
+ {
+  "k": "el.17.title",
+  "he": "אב״ד צעהלים",
+  "en": "Chief Rabbi of Tzehlim"
+ },
+ {
+  "k": "el.17.quote",
+  "he": "מה נורא הניאוץ כלפי מעלה, שיהודים המייצגים שומרי תורה ומצות מאשרים זדים, גם בונים ומבססים ממשלת עושי רשעה, ובזה הם מכריזים לכל העולם כולו שהם מהוים חלק בלתי נפרד בממשלתם.",
+  "en": "How terrible is the affront to Heaven, that Jews who represent the Torah- and mitzvah-observant endorse the wicked, and even build and establish a government of evildoers — and thereby proclaim to the whole world that they are an inseparable part of their government."
+ },
+ {
+  "k": "el.17.date",
+  "he": "אב תשל״ז",
+  "en": "Av 5737 (1977)"
+ },
+ {
+  "k": "el.17.bio",
+  "he": "נפטר בשנת 1980, בן 87. הרב מצעהלים; ייסד בשנת 1941 את קהילת ״ערוגת הבושם״ בוויליאמסבורג, הקהילה החסידית הראשונה שם.",
+  "en": "Died 1980, aged 87. The Tzelemer Rav; founded Arugath Habosem in Williamsburg (1941), its first Hasidic congregation."
+ },
+ {
+  "k": "el.18.name",
+  "he": "רבי שמואל שפירא זצוק״ל",
+  "en": "Rabbi Shmuel Shapira"
+ },
+ {
+  "k": "el.18.title",
+  "he": "מזקני רבני ברסלב",
+  "en": "One of the elder Breslov rabbis"
+ },
+ {
+  "k": "el.18.quote",
+  "he": "...איסור ההשתתפות בבחירות הוא אמת לאמיתו שצריך להשמע אליה.",
+  "en": "…The prohibition of taking part in the elections is the absolute truth, and one must heed it."
+ },
+ {
+  "k": "el.18.date",
+  "he": "מתוך שיחה - תשל״ז",
+  "en": "From a talk, 5737 (1977)"
+ },
+ {
+  "k": "el.18.bio",
+  "he": "1913–1989. יליד ירושלים ותלמיד רבי איסר זלמן מלצר; מזקני חסידי ברסלב, שכונה ״הצדיק מירושלים״.",
+  "en": "1913–1989. Jerusalem-born student of Rav Isser Zalman Meltzer; a leading Breslov elder, known as 'the tzaddik of Jerusalem.'"
+ },
+ {
+  "k": "el.19.name",
+  "he": "רבי יעקב מוצפי זצוק״ל",
+  "en": "Rabbi Yaakov Mutzafi"
+ },
+ {
+  "k": "el.19.title",
+  "he": "גאב״ד העדה״ח הספרדית",
+  "en": "Chief Rabbi of the Sephardic Edah HaChareidis"
+ },
+ {
+  "k": "el.19.quote",
+  "he": "כל הנוטל חלק בבחירות אלו פורץ גדר הוא, והרי זה כמודה בחוקי המדינה שהם כנגד חוקי התורה, ונותן כח להסט״א ומנאצים שם הוי״ה ית״ש.",
+  "en": "Whoever takes part in these elections breaches the fence. It is as though he acknowledges the laws of the State, which are against the laws of the Torah, and he gives strength to the Other Side and to those who blaspheme G-d's name."
+ },
+ {
+  "k": "el.19.date",
+  "he": "י״ד תמוז תשי״א",
+  "en": "14 Tammuz 5711 (1951)"
+ },
+ {
+  "k": "el.19.bio",
+  "he": "1900–1983. מקובל יליד בגדאד; גאב״ד העדה החרדית הספרדית. היה מקורב לרבי מסאטמאר והתנגד בתוקף להשתתפות בבחירות.",
+  "en": "1900–1983. Kabbalist from Baghdad; head of the Sephardi Edah HaChareidis court; close to the Satmar Rebbe and strongly opposed to voting."
+ },
+ {
+  "k": "el.20.name",
+  "he": "רבי יששכר דוב הלוי ראטנבערג זצוק״ל",
+  "en": "Rabbi Yissachar Dov HaLevi Rottenberg"
+ },
+ {
+  "k": "el.20.title",
+  "he": "אב״ד וואידיסלאוו",
+  "en": "Chief Rabbi of Wodzisław"
+ },
+ {
+  "k": "el.20.quote",
+  "he": "לאסור השתתפות לבחירות הכנסת אשר שליחותייהו דגאוני קדמאי קעבדו שאסור בכלל ללכת בדרך אתם.",
+  "en": "To forbid taking part in the Knesset elections — for they [the rabbis who issued the ban] were fulfilling the mission of the earlier sages: that it is forbidden altogether to walk the path together with them."
+ },
+ {
+  "k": "el.20.date",
+  "he": "מנ״א תשכ״א",
+  "en": "Menachem Av 5721 (1961)"
+ },
+ {
+  "k": "el.20.bio",
+  "he": "פרטים נוספים עליו טרם אותרו.",
+  "en": "Further details have not yet been located."
+ },
+ {
+  "k": "el.22.name",
+  "he": "רבי יוסף גרינוואלד זצוק״ל",
+  "en": "Rabbi Yosef Greenwald"
+ },
+ {
+  "k": "el.22.title",
+  "he": "אדמו״ר מפאפא",
+  "en": "Pupa Rebbe"
+ },
+ {
+  "k": "el.22.quote",
+  "he": "כל צורה של שלטון באר״י טרם ביאת המשיח היא כפירה ומרידה בתורתינו הק' וכל אלו המשתתפים עמהם, יש להם חלק במרידה נוראה זו.",
+  "en": "Every form of government in the Land of Israel before the coming of the Messiah is heresy and rebellion against our holy Torah, and all who take part with them have a share in this terrible rebellion."
+ },
+ {
+  "k": "el.22.date",
+  "he": "אב תשל״ז",
+  "en": "Av 5737 (1977)"
+ },
+ {
+  "k": "el.22.bio",
+  "he": "1903–1984. האדמו״ר מפאפא; רב בפאפא, ומשנת 1950 בערך בוויליאמסבורג; נשיא התאחדות הרבנים דארצות הברית וקנדה.",
+  "en": "1903–1984. The Pupa Rebbe; rav in Pápa, then Williamsburg from about 1950; president of the Central Rabbinical Congress of the US and Canada."
+ },
+ {
+  "k": "el.23.name",
+  "he": "רבי נפתלי הרצקא העניג זצוק״ל",
+  "en": "Rabbi Naftali Hertzka Hönig"
+ },
+ {
+  "k": "el.23.title",
+  "he": "אב״ד שאמאש",
+  "en": "Chief Rabbi of Samos (Šamorín)"
+ },
+ {
+  "k": "el.23.quote",
+  "he": "שליחותייהו דגאוני קדמאי קעבדו שאסור בכלל ללכת בדרך אתם ובפרט בכגון דא לקחת חבל בהבחירות לבחור חברי היושבים בכנסת, שהם באי כח של הבוחרים.",
+  "en": "They were fulfilling the mission of the earlier sages: that it is forbidden altogether to walk the path together with them — and all the more so in a case like this, to take part in the elections to choose members who sit in the Knesset, who are the representatives of the voters."
+ },
+ {
+  "k": "el.23.date",
+  "he": "מנ״א תשכ״א",
+  "en": "Menachem Av 5721 (1961)"
+ },
+ {
+  "k": "el.23.bio",
+  "he": "רב בשאמאש (שאמורין).",
+  "en": "Rav of Šamorín (Samos)."
+ },
+ {
+  "k": "el.24.name",
+  "he": "רבי אליעזר זוסיא פארטוגאל זצוק״ל",
+  "en": "Rabbi Eliezer Zusia Portugal"
+ },
+ {
+  "k": "el.24.title",
+  "he": "אדמו״ר מסקולען",
+  "en": "Skulener Rebbe"
+ },
+ {
+  "k": "el.24.quote",
+  "he": "חולין היא לחברינו להשתתף בכנסת כזו המלאה כופרים ופסשים [ופושעים], על גדולי התורה להראות בזה שאין אנו מכירים בשום אופן בממשלת כופרים בארה״ק, אין אנו משתתפים בעדת בוגדים.",
+  "en": "It is a profanation for our colleagues to take part in a Knesset like this, full of heretics and transgressors. The Torah giants must show by this that we in no way recognize a government of heretics in the Holy Land; we do not take part in the congregation of traitors."
+ },
+ {
+  "k": "el.24.date",
+  "he": "חשון תשכ״ד",
+  "en": "Cheshvan 5724 (1963)"
+ },
+ {
+  "k": "el.24.bio",
+  "he": "1898–1982. האדמו״ר מסקולען; ייסד את מוסדות ״חסד לאברהם״. בעל ״נועם אליעזר״.",
+  "en": "1898–1982. The Skulener Rebbe; founded the Chesed L'Avrohom schools. Author of Noam Eliezer."
+ },
+ {
+  "k": "el.25.name",
+  "he": "רבי בצלאל שטרן זצוק״ל",
+  "en": "Rabbi Betzalel Stern"
+ },
+ {
+  "k": "el.25.title",
+  "he": "אב״ד וויען, בעל שו״ת ״בצל החכמה״",
+  "en": "Rabbi in Vienna; author of Responsa B'Tzel HaChochma"
+ },
+ {
+  "k": "el.25.quote",
+  "he": "אין שום היתר על פי התורה להצטרף לשלטון זה, אף אם היתה ממשלה כולה מורכבת מיהודים שומרי תורה ומצות.",
+  "en": "There is no permission whatsoever under Torah law to join this regime — even if the government were composed entirely of Torah- and mitzvah-observant Jews."
+ },
+ {
+  "k": "el.25.date",
+  "he": "אלול תשל״ז",
+  "en": "Elul 5737 (1977)"
+ },
+ {
+  "k": "el.25.bio",
+  "he": "1911–1988. רב בסיביו, אחר כך בקהילת ״עדת ישראל״ במלבורן (1954) ובקהל ״יראים״ בווינה (1968); השתקע בירושלים בשנת 1982. נפטר ביום הבחירות, 1 בנובמבר 1988.",
+  "en": "1911–1988. Rabbi in Sibiu, then of Adass Israel in Melbourne (1954) and Kehal Yereim in Vienna (1968); settled in Jerusalem in 1982. Died on election day, November 1, 1988."
+ },
+ {
+  "k": "el.26.name",
+  "he": "רבי יוסף ס. הכהן זצוק״ל",
+  "en": "Rabbi Yosef S. HaKohen"
+ },
+ {
+  "k": "el.26.title",
+  "he": "זקן רבני טוניס",
+  "en": "Elder of the rabbis of Tunis"
+ },
+ {
+  "k": "el.26.quote",
+  "he": "...ואין שום כח בעולם אשר יתיר באיזה אופן שהוא תוקף האיסור הנורא הזה.",
+  "en": "…There is no power in the world that can permit it in any way whatsoever; this terrible prohibition stands in full force."
+ },
+ {
+  "k": "el.26.date",
+  "he": "י' תמוז תשל״ז",
+  "en": "10 Tammuz 5737 (1977)"
+ },
+ {
+  "k": "el.26.bio",
+  "he": "1891–1980. חכם יוסף סוסו הכהן, סגן הרב הראשי וראש בית הדין בתוניס; בירושלים כיהן כדיין בעדה החרדית הספרדית.",
+  "en": "1891–1980. Hacham Yosef Soso HaKohen, associate chief rabbi and head of the rabbinical court of Tunis; in Jerusalem, a judge of the Sephardi Edah HaChareidis."
+ },
+ {
+  "k": "el.27.name",
+  "he": "רבי יצחק יעקב ווייס זצוק״ל",
+  "en": "Rabbi Yitzchok Yaakov Weiss"
+ },
+ {
+  "k": "el.27.title",
+  "he": "גאב״ד ירושלים (בעל ״מנחת יצחק״)",
+  "en": "Chief Rabbi of Jerusalem (Edah HaChareidis); author of Minchas Yitzchok"
+ },
+ {
+  "k": "el.27.quote",
+  "he": "אין כח בעולם ולא סיבה ולא אמתלא להתיר באיזה אופן שהוא, להצביע בעד שום צד ומפלגה השולחים נבחריהם לכנסת המינים.",
+  "en": "There is no power in the world, no reason and no pretext, to permit in any way whatsoever voting for any side or party that sends its elected members to the Knesset of heretics."
+ },
+ {
+  "k": "el.27.date",
+  "he": "חשון תשמ״ט",
+  "en": "Cheshvan 5749 (1988)"
+ },
+ {
+  "k": "el.27.bio",
+  "he": "1902–1989. אב״ד גרוסוורדיין ומנצ׳סטר; גאב״ד העדה החרדית משנת 1979. בעל ״מנחת יצחק״.",
+  "en": "1902–1989. Head of the courts of Grosswardein and Manchester; head of the Edah HaChareidis court from 1979. Author of Minchas Yitzchok."
+ },
+ {
+  "k": "el.28.name",
+  "he": "רבי שלמה זלמן פרידמאן זצוק״ל",
+  "en": "Rabbi Shlomo Zalman Friedman"
+ },
+ {
+  "k": "el.28.title",
+  "he": "אב״ד ראחוב - שוויץ",
+  "en": "Chief Rabbi of Rachov; Switzerland"
+ },
+ {
+  "k": "el.28.quote",
+  "he": "כל אלו המשתתפים עמהם באיזה צורה שהיא יש להם חלק במרידה נוראה זו.",
+  "en": "All who take part with them in any form whatsoever have a share in this terrible rebellion."
+ },
+ {
+  "k": "el.28.date",
+  "he": "מנ״א תשל״ז",
+  "en": "Menachem Av 5737 (1977)"
+ },
+ {
+  "k": "el.28.bio",
+  "he": "נפטר בשנת 1980. רב בראחוב; ניצול אושוויץ; לאחר מכן רב ראשי בלוגאנו שבשווייץ.",
+  "en": "Died 1980. Rav of Rachov; survived Auschwitz; later chief rabbi in Lugano, Switzerland."
+ },
+ {
+  "k": "el.29.name",
+  "he": "רבי חיים זאנוויל אבראמאוויטש זצוק״ל",
+  "en": "Rabbi Chaim Zanvil Abramowitz"
+ },
+ {
+  "k": "el.29.title",
+  "he": "אדמו״ר מריבניץ",
+  "en": "Ribnitzer Rebbe"
+ },
+ {
+  "k": "el.29.quote",
+  "he": "...לו יהא כדבריהם שהשיגו איזה הבטחות לטובת הדת אין שום היתר על פי התורה להצטרף לשלטון זה.",
+  "en": "…Even if it is as they claim, that they obtained some promises for the benefit of religion, there is no permission whatsoever under Torah law to join this regime."
+ },
+ {
+  "k": "el.29.date",
+  "he": "מנ״א תשל״ז",
+  "en": "Menachem Av 5737 (1977)"
+ },
+ {
+  "k": "el.29.bio",
+  "he": "נפטר בשנת 1995 במונסי. האדמו״ר מריבניץ.",
+  "en": "Died 1995 in Monsey. The Ribnitzer Rebbe."
+ },
+ {
+  "k": "el.30.name",
+  "he": "רבי הלל ליכטענשטיין זצוק״ל",
+  "en": "Rabbi Hillel Lichtenstein"
+ },
+ {
+  "k": "el.30.title",
+  "he": "אב״ד קראסנא",
+  "en": "Chief Rabbi of Krasna"
+ },
+ {
+  "k": "el.30.quote",
+  "he": "...לקחת חבל בהבחירות לבחור חברי היושבים בכנסת, שהם באי כח של הבוחרים ממילא נעשה שותף ומסיע לכל האיסורים החמורים שעושים שם.",
+  "en": "…Whoever takes part in the elections to choose members who sit in the Knesset — who are the representatives of the voters — automatically becomes a partner and accessory to all the severe transgressions committed there."
+ },
+ {
+  "k": "el.30.date",
+  "he": "אב תשכ״א",
+  "en": "Av 5721 (1961)"
+ },
+ {
+  "k": "el.30.bio",
+  "he": "1910–1979. רב בקראסנא; ייסד את קהילת קראסנא בוויליאמסבורג.",
+  "en": "1910–1979. Rav of Krasna; founded the Krasna community in Williamsburg."
+ },
+ {
+  "k": "el.31.name",
+  "he": "רבי אברהם יצחק קאהן זצוק״ל",
+  "en": "Rabbi Avraham Yitzchok Kahn"
+ },
+ {
+  "k": "el.31.title",
+  "he": "אדמו״ר מתולדות אהרן",
+  "en": "Toldos Aharon Rebbe"
+ },
+ {
+  "k": "el.31.quote",
+  "he": "...כל הבוחרים נעשים שותפים באמצעות הודאה בע״ז ובאיסורים החמורים, באמצעות נציגיהם באי כוחם היושבים בכנסת.",
+  "en": "…All the voters become partners, through their representatives sitting in the Knesset, in acknowledging idolatry and in the severe prohibitions."
+ },
+ {
+  "k": "el.31.date",
+  "he": "חשון תשמ״ט",
+  "en": "Cheshvan 5749 (1988)"
+ },
+ {
+  "k": "el.31.bio",
+  "he": "1914–1996. האדמו״ר מתולדות אהרן משנת 1947; אסר הצבעה ושירות בצבא. בעל ״דברי אמונה״.",
+  "en": "1914–1996. The Toldos Aharon Rebbe from 1947; forbade voting and army service. Author of Divrei Emuna."
+ },
+ {
+  "k": "el.32.name",
+  "he": "רבי אברהם שלמה כ״ץ זצוק״ל",
+  "en": "Rabbi Avraham Shlomo Katz"
+ },
+ {
+  "k": "el.32.title",
+  "he": "אב״ד ריסקווא, בעל ״אורחות המשפטים״",
+  "en": "Chief Rabbi of Riskeve; author of Orchos HaMishpatim"
+ },
+ {
+  "k": "el.32.quote",
+  "he": "באנו לעורר את כל אחינו בני ישראל הנאמנים לה' ולתורתו הקדושה לבל ילכו להבחירות.",
+  "en": "We come to rouse all our brethren of Israel who are faithful to G-d and to His holy Torah not to go to the elections."
+ },
+ {
+  "k": "el.32.date",
+  "he": "מנ״א תשכ״א",
+  "en": "Menachem Av 5721 (1961)"
+ },
+ {
+  "k": "el.32.bio",
+  "he": "פרטים נוספים עליו טרם אותרו.",
+  "en": "Further details have not yet been located."
+ },
+ {
+  "k": "el.33.name",
+  "he": "רבי שמואל צבי הורוויץ זצוק״ל",
+  "en": "Rabbi Shmuel Tzvi Horowitz"
+ },
+ {
+  "k": "el.33.title",
+  "he": "אדמו״ר מספינקא",
+  "en": "Spinka Rebbe"
+ },
+ {
+  "k": "el.33.quote",
+  "he": "...עצם ההשתתפות והישיבה בכנסת המינים, היא הודאה גמורה במלכות המינות המורדת במלכות שמים.",
+  "en": "…The very act of taking part in and sitting in the Knesset of heretics is a full acknowledgment of the kingdom of heresy, which rebels against the Kingdom of Heaven."
+ },
+ {
+  "k": "el.33.date",
+  "he": "חשון תשמ״ט",
+  "en": "Cheshvan 5749 (1988)"
+ },
+ {
+  "k": "el.33.bio",
+  "he": "נפטר בשנת 1997. האדמו״ר מספינקא בוויליאמסבורג; מקורב לרבי מסאטמאר.",
+  "en": "Died 1997. The Spinka Rebbe in Williamsburg; close to the Satmar Rebbe."
+ },
+ {
+  "k": "el.34.name",
+  "he": "רבי דוד יונגרייז זצוק״ל",
+  "en": "Rabbi Dovid Jungreis"
+ },
+ {
+  "k": "el.34.title",
+  "he": "ראב״ד ירושלים",
+  "en": "Head of the Jerusalem Rabbinical Court (Edah HaChareidis)"
+ },
+ {
+  "k": "el.34.quote",
+  "he": "...עליו לדאוג מאחריות תוצאות השתתפותו בבית המינים המחרף ומגדף מערכות אלקים חיים.",
+  "en": "…He must answer for the consequences of his taking part in the house of heretics that reviles and blasphemes the armies of the living G-d."
+ },
+ {
+  "k": "el.34.date",
+  "he": "חשון תשכ״א",
+  "en": "Cheshvan 5721 (1960)"
+ },
+ {
+  "k": "el.34.bio",
+  "he": "נולד בשנת 1898. גאב״ד העדה החרדית משנת 1968 ועד פטירתו.",
+  "en": "Born 1898. Head of the Edah HaChareidis court from 1968 until his death."
+ },
+ {
+  "k": "el.35.name",
+  "he": "רבי יעקב לייזער זצוק״ל",
+  "en": "Rabbi Yaakov Leizer"
+ },
+ {
+  "k": "el.35.title",
+  "he": "אדמו״ר מפשעווארסק",
+  "en": "Pshevorsker Rebbe"
+ },
+ {
+  "k": "el.35.quote",
+  "he": "כל אלו המשתתפים עמהם באיזה צורה שהיא יש להם חלק במרידה נוראה זו.",
+  "en": "All who take part with them in any form whatsoever have a share in this terrible rebellion."
+ },
+ {
+  "k": "el.35.date",
+  "he": "מנ״א תשל״ז",
+  "en": "Menachem Av 5737 (1977)"
+ },
+ {
+  "k": "el.35.bio",
+  "he": "1907–1998. האדמו״ר מפשעווארסק באנטוורפן משנת 1976.",
+  "en": "1907–1998. Pshevorsker Rebbe in Antwerp from 1976."
+ },
+ {
+  "k": "el.36.name",
+  "he": "רבי שמעון ישראל פאזען זצוק״ל",
+  "en": "Rabbi Shimon Yisroel Posen"
+ },
+ {
+  "k": "el.36.title",
+  "he": "אב״ד שאפראן",
+  "en": "Chief Rabbi of Shopron (Sopron)"
+ },
+ {
+  "k": "el.36.quote",
+  "he": "...המשתתפים בממשלת מדינה זו, עתידים ליתן דין על כפירה זו הבולטת ממעשיהם, ואוי לאותה בושה.",
+  "en": "…Those who take part in the government of this state will one day have to give an accounting for this heresy that stands out from their deeds — and woe for that shame."
+ },
+ {
+  "k": "el.36.date",
+  "he": "אלול תשי״ט",
+  "en": "Elul 5719 (1959)"
+ },
+ {
+  "k": "el.36.bio",
+  "he": "1895–1969. הרב משאפראן; לאחר מכן עמד בראש ישיבה בקהילת סאטמאר בוויליאמסבורג.",
+  "en": "1895–1969. The Shoproner Rav; later headed a yeshiva in Satmar, Williamsburg."
+ },
+ {
+  "k": "el.37.name",
+  "he": "רבי ישראל יעקב פישר זצוק״ל",
+  "en": "Rabbi Yisroel Yaakov Fisher"
+ },
+ {
+  "k": "el.37.title",
+  "he": "ראב״ד ירושלים, בעל ״אבן ישראל״",
+  "en": "Head of the Jerusalem Rabbinical Court (Edah HaChareidis); author of Even Yisroel"
+ },
+ {
+  "k": "el.37.quote",
+  "he": "כל מי ששולח נציג שיאמר במקומו ובשמו את אלו הדברים החמורים, אחריות מינות ואפיקורסות רובצת על שכמו, ואין שייך כאן שום טענת התחמקות.",
+  "en": "Whoever sends a representative to say these grave things in his place and in his name — the responsibility for heresy and apostasy rests upon his shoulders, and no excuse of evasion applies here."
+ },
+ {
+  "k": "el.37.date",
+  "he": "שבט תשס״ג",
+  "en": "Shevat 5763 (2003)"
+ },
+ {
+  "k": "el.37.bio",
+  "he": "1928–2003. רב שכונת זכרון משה; חבר בד״ץ העדה החרדית משנת 1974 וראב״ד משנת 1996. בעל ״אבן ישראל״.",
+  "en": "1928–2003. Rav of Zichron Moshe; on the Edah HaChareidis court from 1974 and its deputy head from 1996. Author of Even Yisroel."
+ },
+ {
+  "k": "el.38.name",
+  "he": "רבי ישראל זאב מינצברג זצוק״ל",
+  "en": "Rabbi Yisroel Zev Mintzberg"
+ },
+ {
+  "k": "el.38.title",
+  "he": "דומ״ץ בעיה״ק, מחבר שו״ת ״שארית ישראל״",
+  "en": "Rabbinical judge in the Holy City; author of Responsa She'eris Yisroel"
+ },
+ {
+  "k": "el.38.quote",
+  "he": "ביארתי דעת תוה״ק בס' ״זאת חוקת התורה״ שבכל ענין ציבורי שבמשגה נעשה בניגוד לחוקי תוה״ק חל איסור גם על היחידים שהשתתפו לזה.",
+  "en": "I explained the view of the holy Torah in my book Zos Chukas HaTorah: in any public matter that is conducted against the laws of the holy Torah, the prohibition applies also to the individuals who took part in it."
+ },
+ {
+  "k": "el.38.date",
+  "he": "י' כסלו תש״ט",
+  "en": "10 Kislev 5709 (December 1948)"
+ },
+ {
+  "k": "el.38.bio",
+  "he": "דיין בבד״ץ העדה החרדית בירושלים; בעל שו״ת ״שארית ישראל״.",
+  "en": "Jerusalem rabbinical judge of the Edah HaChareidis; author of Responsa She'eris Yisroel."
+ },
+ {
+  "k": "el.39.name",
+  "he": "רבי שלום משה הלוי אונגאר זצוק״ל",
+  "en": "Rabbi Shalom Moshe HaLevi Ungar"
+ },
+ {
+  "k": "el.39.title",
+  "he": "אב״ד ור״מ ניטרא",
+  "en": "Chief Rabbi and Rosh Yeshiva of Nitra"
+ },
+ {
+  "k": "el.39.quote",
+  "he": "הממשיכים שלשלת מסורת אבותינו הקדושים מדור דור, מתנגדים ופוסלים בהחלט כל אופן של התחברות ושותפות עם מינים וכופרים.",
+  "en": "Those who continue the chain of tradition of our holy forefathers from generation to generation absolutely oppose and reject every form of association and partnership with heretics and deniers."
+ },
+ {
+  "k": "el.39.date",
+  "he": "מנ״א תשל״ז",
+  "en": "Menachem Av 5737 (1977)"
+ },
+ {
+  "k": "el.39.bio",
+  "he": "נפטר בשנת 2003. הקים מחדש את ישיבת ניטרא לאחר המלחמה והעביר אותה לארצות הברית (מאונט קיסקו).",
+  "en": "Died 2003. Reopened the Nitra yeshiva after the war and moved it to the US (Mount Kisco)."
+ },
+ {
+  "k": "el.40.name",
+  "he": "רבי מרדכי חיים סלאנים זצוק״ל",
+  "en": "Rabbi Mordechai Chaim of Slonim"
+ },
+ {
+  "k": "el.40.title",
+  "he": "אדמו״ר מסלאנים",
+  "en": "Slonimer Rebbe"
+ },
+ {
+  "k": "el.40.quote",
+  "he": "...כל מי שישתתף ויקח חבל בבחירות אסורות אלו, ידע כי בנפשו ונפש בניו ובני ביתו הוא קובע.",
+  "en": "…Whoever takes part and has a hand in these forbidden elections should know that he is staking his own life and the lives of his children and household."
+ },
+ {
+  "k": "el.40.date",
+  "he": "תמוז תשי״א",
+  "en": "Tammuz 5711 (1951)"
+ },
+ {
+  "k": "el.40.bio",
+  "he": "1868–1953. הנהיג את חסידי סלונים בירושלים לאחר השואה.",
+  "en": "1868–1953. Led the Slonim Hasidim in Jerusalem after the Holocaust."
+ },
+ {
+  "k": "el.41.name",
+  "he": "רבי רפאל בלום זצוק״ל",
+  "en": "Rabbi Refael Blum"
+ },
+ {
+  "k": "el.41.title",
+  "he": "אב״ד קאשוי",
+  "en": "Kashauer Rav"
+ },
+ {
+  "k": "el.41.quote",
+  "he": "מעת אשר מפלגת התורתיים מעלה מעל בה', להצטרף לממשלת הרשע, השיאם זדון לבם להשתיק קול היהדות הנאמנה הנאנחת ונאנקת למראה הבגידה הנוראה הזאת.",
+  "en": "Since the party of the 'Torah-observant' committed a betrayal against G-d by joining the wicked government, the arrogance of their hearts has led them to silence the voice of faithful Judaism, which sighs and groans at the sight of this terrible treachery."
+ },
+ {
+  "k": "el.41.date",
+  "he": "תשל״ז",
+  "en": "5737 (1977)"
+ },
+ {
+  "k": "el.41.bio",
+  "he": "1906–2005. הרב מקאשוי, בבדפורד הילס שבמדינת ניו יורק. בעל ״טל שמים״.",
+  "en": "1906–2005. The Kashauer Rav, of Bedford Hills, New York. Author of Tal Shamayim."
+ },
+ {
+  "k": "el.42.name",
+  "he": "רבי משה הלברשטאם זצוק״ל",
+  "en": "Rabbi Moshe Halberstam"
+ },
+ {
+  "k": "el.42.title",
+  "he": "חבר הבד״ץ, בעל שו״ת ״דברי משה״",
+  "en": "Member of the Badatz; author of Responsa Divrei Moshe"
+ },
+ {
+  "k": "el.42.quote",
+  "he": "...אסור להשתתף בבחירות בארה״ק וע״ז נאמר ודבר אלוקינו יקום לעולם.",
+  "en": "…It is forbidden to take part in the elections in the Holy Land, and of this it is said: 'The word of our G-d shall stand forever.'"
+ },
+ {
+  "k": "el.42.date",
+  "he": "אדר תשס״ו",
+  "en": "Adar 5766 (2006)"
+ },
+ {
+  "k": "el.42.bio",
+  "he": "1932–2006. ראש ישיבת טשאקאווא; חבר בד״ץ העדה החרדית משנת 1997. בעל שו״ת ״דברי משה״.",
+  "en": "1932–2006. Rosh yeshiva of Tshakava; on the Edah HaChareidis court from 1997. Author of Divrei Moshe."
+ },
+ {
+  "k": "tr.theme.halacha",
+  "he": "שאלה הלכתית, לא מדינית",
+  "en": "A question of halacha, not politics"
+ },
+ {
+  "k": "tr.theme.life",
+  "he": "פיקוח נפש",
+  "en": "Saving lives (pikuach nefesh)"
+ },
+ {
+  "k": "tr.theme.land",
+  "he": "אין לוותר על שעל",
+  "en": "Not a single foot of land"
+ },
+ {
+  "k": "tr.theme.peace",
+  "he": "שלום של שקר",
+  "en": "A false peace"
+ },
+ {
+  "k": "tr.theme.duty",
+  "he": "חובה לפעול",
+  "en": "A duty to act"
+ },
+ {
+  "k": "tr.rabbi.halberstam.name",
+  "he": "האדמו״ר מצאנז־קלויזנבורג, רבי יקותיאל יהודה הלברשטאם זצ״ל",
+  "en": "The Klausenburger Rebbe, Rabbi Yekusiel Yehuda Halberstam"
+ },
+ {
+  "k": "tr.rabbi.halberstam.short",
+  "he": "האדמו״ר מקלויזנבורג",
+  "en": "The Klausenburger Rebbe"
+ },
+ {
+  "k": "tr.rabbi.halberstam.bio",
+  "he": "גאון אדיר ומגדולי האדמו״רים בדורנו. מקים עולה של תורה לאחר השואה הנוראה באירופא, מיסד רשת מוסדות תורה בארה״ק ובארה״ב, שעוריו ההלכתיים קנו להם שם בין כל לומדי התורה מכל השכבות. דבריו המובאים פה נאמרו בפני אלפי ישראל בעיה״ק ירושלים ת״ו בהופעתו כבוד בשעריה בקיץ תשל״ח.",
+  "en": "A towering Torah genius and one of the greatest Hasidic rebbes of our generation. After the terrible Holocaust in Europe he raised up the yoke of Torah again, founding a network of Torah institutions in the Holy Land and the United States. His halachic lectures won renown among Torah scholars of every background. The words quoted here were spoken before thousands of Jews in the holy city of Jerusalem during his visit there in the summer of 5738 (1978)."
+ },
+ {
+  "k": "tr.rabbi.ehrenberg.name",
+  "he": "הרב יהושע מנחם אהרנברג זצ״ל",
+  "en": "Rabbi Yehoshua Menachem Ehrenberg"
+ },
+ {
+  "k": "tr.rabbi.ehrenberg.short",
+  "he": "הרב אהרנברג",
+  "en": "Rabbi Ehrenberg"
+ },
+ {
+  "k": "tr.rabbi.ehrenberg.bio",
+  "he": "אב״ד ת״א יפו, מחבר הספרים הענקיים ״דבר יהושע״ על ארבעת חלקי שו״ע. משרידי גאוני גאליציה ומגדולי תלמידיו של גאון הדור רבי מאיר אריק זצ״ל בעל ״אמרי יושר״. מראשי חסידי בעלזא ומקורב מאד למרן האדמו״ר מבעלזא זיע״א.",
+  "en": "Head of the rabbinical court of Tel Aviv–Jaffa and author of the monumental Devar Yehoshua on all four sections of the Shulchan Aruch. One of the last of the great Torah scholars of Galicia and a leading disciple of the gaon of his generation, Rabbi Meir Arik, author of Imrei Yosher. A leading Belz Hasid, very close to the Belzer Rebbe."
+ },
+ {
+  "k": "tr.rabbi.hedaya.name",
+  "he": "הרב עובדיה הדאיה זצ״ל",
+  "en": "Rabbi Ovadia Hedaya"
+ },
+ {
+  "k": "tr.rabbi.hedaya.short",
+  "he": "הרב הדאיה",
+  "en": "Rabbi Hedaya"
+ },
+ {
+  "k": "tr.rabbi.hedaya.bio",
+  "he": "ראש וראשון לגאוני הספרדים בדורו. חבר הבד״צ לעדת הספרדים בירושלים ולאחר מכן חבר בית הדין הגדול לערעורים. מח״ס שו״ת ״ישכיל עבדי״ ד״ח וספר ״דעה והשכל״ בעניני קבלה. היה נערץ ומקובל על כל חוגי הרבנים. מהם הגאון המקובל רבי דוד יונגרייז זצ״ל ראב״ד העדה החרדית בירושלים שנו״נ אתו הרבה בעניני הלכה.",
+  "en": "Foremost among the Sephardi Torah giants of his generation. A member of the rabbinical court of the Sephardi community in Jerusalem and later of the Great Rabbinical Court of Appeals. Author of the responsa Yaskil Avdi and of Deah VeHaskel on Kabbalah. He was revered and accepted by rabbis of every circle, among them the kabbalist Rabbi David Jungreis, head of the Edah HaChareidis court in Jerusalem, who corresponded with him extensively on halacha."
+ },
+ {
+  "k": "tr.rabbi.hirschprung.name",
+  "he": "הרב פנחס הירשפרונג זצ״ל",
+  "en": "Rabbi Pinchas Hirschprung"
+ },
+ {
+  "k": "tr.rabbi.hirschprung.short",
+  "he": "הרב הירשפרונג",
+  "en": "Rabbi Hirschprung"
+ },
+ {
+  "k": "tr.rabbi.hirschprung.bio",
+  "he": "גאב״ד מונטריאול הרב הראשי ליהדות קנדה. משרידי העילויים של פולין. תלמיד מובהק לגאוני פולין שהסמיכוהו. מגדולי הבקיאים בדורנו. נחשב לאחד מראשי רבני קנדה וארה״ב ועומד בראשות ובנשיאות מוסדות ומפעלי תורה רבים.",
+  "en": "Head of the rabbinical court of Montreal and Chief Rabbi of Canadian Jewry. One of the last of the prodigies of Poland and a close disciple of the Polish Torah giants who ordained him. One of the most encyclopedic scholars of our generation. Considered one of the leading rabbis of Canada and the United States, he heads many Torah institutions and projects."
+ },
+ {
+  "k": "tr.rabbi.hecht.name",
+  "he": "הרב אברהם הכט זצ״ל",
+  "en": "Rabbi Avraham Hecht"
+ },
+ {
+  "k": "tr.rabbi.hecht.short",
+  "he": "הרב הכט",
+  "en": "Rabbi Hecht"
+ },
+ {
+  "k": "tr.rabbi.hecht.bio",
+  "he": "נשיא איגוד הרבנים באמריקה. רבם ומנהיגם של עדות המזרח בארה״ב ואב״ד קהילת ״שערי ציון״ בניו־יורק. מגדולי מנהיגי עולם הרבנות בארה״ב.",
+  "en": "President of the Rabbinical Alliance of America. Rabbi and leader of the Sephardi and Mizrahi communities in the United States and head of the rabbinical court of Congregation Shaare Zion in New York. One of the foremost leaders of the American rabbinate."
+ },
+ {
+  "k": "tr.rabbi.werner.name",
+  "he": "הרב שמואל ברוך וורנר",
+  "en": "Rabbi Shmuel Baruch Werner"
+ },
+ {
+  "k": "tr.rabbi.werner.short",
+  "he": "הרב וורנר",
+  "en": "Rabbi Werner"
+ },
+ {
+  "k": "tr.rabbi.werner.bio",
+  "he": "אב״ד תל אביב. מח״ס שו״ת משפטי שמואל. מחשובי הדיינים בארץ. חתנו של הגרי״מ חרל״פ זצ״ל בעל ״בית זבול״.",
+  "en": "Head of the Tel Aviv rabbinical court and author of the responsa Mishpetei Shmuel. One of the most distinguished rabbinical judges in Israel. Son-in-law of Rabbi Yaakov Moshe Charlap, author of Beit Zevul."
+ },
+ {
+  "k": "tr.rabbi.zevin.name",
+  "he": "הרב שלמה יוסף זוין זצ״ל",
+  "en": "Rabbi Shlomo Yosef Zevin"
+ },
+ {
+  "k": "tr.rabbi.zevin.short",
+  "he": "הרב זוין",
+  "en": "Rabbi Zevin"
+ },
+ {
+  "k": "tr.rabbi.zevin.bio",
+  "he": "מראשי גדולי התורה בדור. עורך האנציקלופדיה התלמודית. תלמיד מובהק לגאונים בעל ״ערוך השלחן״ ובעל ״שמן למאור״ והוסמך על ידם. נו״נ בהלכה עם הגאונים רא״מ שטיינברג מברוד זצ״ל ור״ש שקאפ זצ״ל. מחבר ספרים הרבה ונודע בגאונותו וגדולתו המיוחדת במינה.",
+  "en": "One of the leading Torah giants of the generation and editor of the Encyclopedia Talmudit. A close disciple of the authors of Aruch HaShulchan and Shemen LaMaor, who ordained him. He corresponded on halacha with Rabbi Avraham Menachem Steinberg of Brody and Rabbi Shimon Shkop. Author of many books, renowned for his brilliance and singular greatness."
+ },
+ {
+  "k": "tr.rabbi.zolty.name",
+  "he": "הרב יעקב בצלאל ז׳ולטי זצ״ל",
+  "en": "Rabbi Yaakov Betzalel Zolty"
+ },
+ {
+  "k": "tr.rabbi.zolty.short",
+  "he": "הרב ז׳ולטי",
+  "en": "Rabbi Zolty"
+ },
+ {
+  "k": "tr.rabbi.zolty.bio",
+  "he": "רב ואב״ד ירושלים ת״ו. חבר בית הדין הגדול. מח״ס ״משנת יעב״ץ״ על או״ח יו״ד וחו״מ. מגדולי מרביצי התורה ומראשי הרבנים בארץ.",
+  "en": "Rabbi and head of the rabbinical court of Jerusalem and a member of the Great Rabbinical Court. Author of Mishnat Yaavetz on Orach Chaim, Yoreh De'ah and Choshen Mishpat. One of the great teachers of Torah and leading rabbis in Israel."
+ },
+ {
+  "k": "tr.rabbi.trebnik.name",
+  "he": "הרב נחום טרעבניק",
+  "en": "Rabbi Nachum Trebnik"
+ },
+ {
+  "k": "tr.rabbi.trebnik.short",
+  "he": "הרב טרעבניק",
+  "en": "Rabbi Trebnik"
+ },
+ {
+  "k": "tr.rabbi.trebnik.bio",
+  "he": "רב ואב״ד כפר חב״ד, מראשי בית הדין של חסידי חב״ד בארץ, ומראשי ישיבות תומכי תמימים. חתנו של הגרש״ז גרליק זצ״ל גאב״ד כפר חב״ד ולאחר פטירתו נתמנה לממלא מקומו. נחשב לאחד מגדולי הרבנים בארץ.",
+  "en": "Rabbi and head of the rabbinical court of Kfar Chabad, one of the heads of the Chabad rabbinical court in Israel and of the Tomchei Temimim yeshivas. Son-in-law of Rabbi Shneur Zalman Garelik, head of the Kfar Chabad court, whom he succeeded after his passing. Considered one of the leading rabbis in Israel."
+ },
+ {
+  "k": "tr.rabbi.yolles.name",
+  "he": "הרב אפרים אליעזר הכהן יאלעס",
+  "en": "Rabbi Ephraim Eliezer HaKohen Yolles"
+ },
+ {
+  "k": "tr.rabbi.yolles.short",
+  "he": "הרב יאלעס",
+  "en": "Rabbi Yolles"
+ },
+ {
+  "k": "tr.rabbi.yolles.bio",
+  "he": "גאב״ד פילדלפיה; נשיא הכבוד של אגודת הרבנים לארה״ב וקנדה; דור אחר דור לרבנים גדולי הוראה מפורסמים; מגדולי הפוסקים באמריקה; מח״ס קצה ההר.",
+  "en": "Head of the rabbinical court of Philadelphia and honorary president of the Agudath HaRabbonim of the United States and Canada. Descended from generation after generation of renowned halachic authorities, he is one of the leading decisors of halacha in America and author of Ketzeh HaHar."
+ },
+ {
+  "k": "tr.rabbi.yosef.name",
+  "he": "הראשון לציון הרב עובדיה יוסף זצ״ל",
+  "en": "Rishon LeZion Rabbi Ovadia Yosef"
+ },
+ {
+  "k": "tr.rabbi.yosef.short",
+  "he": "הרב עובדיה יוסף",
+  "en": "Rabbi Ovadia Yosef"
+ },
+ {
+  "k": "tr.rabbi.yosef.bio",
+  "he": "הרב הראשי לישראל, ראשון לציון. מח״ס ״יביע אומר״ ששה חלקים על כל חלקי השו״ע. מראשי הרבנים בדורנו.",
+  "en": "Chief Rabbi of Israel, Rishon LeZion. Author of Yabia Omer, six volumes on all sections of the Shulchan Aruch. One of the leading rabbis of our generation."
+ },
+ {
+  "k": "tr.rabbi.yosef.context",
+  "he": "פסיקתו של הרב עובדיה תלויה בשיקולי פיקוח נפש. בפסקו הידוע משנת 1979 כתב שההכרעה תלויה בהערכת אנשי הביטחון: היכן שמסירת שטחים מסכנת חיים, היא אסורה.",
+  "en": "Rav Ovadia's ruling turns on pikuach nefesh. In his well-known 1979 ruling he held that the decision depends on the judgment of security experts: where giving up territory endangers lives, it is forbidden."
+ },
+ {
+  "k": "tr.rabbi.yisraeli.name",
+  "he": "הרב שאול ישראלי זצ״ל",
+  "en": "Rabbi Shaul Yisraeli"
+ },
+ {
+  "k": "tr.rabbi.yisraeli.short",
+  "he": "הרב שאול ישראלי",
+  "en": "Rabbi Yisraeli"
+ },
+ {
+  "k": "tr.rabbi.yisraeli.bio",
+  "he": "חבר בית הדין הגדול. מראשי הדיינים בארץ. מחבר ספרים הרבה. כיום אחד מחשובי גדולי התורה בירושלים.",
+  "en": "Member of the Great Rabbinical Court and one of Israel's leading rabbinical judges. Author of many books, he is today one of the most distinguished Torah authorities in Jerusalem."
+ },
+ {
+  "k": "tr.rabbi.nissim.name",
+  "he": "הראשון לציון הרב יצחק ניסים זצ״ל",
+  "en": "Rishon LeZion Rabbi Yitzhak Nissim"
+ },
+ {
+  "k": "tr.rabbi.nissim.short",
+  "he": "הרב יצחק ניסים",
+  "en": "Rabbi Nissim"
+ },
+ {
+  "k": "tr.rabbi.nissim.bio",
+  "he": "ראשון לציון ולשעבר הרב הראשי לארץ ישראל. מח״ס ״יין הטוב״ ו״כנגה צדקה״. הו״ל את ״שו״ת מהרש״א״ להגאון הגדול מהרש״א אלפנדרי זיע״א.",
+  "en": "Rishon LeZion and former Chief Rabbi of the Land of Israel. Author of Yayin HaTov and Kenogah Tzedakah. He published the responsa of the great Rabbi Shlomo Eliezer Alfandari (the Maharsha Alfandari)."
+ },
+ {
+  "k": "tr.rabbi.sawitzki.name",
+  "he": "הרב מרדכי סאוויצקי",
+  "en": "Rabbi Mordechai Sawitzki"
+ },
+ {
+  "k": "tr.rabbi.sawitzki.short",
+  "he": "הרב סאוויצקי",
+  "en": "Rabbi Sawitzki"
+ },
+ {
+  "k": "tr.rabbi.sawitzki.bio",
+  "he": "גאב״ד בוסטון ארה״ב. אחד מראשי וגדולי התורה בדורנו. מח״ס ״מים אדירים״ ״מראה אש״ ו״בריכת ירושלים״ על הבבלי והירושלמי ו״בריכת המלך״ על מנין המצות להרמב״ם. תלמיד מובהק למרן החפץ חיים זצ״ל ולמרן הרוגטשובי זצ״ל שאת תשובותיו אליו קיבץ בספר מיוחד ״נר אברהם״.",
+  "en": "Head of the rabbinical court of Boston. One of the leading Torah giants of our generation. Author of Mayim Adirim, Mar'eh Esh and Berechat Yerushalayim on the Babylonian and Jerusalem Talmuds, and Berechat HaMelech on Maimonides' count of the commandments. A close disciple of the Chafetz Chaim and of the Rogatchover Gaon, whose responsa to him he collected in a separate volume, Ner Avraham."
+ },
+ {
+  "k": "tr.rabbi.sorotzkin.name",
+  "he": "הרב ברוך סורוצקין זצ״ל",
+  "en": "Rabbi Baruch Sorotzkin"
+ },
+ {
+  "k": "tr.rabbi.sorotzkin.short",
+  "he": "הרב סורוצקין",
+  "en": "Rabbi Sorotzkin"
+ },
+ {
+  "k": "tr.rabbi.sorotzkin.bio",
+  "he": "ראש ישיבת טלז בקליוולאנד ארה״ב ומראשי מועצת גדולי התורה באמריקה. מגדולי מרביצי התורה בדורנו. בנו של הגאון מהר״ז סורוצקין זצ״ל יו״ר מועצת גדולי התורה באר״י.",
+  "en": "Rosh yeshiva of Telshe in Cleveland and one of the leaders of the Moetzes Gedolei HaTorah in America. One of the great Torah teachers of our generation. Son of Rabbi Zalman Sorotzkin, chairman of the Moetzes Gedolei HaTorah in the Land of Israel."
+ },
+ {
+  "k": "tr.rabbi.friedman.name",
+  "he": "הרב נתן צבי פרידמן",
+  "en": "Rabbi Natan Zvi Friedman"
+ },
+ {
+  "k": "tr.rabbi.friedman.short",
+  "he": "הרב פרידמן",
+  "en": "Rabbi Friedman"
+ },
+ {
+  "k": "tr.rabbi.friedman.bio",
+  "he": "מרבני בני ברק. מח״ס שו״ת ״נצר מטעי״ ושאר ספרים.",
+  "en": "One of the rabbis of Bnei Brak. Author of the responsa Netzer Mata'ai and other books."
+ },
+ {
+  "k": "tr.rabbi.shapira.name",
+  "he": "הרב אברהם אלקנה כהנא שפירא זצ״ל",
+  "en": "Rabbi Avraham Elkana Kahana Shapira"
+ },
+ {
+  "k": "tr.rabbi.shapira.short",
+  "he": "הרב אברהם שפירא",
+  "en": "Rabbi Avraham Shapira"
+ },
+ {
+  "k": "tr.rabbi.shapira.bio",
+  "he": "כיהן הרבה שנים כאב״ד ירושלים וכיום חבר בית הדין הגדול. מגדולי מרביצי התורה ותלמיד מובהק לגאוני ירושלים בדור העבר זצ״ל.",
+  "en": "Served for many years as head of the Jerusalem rabbinical court and is today a member of the Great Rabbinical Court. One of the great teachers of Torah and a close disciple of the Jerusalem Torah giants of the previous generation."
+ },
+ {
+  "k": "tr.rabbi.nachshoni.name",
+  "he": "הרב יהודה נחשוני",
+  "en": "Rabbi Yehuda Nachshoni"
+ },
+ {
+  "k": "tr.rabbi.nachshoni.short",
+  "he": "הרב נחשוני",
+  "en": "Rabbi Nachshoni"
+ },
+ {
+  "k": "tr.rabbi.klausner.name",
+  "he": "הרב ישכר דוד קלויזנר",
+  "en": "Rabbi Yissachar David Klausner"
+ },
+ {
+  "k": "tr.rabbi.klausner.short",
+  "he": "הרב קלויזנר",
+  "en": "Rabbi Klausner"
+ },
+ {
+  "k": "tr.say.1.quote",
+  "he": "ארץ ישראל תהא שלנו כל זמן שהעולם קיים",
+  "en": "The Land of Israel will be ours for as long as the world exists."
+ },
+ {
+  "k": "tr.say.1.note",
+  "he": "נאמר בפני אלפי ישראל בירושלים, קיץ תשל״ח.",
+  "en": "Spoken before thousands of Jews in Jerusalem, summer 5738 (1978)."
+ },
+ {
+  "k": "tr.say.2.quote",
+  "he": "דעת הפוסקים ברורה שאסור להחזיר שטחים",
+  "en": "The view of the halachic authorities is clear: it is forbidden to return territories."
+ },
+ {
+  "k": "tr.say.3.quote",
+  "he": "אסור להוציא מתחת ידינו שום שטח מארץ ישראל",
+  "en": "It is forbidden to let any part of the Land of Israel leave our hands."
+ },
+ {
+  "k": "tr.say.4.quote",
+  "he": "פקוח נפש דוחה החזרת שטחים",
+  "en": "Saving lives (pikuach nefesh) overrides the return of territories."
+ },
+ {
+  "k": "tr.say.5.quote",
+  "he": "אסור לוותר על שעל מארצנו",
+  "en": "It is forbidden to give up a single foot of our land."
+ },
+ {
+  "k": "tr.say.6.quote",
+  "he": "אוטונומיה לעם אחר בארץ ישראל – בניגוד להלכה",
+  "en": "Autonomy for another people in the Land of Israel is contrary to halacha."
+ },
+ {
+  "k": "tr.say.7.quote",
+  "he": "ההגנה על שטחי ארץ ישראל – מלחמת מצוה",
+  "en": "Defending the territories of the Land of Israel is a milchemet mitzvah, a commanded war."
+ },
+ {
+  "k": "tr.say.8.quote",
+  "he": "החזרת השטחים סכנה גמורה ח״ו לקיום העם והארץ",
+  "en": "Returning the territories is a grave danger, Heaven forbid, to the survival of the people and the land."
+ },
+ {
+  "k": "tr.say.9.quote",
+  "he": "החזקת השטחים אינה שאלה מדינית אלא הלכתית",
+  "en": "Holding the territories is not a political question but a halachic one."
+ },
+ {
+  "k": "tr.say.10.quote",
+  "he": "אסור לקרב את אויבינו לגבול ישראל",
+  "en": "It is forbidden to bring our enemies closer to Israel's border."
+ },
+ {
+  "k": "tr.say.11.quote",
+  "he": "חוב גמור על כל יחיד וציבור לפעול למניעת החזרת השטחים",
+  "en": "Every individual and every community has an absolute duty to act to prevent the return of the territories."
+ },
+ {
+  "k": "tr.say.12.quote",
+  "he": "ההלכה אוסרת החזרת שטחים במידה שיש פקוח נפש בדבר",
+  "en": "Halacha forbids returning territories wherever lives are at stake."
+ },
+ {
+  "k": "tr.say.13.quote",
+  "he": "יש להחזיק בשטחים ששוחררו בכל תוקף",
+  "en": "The liberated territories must be held with full force."
+ },
+ {
+  "k": "tr.say.14.quote",
+  "he": "אין רשות לממשלה להחזיר אף שעל אדמה אחד",
+  "en": "The government has no authority to return even a single foot of land."
+ },
+ {
+  "k": "tr.say.15.quote",
+  "he": "החזרת שטחים – תסכן את הארץ ויושביה",
+  "en": "Returning territories will endanger the land and those who live in it."
+ },
+ {
+  "k": "tr.say.16.quote",
+  "he": "הדיבורים בנוגע ל״שלום״ המה מזויפים ומוליכי שולל",
+  "en": "The talk of “peace” is false and misleading."
+ },
+ {
+  "k": "tr.say.17.quote",
+  "he": "אסור להחזיר שטחים ולסמוך על נס שיחזרו אלינו",
+  "en": "It is forbidden to return territories and rely on a miracle to bring them back to us."
+ },
+ {
+  "k": "tr.say.18.quote",
+  "he": "חישובי פקוח נפש אוסרים את הנסיגה מהשטחים",
+  "en": "Considerations of pikuach nefesh forbid withdrawing from the territories."
+ },
+ {
+  "k": "tr.say.19.quote",
+  "he": "היש מקום לחילוקי דעות ביחס לחיינו וחיי בנינו?",
+  "en": "Can there be any room for disagreement when our lives and our children's lives are at stake?"
+ },
+ {
+  "k": "tr.say.20.quote",
+  "he": "פינוי ישוב יהודי מתושביו – איסור הלכתי",
+  "en": "Uprooting a Jewish community from its homes is forbidden by halacha."
+ },
+ {
+  "k": "tr.open.0.title",
+  "he": "מדברי מועצת גדולי התורה משנת תרצ״ז",
+  "en": "From the Council of Torah Sages, 5697 (1937)"
+ },
+ {
+  "k": "tr.open.0.text",
+  "he": "מועצת גדולי התורה מצהירה שגבולי ארצנו הקדושה תחומים על ידי מנחיל ארצות בתורתו הקדושה והקבועים לדורות עולם. בלתי אפשרי משום כך שהעם היהודי מצדו יוותר באיזה צורה שהיא על הגבולות האלה. כל ויתור שכזה אין לו שום ערך.",
+  "en": "The Council of Torah Sages declares that the borders of our Holy Land were set by the One who apportions the lands, in His holy Torah, and are fixed for all generations. It is therefore impossible for the Jewish people, for its part, to give up these borders in any form whatsoever. Any such concession has no validity at all."
+ },
+ {
+  "k": "tr.open.1.title",
+  "he": "חברי מועצת גדולי התורה בשנת תרצ״ז — הכנסיה הגדולה השלישית",
+  "en": "Members of the Council of Torah Sages in 5697 (1937), at the Third Knessia Gedola"
+ },
+ {
+  "k": "tr.open.1.text",
+  "he": "— ״הכנסיה הגדולה השלישית שהיתה זה עתה במרינבד, השמיעה כלפי כל העולם כולו את עמדתה של היהדות החרדית המאורגנת לכל השאלות המנסרות בעולמנו...\nחברים! הכנסיה הגדולה התוותה לכם את הדרך אשר תלכו בה ואת המעשה אשר תעשון. ואתם לכו בכוחה זו ולאורה הגדול והושעתם את ישראל, תורתו וארצו״.\nבשם מועצת גדולי התורה — חיים עוזר גראדזענסקי",
+  "en": "“The Third Knessia Gedola, just held in Marienbad, declared before the whole world the position of organized Orthodox Jewry on all the questions that trouble our world...\nFriends! The Knessia Gedola has marked out for you the path you shall walk and the deeds you shall do. Go in this strength and by its great light, and you will save Israel, its Torah and its Land.”\nIn the name of the Council of Torah Sages — Chaim Ozer Grodzinski"
+ },
+ {
+  "k": "tr.open.1.note",
+  "he": "אחרי הכנסיה הגדולה השלישית פירסם הגרח״ע גרודז׳ינסקי ״קריאת קודש״:",
+  "en": "After the Third Knessia Gedola, Rabbi Chaim Ozer Grodzinski published a “Holy Call”:"
+ },
+ {
+  "k": "tr.open.1.place",
+  "he": "כריכה אחורית",
+  "en": "Back cover"
+ },
+ {
+  "k": "tr.open.1.member.0",
+  "he": "האדמו״ר רבי אברהם מרדכי אלתר מגור",
+  "en": "The Gerer Rebbe, Rabbi Avraham Mordechai Alter"
+ },
+ {
+  "k": "tr.open.1.member.1",
+  "he": "האדמו״ר רבי יצחק מנחם דנציגר מאלכסנדר",
+  "en": "The Alexander Rebbe, Rabbi Yitzchak Menachem Danziger"
+ },
+ {
+  "k": "tr.open.1.member.2",
+  "he": "האדמו״ר רבי דוד בורנשטיין מסוכטשוב",
+  "en": "The Sochatchover Rebbe, Rabbi Dovid Bornstein"
+ },
+ {
+  "k": "tr.open.1.member.3",
+  "he": "האדמו״ר רבי אברהם יעקב פרידמן מסדיגורא",
+  "en": "The Sadigura Rebbe, Rabbi Avraham Yaakov Friedman"
+ },
+ {
+  "k": "tr.open.1.member.4",
+  "he": "האדמו״ר רבי מרדכי שלום יוסף פרידמן מסדיגורא — פשמישל",
+  "en": "The Sadigura–Przemyśl Rebbe, Rabbi Mordechai Shalom Yosef Friedman"
+ },
+ {
+  "k": "tr.open.1.member.5",
+  "he": "הגאון רבי אהרון לוין מרישא",
+  "en": "Rabbi Aharon Levin of Reisha (Rzeszów)"
+ },
+ {
+  "k": "tr.open.1.member.6",
+  "he": "הגאון רבי אלחנן וואסרמאן מברנוביץ",
+  "en": "Rabbi Elchanan Wasserman of Baranovich"
+ },
+ {
+  "k": "tr.open.1.member.7",
+  "he": "הגאון רבי אהרון קוטלר מקלצק",
+  "en": "Rabbi Aharon Kotler of Kletsk"
+ },
+ {
+  "k": "tr.open.1.member.8",
+  "he": "הגאון רבי בנציון יועזר אב״ד טורדה, ונשיא לשכת התאחדות הקהלות החרדיות ברומניה",
+  "en": "Rabbi Ben-Zion Yoezer, head of the rabbinical court of Turda and president of the bureau of the Union of Orthodox Communities in Romania"
+ },
+ {
+  "k": "tr.open.1.member.9",
+  "he": "הגאון רבי דוב בער אב״ד אוז׳רקוב",
+  "en": "Rabbi Dov Ber, head of the rabbinical court of Ozorków"
+ },
+ {
+  "k": "tr.open.1.member.10",
+  "he": "הגאון רבי משה בלום אב״ד זמושץ",
+  "en": "Rabbi Moshe Blum, head of the rabbinical court of Zamość"
+ },
+ {
+  "k": "tr.open.1.member.11",
+  "he": "הגאון רבי זלמן סורוצקין אב״ד לוצק",
+  "en": "Rabbi Zalman Sorotzkin, head of the rabbinical court of Lutsk"
+ },
+ {
+  "k": "tr.open.1.member.12",
+  "he": "הגאון רבי יהודה לב צירלסון אב״ד קישינוב",
+  "en": "Rabbi Yehuda Leib Tsirelson, head of the rabbinical court of Kishinev"
+ },
+ {
+  "k": "tr.open.1.member.13",
+  "he": "הגאון רבי יוסף צבי דושינסקי מירושלים",
+  "en": "Rabbi Yosef Tzvi Dushinsky of Jerusalem"
+ },
+ {
+  "k": "tr.open.1.member.14",
+  "he": "הגאון רבי מנחם זמבה מוורשא",
+  "en": "Rabbi Menachem Ziemba of Warsaw"
+ },
+ {
+  "k": "tr.open.1.member.15",
+  "he": "הגאון רבי מרדכי רוטנברג אב״ד אנטוורפן",
+  "en": "Rabbi Mordechai Rottenberg, head of the rabbinical court of Antwerp"
+ },
+ {
+  "k": "tr.open.1.member.16",
+  "he": "הגאון רבי עקיבא סופר אבד״ק פרשבורג",
+  "en": "Rabbi Akiva Sofer, head of the rabbinical court of Pressburg"
+ },
+ {
+  "k": "tr.open.1.member.17",
+  "he": "הגאון רבי שמואל דוד אונגר אב״ד נייטרא",
+  "en": "Rabbi Shmuel Dovid Ungar, head of the rabbinical court of Nitra"
+ },
+ {
+  "k": "tr.open.2.title",
+  "he": "הגאון הקדוש ר׳ מנחם זעמבא זצוקללה״ה הי״ד",
+  "en": "Rabbi Menachem Ziemba, may God avenge his blood"
+ },
+ {
+  "k": "tr.open.2.text",
+  "he": "רק אנשים כאלה אשר להם העוז המר לקרוע גזרים מתורתנו התמימה והקדושה — הם הם אשר ירהבו בנפשם לקרוע גם את ארצנו לגזרים. אבל אנחנו שומרי התורה והחרדים על דבר ה׳ של תורה שבכתב ושבע״פ מראשו עד סופו מוסרים את נפשינו על כל אות ואות ועל כל מנהג שבישראל — בשום אופן לא נוכל להסכים לוותר אפילו על צעד ושעל אחד מארצנו הקדושה.",
+  "en": "Only people who have the bitter audacity to tear pieces out of our perfect and holy Torah are the ones who will dare to tear our Land to pieces as well. But we, who keep the Torah and tremble at the word of God in the Written and Oral Torah from beginning to end, who give our lives for every single letter and every custom in Israel, can in no way agree to give up even a single step or a single foot of our Holy Land."
+ },
+ {
+  "k": "tr.open.2.note",
+  "he": "אמר בנאומו בכנסיה",
+  "en": "From his speech at the Knessia Gedola"
+ },
+ {
+  "k": "tr.open.3.title",
+  "he": "הגאון ר׳ אליעזר סילווער זצ״ל",
+  "en": "Rabbi Eliezer Silver"
+ },
+ {
+  "k": "tr.open.3.text",
+  "he": "״הגזירה הרעה של חלוקת הארץ שכרעם נפל על עמנו, ואשר נכיר כגזל וחמס הנעשה לעמנו, וכמפיר שבועת ה׳ אשר נשבע לאבותינו״, וסיים: אשר ״לא ירים איש ידו לוותר אף כמלא שעל מארצנו״.",
+  "en": "“The evil decree of partitioning the Land, which has fallen on our people like thunder, and which we recognize as robbery and violence done to our people and as a breach of the oath God swore to our fathers.” He concluded that “no one may raise his hand to give up even a single foot of our Land.”"
+ },
+ {
+  "k": "tr.open.4.title",
+  "he": "בקשה ותביעה מאת הגאון רבי משה פיינשטיין זצ״ל לכלל ישראל בכל אתר ואתר",
+  "en": "A request and a demand from Rabbi Moshe Feinstein to all Jews everywhere"
+ },
+ {
+  "k": "tr.open.4.text",
+  "he": "עם ישראל בהרבה מקומות מושבותיהם נתון בצרה וביגון. המצב הפרוע בכמה שטחי החיים של אחינו בני ישראל הולך ומתגבר מיום ליום. באמריקה נתרבו מעשי הרציחה והשוד ואנשים אשר לא עול בכפם נהרגים בחוצות, וההשתוללות עוברת כבר כל גבול אנושי.\nמספר חשוב של אחב״י נתפסו באיראן בתור בני הערובה ועונש מוות צפוי להם, חס ושלום.\nהמצב בארץ ישראל אינו משביע רצון. השלום מחריד וסופו מי ישורנו ומי יודע מה יולד יום. ע״כ עלינו לבא לפני השי״ת בתפלה ובתחנונים, שירחם על עם ישראל הנדכה.\nאנו קוראים בזה לכל יהודי ויהודי לומר בל״נ בכל יום ג׳ מזמורי תהלים (כ, ק״ל, קמ״ב) אחרי התפלה, בבוקר, ולשפוך שיחה לפני רבון העולמים שישלח עזרו מקודש ויראנו ניסים ונפלאות כבימי קדם.\nאגודת הרבנים דארה״ב וקנדה — הרב משה פיינשטיין, נשיא",
+  "en": "In many of the places where they live, the Jewish people is in trouble and grief. The lawlessness in many areas of our brethren's lives grows worse from day to day. In America murder and robbery have multiplied, innocent people are killed in the streets, and the rampage already exceeds every human limit.\nA significant number of our Jewish brethren have been seized in Iran as hostages, and the death penalty awaits them, Heaven forbid.\nThe situation in the Land of Israel is not satisfactory. The peace is frightening; who can foresee its end, and who knows what a day may bring? We must therefore come before God in prayer and supplication, that He have mercy on the downtrodden people of Israel.\nWe hereby call on every Jew to say, bli neder, three psalms every day (20, 130, 142) after the morning prayers, and to pour out their hearts before the Master of the world, that He send His help from the Sanctuary and show us wonders and miracles as in days of old.\nAgudath HaRabbonim of the United States and Canada — Rabbi Moshe Feinstein, President"
+ },
+ {
+  "k": "tr.open.4.bio",
+  "he": "נשיא אגודת הרבנים לארה״ב וקנדה; ראש מועצת גדולי התורה באמריקה; נחשב אצל כל חוגי היהדות הדתית לגאון הדור וגדול הפוסקים; בעל שו״ת ״אגרות משה״, חדושי ״דברות משה״ על הש״ס ו״קול רם״ על התורה; ראש ישיבת תפארת ירושלים.",
+  "en": "President of the Agudath HaRabbonim of the United States and Canada and head of the Moetzes Gedolei HaTorah in America. Regarded across Orthodox Jewry as the gaon of the generation and the greatest halachic decisor. Author of the responsa Igrot Moshe, Dibrot Moshe on the Talmud and Kol Ram on the Torah; rosh yeshiva of Tiferet Jerusalem."
+ },
+ {
+  "k": "tr.appx.0",
+  "he": "גילוי דעת — מאת כבוד רבני ארץ הקודש",
+  "en": "Public declaration by the rabbis of the Holy Land"
+ },
+ {
+  "k": "tr.appx.1",
+  "he": "קריאה דחופה — מאת רבני ארה״ב וקנדה",
+  "en": "Urgent appeal by the rabbis of the United States and Canada"
+ },
+ {
+  "k": "tr.pending",
+  "he": "הדברים מופיעים בנספחים לספר, ולא צורפה להם ביוגרפיה.",
+  "en": "This appears in the book's appendix, which doesn't include a biography."
+ },
+ {
+  "k": "more.elchanan-wasserman.name",
+  "he": "רבי אלחנן בונם וסרמן הי״ד",
+  "en": "Rabbi Elchanan Bunim Wasserman"
+ },
+ {
+  "k": "more.elchanan-wasserman.short",
+  "he": "רבי אלחנן וסרמן",
+  "en": "Rabbi Elchanan Wasserman"
+ },
+ {
+  "k": "more.elchanan-wasserman.title",
+  "he": "ראש ישיבת ״אהל תורה״ בברנוביץ׳",
+  "en": "Rosh yeshiva of Ohel Torah, Baranovich"
+ },
+ {
+  "k": "more.elchanan-wasserman.bio",
+  "he": "1874–1941. מגדולי תלמידיו של החפץ חיים, ראש ישיבת ״אהל תורה״ בברנוביץ׳ משנת 1921 וממנהיגי אגודת ישראל. בעל ״קובץ שיעורים״ ו״קובץ הערות״. נהרג על קידוש השם בקובנה, בתמוז תש״א.",
+  "en": "1874–1941. One of the foremost disciples of the Chafetz Chaim, rosh yeshiva of Ohel Torah in Baranovich from 1921, and a leader of Agudath Israel. Author of Kovetz Shiurim and Kovetz He’aros. Killed for the sanctification of G-d’s name in Kovno in Tammuz 5701 (July 1941)."
+ },
+ {
+  "k": "more.elchanan-wasserman.quote",
+  "he": "בימינו אלה בחרו להם היהודים בשתי עבודות זרות אשר להן יקריבו את קרבנותיהם, הרי הם: הסוציאליזם והנציונליזם [הלאומיות]. את תורת הנציונליזם החדש אפשר להגדיר בקצור נמרץ: ׳נהיה ככל הגויים׳.",
+  "en": "In our days the Jews have chosen two idolatries to which they bring their offerings: socialism and nationalism. The teaching of the new nationalism can be defined in the fewest words: ‘Let us be like all the nations.’"
+ },
+ {
+  "k": "more.elchanan-wasserman.src",
+  "he": "״עקבתא דמשיחא״, אות כ״א. נכתב ביידיש; תרגום: רבי משה שנפלד, הוצאת נצח, בני ברק תשמ״ט, עמ׳ 35–36",
+  "en": "Ikvesa DeMeshicha, section 21. Written in Yiddish; Hebrew translation by Rabbi Moshe Scheinfeld, Netzach, Bnei Brak 5749 (1989), pp. 35–36"
+ }
+]

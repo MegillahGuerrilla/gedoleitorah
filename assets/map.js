@@ -67,7 +67,7 @@
         const arc = d3.arc().innerRadius(hollow ? r - 2.4 : 0).outerRadius(r);
         d3.select(this).select('.pie').selectAll('path').data(pie(tally)).join('path').attr('d', arc).attr('fill', d => col(d.data[0]));
         d3.select(this).select('.hit').attr('r', Math.max(r + 5, 13));
-        d3.select(this).select('text').text(P[p].name).attr('x', D.lang === 'he' ? -(r + 5) : r + 5).attr('y', 4).attr('text-anchor', D.lang === 'he' ? 'end' : 'start');
+        d3.select(this).select('text').text(P[p].name).attr('x', D.rtl ? -(r + 5) : r + 5).attr('y', 4).attr('text-anchor', D.rtl ? 'end' : 'start');
       })
       .on('click keydown', (ev, p) => { if (ev.type === 'keydown' && ev.key !== 'Enter' && ev.key !== ' ') return; ev.preventDefault(); show(p); });
     if (first && !still) pts.style('opacity', 0).transition().delay((d, i) => 200 + i * 14).duration(500).style('opacity', 1);

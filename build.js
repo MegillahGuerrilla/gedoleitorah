@@ -1,4 +1,5 @@
-// Builds gedoleitorah.com: Hebrew at the root, English under /en/. Run: node build.js
+// Builds gedoleitorah.com: Hebrew at the root, English under /en/, other languages from i18n/<code>.json.
+// Run: node build.js   (node build.js --source rewrites i18n/source.json for translators)
 const fs = require('fs');
 const path = require('path');
 const ROOT = __dirname;
@@ -25,7 +26,7 @@ const L = {
     terrTitle: 'החזרת שטחים', terrQ: 'האם מותר למסור חלק מארץ ישראל?',
     terrMeta: '20 מאמרים של 19 רבנים, מתוך ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980)',
     elTitle: 'הבחירות לכנסת', elQ: 'האם מותר להשתתף בבחירות לכנסת?',
-    elMeta: EL.length + ' רבנים, מתוך הקונטרס ״זכרון בספר״, ירושלים תשס״ט (2009)',
+    elMeta: '{n} רבנים, מתוך הקונטרס ״זכרון בספר״, ירושלים תשס״ט (2009)',
     toCollection: 'לאוסף', rabbisN: 'רבנים', sayingsN: 'מאמרים', questionsN: 'שאלות',
     homeLede: 'כאן מרוכזים דברי גדולי התורה על שאלות שעמדו לפני עם ישראל, כל שאלה באוסף משלה: הדברים בלשון אומרם, עם המקור, התאריך והדף המקורי.',
     howTitle: 'איך לקרוא את האתר',
@@ -50,6 +51,7 @@ const L = {
     cover: 'כריכה קדמית', titlePage: 'שער', note43: 'פתק בכתב יד, ט״ז שבט תשס״ט', back: 'כריכה אחורית',
     themes: 'נושא', back2: 'חזרה', footer: 'הדברים מובאים מתוך הספרים שנדפסו. התרגומים לאנגלית נעשו עבור אתר זה.',
     opening: 'בפתח הספר', members: 'חברי המועצה',
+    skip: 'דילוג לתוכן', navLabel: 'ניווט', notFound: 'הדף לא נמצא', origLabel: 'המקור בעברית', langLabel: 'שפה',
   },
   en: {
     dir: 'ltr', site: 'Torah Leaders on the Questions of the Hour', other: 'he', otherName: 'עברית',
@@ -59,7 +61,7 @@ const L = {
     terrTitle: 'Giving Up Land', terrQ: 'May any part of the Land of Israel be handed over?',
     terrMeta: '20 sayings by 19 rabbis, from Gedolei Torah al Hachzarat Shetachim, Bnei Brak 1980',
     elTitle: 'Knesset Elections', elQ: 'May a Jew take part in the Knesset elections?',
-    elMeta: EL.length + ' rabbis, from the pamphlet Zichron BaSefer, Jerusalem 2009',
+    elMeta: '{n} rabbis, from the pamphlet Zichron BaSefer, Jerusalem 2009',
     toCollection: 'Open the collection', rabbisN: 'rabbis', sayingsN: 'sayings', questionsN: 'questions',
     homeLede: 'This site gathers what the Torah leaders said on questions that came before the Jewish people, each question in a collection of its own: their words as they said them, with the source, the date and the original page.',
     howTitle: 'How to read this site',
@@ -84,40 +86,52 @@ const L = {
     cover: 'Front cover', titlePage: 'Title page', note43: 'Handwritten note, 16 Shevat 5769', back: 'Back cover',
     themes: 'Theme', back2: 'Back', footer: 'The sayings are quoted from the printed books. The English translations were made for this site.',
     opening: 'Opening the book', members: 'Members of the Council',
+    skip: 'Skip to content', navLabel: 'Main', notFound: 'Page not found', origLabel: 'Hebrew original', langLabel: 'Language',
   }
 };
-const base = lang => (lang === 'he' ? '/' : '/en/');
-const url = (lang, p = '') => base(lang) + p;
+// Hebrew and English are written here. Every other language is built through the English code path:
+// its translation pack is swapped into the English slots (see applyPack), and CUR names the language.
+const LANGS = [
+  { code: 'he', name: 'עברית', dir: 'rtl' }, { code: 'en', name: 'English', dir: 'ltr' },
+  { code: 'yi', name: 'אידיש', dir: 'rtl' }, { code: 'ru', name: 'Русский', dir: 'ltr' }, { code: 'fr', name: 'Français', dir: 'ltr' },
+  { code: 'es', name: 'Español', dir: 'ltr' }, { code: 'am', name: 'አማርኛ', dir: 'ltr' },
+];
+let CUR = null;
+const code = lang => (lang === 'he' ? 'he' : CUR || 'en');
+const urlFor = (c, p = '') => (c === 'he' ? '/' : `/${c}/`) + p;
+const url = (lang, p = '') => urlFor(code(lang), p);
+const isRtl = lang => L[lang].dir === 'rtl';
+const arrow = lang => (isRtl(lang) ? '←' : '→');
 
 // ---------- people ----------
 const people = [];
+const lazy = (o, defs) => { for (const [k, fn] of Object.entries(defs)) Object.defineProperty(o, k, { get: fn, enumerable: true }); return o; };
 for (const it of EL) {
-  people.push({
+  { const m = /(\d{4})\)?$/.exec(it.en_date); it.year = m ? +m[1] : null; }
+  people.push(lazy({
     slug: it.slug, coll: 'elections', comm: it.community, born: it.born, served: it.served, n: it.n,
     he: { name: it.he_name, title: it.he_title, when: `${L.he.died} ${it.he_death.replace(/^נלב״ע\s*/, '')}`, bio: it.he_bio },
-    en: { name: it.en_name, title: it.en_title, when: '', bio: it.en_bio },
-    sayings: [{ n: it.n, no: it.no, he: it.he_quote, en: it.en_quote, he_src: it.he_date, en_src: it.en_date, scan: it.scan }],
+    sayings: [lazy({ n: it.n, no: it.no, he: it.he_quote, he_src: it.he_date, scan: it.scan }, { en: () => it.en_quote, en_src: () => it.en_date })],
     links: it.links, verify: it.verify,
-  });
+  }, { en: () => ({ name: it.en_name, title: it.en_title, when: '', bio: it.en_bio }) }));
 }
 for (const [k, r] of Object.entries(TR.rabbis)) {
   const says = TR.sayings.filter(s => s.rabbi === k);
-  people.push({
+  people.push(lazy({
     slug: r.slug, coll: 'territories', comm: r.community, born: r.born, served: r.served, n: says[0].n,
-    he: { name: r.he_name, title: '', when: r.years, bio: r.he_bio || TR.pending_bio.he, context: r.he_context, fromBook: !!r.he_bio },
-    en: { name: r.en_name, title: '', when: r.years, bio: r.en_bio || TR.pending_bio.en, context: r.en_context, fromBook: !!r.en_bio },
-    sayings: says.map(s => ({ n: s.n, he: s.he_quote, en: s.en_quote, he_src: `${L.he.page} ${s.page}${s.appendix ? ` (${L.he.inAppendix})` : ''}`, en_src: `${L.en.page} ${s.page}${s.appendix ? ` (${L.en.inAppendix})` : ''}`, he_note: s.he_note, en_note: s.en_note })),
+    he: { name: r.he_name, title: '', when: r.years, bio: r.he_bio || TR.pending_bio.he, context: r.he_context, fromBook: !!r.he_bio, short: r.he_short },
+    sayings: says.map(s => lazy({ n: s.n, he: s.he_quote, he_src: `${L.he.page} ${s.page}${s.appendix ? ` (${L.he.inAppendix})` : ''}`, he_note: s.he_note },
+      { en: () => s.en_quote, en_src: () => `${L.en.page} ${s.page}${s.appendix ? ` (${L.en.inAppendix})` : ''}`, en_note: () => s.en_note })),
     links: [], verify: false,
-  });
+  }, { en: () => ({ name: r.en_name, title: '', when: r.years, bio: r.en_bio || TR.pending_bio.en, context: r.en_context, fromBook: !!r.en_bio, short: r.en_short }) }));
 }
 for (const o of OT) {
-  people.push({
+  people.push(lazy({
     slug: o.slug, coll: 'others', comm: o.community, born: o.born, served: o.served, n: o.n, year: o.year,
     he: { name: o.he_name, title: o.he_title, when: o.years, bio: o.he_bio, short: o.he_short },
-    en: { name: o.en_name, title: o.en_title, when: o.years, bio: o.en_bio, short: o.en_short },
-    sayings: [{ n: o.n, he: o.he_quote, en: o.en_quote, he_src: o.he_src, en_src: o.en_src }],
+    sayings: [lazy({ n: o.n, he: o.he_quote, he_src: o.he_src }, { en: () => o.en_quote, en_src: () => o.en_src })],
     links: o.links || [], verify: false,
-  });
+  }, { en: () => ({ name: o.en_name, title: o.en_title, when: o.years, bio: o.en_bio, short: o.en_short }) }));
 }
 const OTX = {
   he: { title: 'עוד מגדולי ישראל', label: 'בכתביהם', q: 'מה כתבו גדולי ישראל אחרים על אותן שאלות?', meta: 'דברים מתוך ספריהם ומכתביהם, עם המקור',
@@ -133,9 +147,10 @@ function layout(lang, p, { title, desc, body, og, active, wide, bleed }) {
   const t = L[lang];
   const full = title ? `${title} | ${t.site}` : t.site;
   const navKeys = ['territories', 'elections', 'others', 'rabbis', 'map', 'connect', 'archive'];
-  const other = url(t.other, p);
+  const cur = code(lang);
+  const fonts = { ru: '&family=Noto+Serif:wght@400;500;700&family=Noto+Sans:wght@400;500;700', am: '&family=Noto+Serif+Ethiopic:wght@400;500;700&family=Noto+Sans+Ethiopic:wght@400;500;700' }[cur] || '';
   return `<!doctype html>
-<html lang="${lang}" dir="${t.dir}">
+<html lang="${cur}" dir="${t.dir}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -146,22 +161,21 @@ ${INDEX ? '' : '<meta name="robots" content="noindex">\n'}<title>${esc0(full)}</
 <meta property="og:site_name" content="${esc0(t.site)}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gedoleitorah.com${url(lang, p)}">
-${og ? `<meta property="og:image" content="https://gedoleitorah.com${og}">\n` : ''}<link rel="alternate" hreflang="he" href="https://gedoleitorah.com${url('he', p)}">
-<link rel="alternate" hreflang="en" href="https://gedoleitorah.com${url('en', p)}">
+${og ? `<meta property="og:image" content="https://gedoleitorah.com${og}">\n` : ''}${SITE_LANGS.map(l => `<link rel="alternate" hreflang="${l.code}" href="https://gedoleitorah.com${urlFor(l.code, p)}">`).join('\n')}
 <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;700${fonts}&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body class="${lang}">
-<a class="skip" href="#main">${lang === 'he' ? 'דילוג לתוכן' : 'Skip to content'}</a>
+<body class="${cur}">
+<a class="skip" href="#main">${esc0(t.skip)}</a>
 <header class="top">
   <div class="wrap toprow">
     <a class="brand" href="${url(lang)}">${esc0(t.site)}</a>
-    <a class="lang" href="${other}" hreflang="${t.other}" lang="${t.other}">${t.otherName}</a>
+    <details class="langs"><summary aria-label="${esc0(t.langLabel)}">${LANGS.find(l => l.code === cur).name}</summary><ul>${SITE_LANGS.filter(l => l.code !== cur).map(l => `<li><a href="${urlFor(l.code, p)}" hreflang="${l.code}" lang="${l.code}" dir="${l.dir}">${l.name}</a></li>`).join('')}</ul></details>
   </div>
-  <nav class="wrap nav" aria-label="${lang === 'he' ? 'ניווט' : 'Main'}">
+  <nav class="wrap nav" aria-label="${esc0(t.navLabel)}">
     ${navKeys.map(k => `<a href="${url(lang, k + '/')}"${active === k ? ' aria-current="page"' : ''}>${esc0(t.nav[k])}</a>`).join('')}
   </nav>
 </header>
@@ -177,8 +191,8 @@ ${body}
 // ---------- pieces ----------
 const paras = s => String(s).split('\n').filter(x => x.trim()).map(x => `<p>${esc(x)}</p>`).join('');
 const quoteHe = s => `<blockquote class="q" lang="he" dir="rtl">${paras(s)}</blockquote>`;
-const quoteEn = s => `<blockquote class="q en" lang="en" dir="ltr">${paras(s)}</blockquote>`;
-const quotes = (lang, he, en) => lang === 'he' ? quoteHe(he) : quoteEn(en) + `<details class="orig"><summary>עברית · Hebrew original</summary>${quoteHe(he)}</details>`;
+const quoteEn = s => `<blockquote class="q${isRtl('en') ? '' : ' en'}" lang="${code('en')}" dir="${L.en.dir}">${paras(s)}</blockquote>`;
+const quotes = (lang, he, en) => lang === 'he' ? quoteHe(he) : quoteEn(en) + `<details class="orig"><summary>${code('en') === 'yi' ? '' : 'עברית · '}${esc0(L.en.origLabel)}</summary>${quoteHe(he)}</details>`;
 const commChip = (lang, c) => `<span class="chip c-${c}">${esc(COMM[c][lang])}</span>`;
 const collBadge = (lang, c) => `<a class="badge b-${c}" href="${url(lang, c + '/')}">${esc(collName(lang, c))}</a>`;
 
@@ -191,7 +205,7 @@ function together(lang, coll) {
 }
 function shortName(lang, p) {
   if (p.coll === 'others') return p[lang].short;
-  if (p.coll === 'territories') { const r = Object.values(TR.rabbis).find(r => r.slug === p.slug); return lang === 'he' ? r.he_short : r.en_short; }
+  if (p.coll === 'territories') return p[lang].short;
   return lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '') : p.en.name;
 }
 
@@ -269,7 +283,7 @@ const thumbOf = p => p.sayings[0].scan ? `/img/zb/t/${p.sayings[0].scan}` : null
 function mapBlock(lang, full) {
   const t = L[lang], h = H[lang];
   const data = {
-    lang, places: Object.fromEntries([...usedPlaces].map(k => [k, { name: PLACES[k][lang], lat: PLACES[k].lat, lon: PLACES[k].lon }])),
+    rtl: isRtl(lang), places: Object.fromEntries([...usedPlaces].map(k => [k, { name: PLACES[k][lang], lat: PLACES[k].lat, lon: PLACES[k].lon }])),
     rabbis: people.map(p => ({ slug: p.slug, name: plain(lang, p), coll: p.coll, comm: p.comm, born: p.born, served: p.served, thumb: thumbOf(p), quote: lang === 'he' ? p.sayings[0].he : p.sayings[0].en })),
     comms: Object.fromEntries(usedComms.map(c => [c.id, c[lang]])),
     t: { servedHere: t.servedHere, bornHere: t.bornHere, fail: t.mapFail, pick: t.mapPick, base: url(lang) },
@@ -285,7 +299,7 @@ function mapBlock(lang, full) {
       </div>
       <aside id="rmap-info" class="mapinfo" aria-live="polite"><p class="muted">${esc(t.mapPick)}</p></aside>
     </div>
-    <div class="mapfoot"><div id="rmap-colls" role="group" aria-label="${esc0(h.colls)}"><button type="button" data-k="territories" aria-pressed="true">${esc(t.terrTitle)} · ${people.filter(p => p.coll === 'territories').length}</button><button type="button" data-k="elections" aria-pressed="true">${esc(t.elTitle)} · ${people.filter(p => p.coll === 'elections').length}</button><button type="button" data-k="others" aria-pressed="true">${esc(OTX[lang].title)} · ${people.filter(p => p.coll === 'others').length}</button></div>${full ? '' : `<a class="maplink" href="${url(lang, 'map/')}">${esc(h.fullMap)} ${lang === 'he' ? '←' : '→'}</a>`}</div>
+    <div class="mapfoot"><div id="rmap-colls" role="group" aria-label="${esc0(h.colls)}"><button type="button" data-k="territories" aria-pressed="true">${esc(t.terrTitle)} · ${people.filter(p => p.coll === 'territories').length}</button><button type="button" data-k="elections" aria-pressed="true">${esc(t.elTitle)} · ${people.filter(p => p.coll === 'elections').length}</button><button type="button" data-k="others" aria-pressed="true">${esc(OTX[lang].title)} · ${people.filter(p => p.coll === 'others').length}</button></div>${full ? '' : `<a class="maplink" href="${url(lang, 'map/')}">${esc(h.fullMap)} ${arrow(lang)}</a>`}</div>
   </div>
 </section>
 <script>window.MAPDATA=${JSON.stringify(data)};</script>
@@ -336,7 +350,7 @@ const LIVES = people.map(p => {
       d = hebDeathYear(it.he_death); m = /Born (\d{4})/.exec(bio); if (m) b = +m[1];
       m = /Died (\d{4}), aged (\d+)/.exec(bio); if (m) b = +m[1] - +m[2];
     }
-    m = /(\d{4})\)?$/.exec(it.en_date); if (m) s = +m[1];
+    s = it.year;
   } else {
     const m = /^(\d{4})–(\d{4})/.exec(p.he.when || ''); if (m) { b = +m[1]; d = +m[2]; }
     if (p.coll === 'others') s = p.year; else if (p.sayings.some(x => x.n === 1)) s = 1978;
@@ -345,7 +359,7 @@ const LIVES = people.map(p => {
 });
 
 function chart(lang) {
-  const c = C[lang], t = L[lang], rtl = lang === 'he';
+  const c = C[lang], t = L[lang], rtl = isRtl(lang), cw = { am: 9.4, ru: 6.6 }[code(lang)] || (rtl ? 6.1 : 5.9);
   const P = 8.5, Y0 = 1858, Y1 = 2022, PADE = 150, PADL = 26, RH = 19;
   const W = PADE + (Y1 - Y0) * P + PADL;
   const X = y => rtl ? W - PADE - (y - Y0) * P : PADE + (y - Y0) * P;
@@ -356,7 +370,7 @@ function chart(lang) {
   let y = 0;
   // era band
   const eraY = y; y += 18;
-  ERAS.forEach(([k, a, b]) => { const [x, w] = span(a, b); o.push(`<rect class="era era-${k}" x="${x.toFixed(1)}" y="${eraY}" width="${w.toFixed(1)}" height="16"><title>${esc0(c.eras[k])}</title></rect>`); if (w > c.eras[k].length * 6.2 + 8) o.push(`<text class="eral" x="${(x + w / 2).toFixed(1)}" y="${eraY + 12}" text-anchor="middle">${esc0(c.eras[k])}</text>`); });
+  ERAS.forEach(([k, a, b]) => { const [x, w] = span(a, b); o.push(`<rect class="era era-${k}" x="${x.toFixed(1)}" y="${eraY}" width="${w.toFixed(1)}" height="16"><title>${esc0(c.eras[k])}</title></rect>`); if (w > c.eras[k].length * (cw + 0.3) + 8) o.push(`<text class="eral" x="${(x + w / 2).toFixed(1)}" y="${eraY + 12}" text-anchor="middle">${esc0(c.eras[k])}</text>`); });
   labels.push([eraY, c.rule, 'lane']);
   // scales
   const scaleY = y; y += 40;
@@ -396,7 +410,7 @@ function chart(lang) {
     const top = y; labels.push([top, title, 'lane']); y += 22;
     const rowsEnd = [];
     const placed = evs.map(([yr, txt, end, gold]) => {
-      const x0 = X(yr + 0.5), wTxt = txt.length * (rtl ? 6.1 : 5.9) + 14;
+      const x0 = X(yr + 0.5), wTxt = txt.length * cw + 14;
       const a = rtl ? x0 - wTxt : x0, b = rtl ? x0 : x0 + wTxt;
       let r = 0; while (rowsEnd[r] && rowsEnd[r].some(([p, q]) => a < q + 6 && b > p - 6)) r++;
       (rowsEnd[r] ||= []).push([a, b]);
@@ -429,9 +443,9 @@ function timeline(lang) {
   const add = (y, e) => (byYear[y] ||= []).push(e);
   const dlg = {};
   for (const it of EL) {
-    const p = bySlug[it.slug], m = /(\d{4})\)?$/.exec(it.en_date) || /\((?:\w+ )?(\d{4})\)/.exec(it.en_date);
+    const p = bySlug[it.slug];
     dlg[it.n] = { name: p[lang].name, title: p[lang].title, quote: lang === 'he' ? it.he_quote : it.en_quote, date: lang === 'he' ? it.he_date : it.en_date, img: `/img/zb/${it.scan}`, url: url(lang, 'rabbis/' + it.slug + '/'), comm: COMM[it.community][lang], c: it.community };
-    add(m ? +m[1] : 9999, { kind: 'el', n: it.n, p });
+    add(it.year || 9999, { kind: 'el', n: it.n, p });
   }
   const decl = TR.opening.find(o => o.kind === 'decl');
   add(1937, { kind: 'doc', title: lang === 'he' ? decl.hhe : decl.hen, quote: lang === 'he' ? decl.he : decl.en });
@@ -439,26 +453,26 @@ function timeline(lang) {
   for (const s of TR.sayings) add(s.n === 1 ? 1978 : 1980, { kind: 'tr', s, p: people.find(x => x.coll === 'territories' && x.sayings.some(y => y.n === s.n)) });
   const years = [...new Set([...Object.keys(byYear).map(Number), ...Object.keys(h.ctx).map(Number)])].sort((a, b) => a - b);
   const elCard = e => `<button type="button" class="tcard c-${e.p.comm}" data-n="${e.n}"><img src="/img/zb/t/${e.p.sayings[0].scan}" alt="" loading="lazy" width="420" height="606"><span class="tn">${esc(plain(lang, e.p))}</span></button>`;
-  const trCard = e => `<a class="tcard text c-${e.p.comm}" href="${url(lang, 'rabbis/' + e.p.slug + '/')}"><span class="tq" lang="${lang}">${esc(lang === 'he' ? e.s.he_quote : e.s.en_quote)}</span><span class="tn">${esc(shortName(lang, e.p))}</span></a>`;
+  const trCard = e => `<a class="tcard text c-${e.p.comm}" href="${url(lang, 'rabbis/' + e.p.slug + '/')}"><span class="tq" lang="${code(lang)}">${esc(lang === 'he' ? e.s.he_quote : e.s.en_quote)}</span><span class="tn">${esc(shortName(lang, e.p))}</span></a>`;
   const sections = years.map(y => {
     const es = byYear[y] || [], els = es.filter(e => e.kind === 'el'), trs = es.filter(e => e.kind === 'tr'), docs = es.filter(e => e.kind === 'doc');
     const ctx = (y !== 9999 && h.ctx[y] || []).map(c => `<p class="ctx ctx-${c[0]}">${esc(c[1])}</p>`).join('');
     const extra = y === 1980 ? `<p class="ctx ctx-w">${esc(h.book1980)}</p>` : y === 2009 ? `<p class="ctx ctx-k">${esc(h.pamph2009)}</p>` : '';
     return `<section class="yr${es.length ? '' : ' quiet'}${y === 9999 ? ' undated' : ''}"><h3 class="y"${y === 9999 ? ' aria-hidden="true"' : ''}>${y === 9999 ? '' : y}</h3><div class="ybody">${ctx}${extra}
-      ${docs.map(d => `<a class="tdoc" href="${url(lang, 'territories/')}"><b>${esc(d.title)}</b><span lang="${lang}">${esc(d.quote)}</span></a>`).join('')}
+      ${docs.map(d => `<a class="tdoc" href="${url(lang, 'territories/')}"><b>${esc(d.title)}</b><span lang="${code(lang)}">${esc(d.quote)}</span></a>`).join('')}
       ${trs.length ? `<div class="tgrid text">${trs.map(trCard).join('')}</div>` : ''}
       ${els.length ? `<div class="tgrid">${els.map(elCard).join('')}</div>` : ''}</div></section>`;
   }).join('');
   return `<section class="wrap wide tlsec"><div class="tlhead"><div><h2>${esc(h.tlH)}</h2><p class="lede">${esc(h.tlP)}</p></div>
     <div class="seg" role="group"><button type="button" id="tl-old" aria-pressed="true">${esc(h.oldest)}</button><button type="button" id="tl-new" aria-pressed="false">${esc(h.newest)}</button></div></div>
     <div class="tl" id="tl">${sections}</div></section>
-<dialog id="tdlg" aria-labelledby="tdlg-name"><button type="button" class="dx" id="tdlg-x" aria-label="${esc0(h.close)}">×</button><div class="dgrid"><a id="tdlg-a" target="_blank" rel="noopener"><img id="tdlg-img" alt=""></a><div class="dtext"><span class="chip" id="tdlg-comm"></span><h3 id="tdlg-name"></h3><p class="ttl" id="tdlg-title"></p><blockquote class="q${lang === 'he' ? '' : ' en'}" lang="${lang}"><p id="tdlg-q"></p></blockquote><p class="src" id="tdlg-date"></p><a class="more" id="tdlg-url">${esc(h.toRabbi)} ${lang === 'he' ? '←' : '→'}</a></div></div></dialog>
+<dialog id="tdlg" aria-labelledby="tdlg-name"><button type="button" class="dx" id="tdlg-x" aria-label="${esc0(h.close)}">×</button><div class="dgrid"><a id="tdlg-a" target="_blank" rel="noopener"><img id="tdlg-img" alt=""></a><div class="dtext"><span class="chip" id="tdlg-comm"></span><h3 id="tdlg-name"></h3><p class="ttl" id="tdlg-title"></p><blockquote class="q${isRtl(lang) ? '' : ' en'}" lang="${code(lang)}"><p id="tdlg-q"></p></blockquote><p class="src" id="tdlg-date"></p><a class="more" id="tdlg-url">${esc(h.toRabbi)} ${arrow(lang)}</a></div></div></dialog>
 <script>window.TL=${JSON.stringify(dlg)};</script><script src="/assets/home.js"></script>`;
 }
 
 function home(lang) {
   const t = L[lang], h = H[lang];
-  const card = (k, label, title, q, meta) => `<a class="qcard b-${k}" href="${url(lang, k + '/')}"><span class="qlabel">${esc(label)}</span><span class="qtitle">${esc(title)}</span><span class="qq">${esc(q)}</span><span class="qmeta">${esc(meta)}</span><span class="qgo">${esc(t.toCollection)} ${lang === 'he' ? '←' : '→'}</span></a>`;
+  const card = (k, label, title, q, meta) => `<a class="qcard b-${k}" href="${url(lang, k + '/')}"><span class="qlabel">${esc(label)}</span><span class="qtitle">${esc(title)}</span><span class="qq">${esc(q)}</span><span class="qmeta">${esc(meta)}</span><span class="qgo">${esc(t.toCollection)} ${arrow(lang)}</span></a>`;
   const body = `<section class="heroband"><div class="wrap wide hero2"><p class="kicker">${esc(h.kicker)}</p><h1>${esc(t.site)}</h1>
 <div class="stats"><span><b>${people.length}</b> ${h.statR}</span><span><b>${usedComms.length}</b> ${h.statC}</span><span><b>${usedPlaces.size}</b> ${h.statP}</span><span><b>6</b> ${h.statK}</span></div></div></section>
 ${mapBlock(lang, false)}
@@ -466,10 +480,10 @@ ${chart(lang)}
 ${timeline(lang)}
 <section class="wrap wide"><h2>${esc(h.twoQ)}</h2><div class="qcards">
 ${card('territories', t.q1, t.terrTitle, t.terrQ, t.terrMeta)}
-${card('elections', t.q2, t.elTitle, t.elQ, t.elMeta)}
+${card('elections', t.q2, t.elTitle, t.elQ, t.elMeta.replace('{n}', EL.length))}
 ${card('others', OTX[lang].label, OTX[lang].title, OTX[lang].q, OTX[lang].meta)}
 </div>
-<div class="prose">${t.how.map(x => `<p>${esc(x)}</p>`).join('')}<p><a class="more" href="${url(lang, 'connect/')}">${esc(t.connectTeaser)} ${lang === 'he' ? '←' : '→'}</a></p></div></section>`;
+<div class="prose">${t.how.map(x => `<p>${esc(x)}</p>`).join('')}<p><a class="more" href="${url(lang, 'connect/')}">${esc(t.connectTeaser)} ${arrow(lang)}</a></p></div></section>`;
   return layout(lang, '', { title: '', body, active: 'home', bleed: true, og: '/img/zb/00a.jpg' });
 }
 
@@ -563,6 +577,24 @@ function rabbisIndex(lang) {
   return layout(lang, 'rabbis/', { title: t.nav.rabbis, body, active: 'rabbis', wide: true });
 }
 
+const CN = {
+  he: { title: 'שתי שאלות, נקודת מפגש אחת',
+    p1: 'האוסף הראשון באתר עוסק בשאלה אם מותר למסור חלק מארץ ישראל. האוסף השני עוסק בשאלה אם מותר להשתתף בבחירות לכנסת. אלה שתי שאלות נפרדות, ושתי קבוצות שונות של רבנים השיבו עליהן. אף רב אינו מופיע בשני האוספים, ואין לייחס לאיש מהם עמדה בשאלה שלא השיב עליה.',
+    p2: 'ובכל זאת השאלות נפגשות בנקודה אחת: בבוחר עצמו.', h1: 'הבוחר שולח שליח',
+    p3: 'הטיעון המרכזי של רבני ״זכרון בספר״ הוא השליחות. הנציג פועל בשם מי שבחר בו, ו[[שלוחו של אדם כמותו]]. מכאן שמי ששולח נציג לכנסת נעשה שותף למה שנעשה בה:',
+    p4: 'יש שיענו ש[[אין שליח לדבר עבירה]]. אבל הרבנים האלה לא נשענו על השליחות בלבד. הם כתבו שהבוחר עצמו מודה בשלטון ונותן לו כוח, וזה מעשה שלו, לא של שלוחו:',
+    h2: 'והכנסת מחליטה על הארץ', p5: 'רבני ״גדולי תורה על החזרת שטחים״ קבעו שאסור למסור שום חלק מארץ ישראל, ושאין לשום ממשלה רשות לעשות זאת:',
+    p6: 'ממשלה שמוסרת שטח מקבלת את כוחה מהכנסת, והכנסת מקבלת את כוחה מהבוחרים. מי שמקבל את שני הפסקים יחד, שמסירת הארץ אסורה ושהבוחר שותף למעשי נציגיו, אינו יכול לראות בקולו עניין פרטי. זו מסקנה של מי שקורא את שני האוספים זה לצד זה, ולא דבריו של רב מסוים.',
+    toTerr: 'להחזרת שטחים', toEl: 'לבחירות לכנסת' },
+  en: { title: 'Two Questions, One Meeting Point',
+    p1: 'The first collection on this site asks whether any part of the Land of Israel may be handed over. The second asks whether a Jew may take part in the Knesset elections. These are separate questions, answered by two different groups of rabbis. No rabbi appears in both collections, and none of them should be credited with a position on a question he did not answer.',
+    p2: 'Even so, the questions meet at one point: the voter himself.', h1: 'The voter sends an agent',
+    p3: 'The central argument of the Zichron BaSefer rabbis is agency. A representative acts in the name of those who chose him, and [[a person\u2019s agent is like himself]]. So whoever sends a representative to the Knesset becomes a partner in what is done there:',
+    p4: 'Some will answer that [[there is no agency for a transgression]]. But these rabbis did not rest on agency alone. They wrote that the voter himself acknowledges the regime and gives it strength, and that is his own act, not his agent\u2019s:',
+    h2: 'And the Knesset decides about the Land', p5: 'The rabbis of Gedolei Torah al Hachzarat Shetachim ruled that no part of the Land of Israel may be handed over, and that no government has the authority to do it:',
+    p6: 'A government that hands over land draws its power from the Knesset, and the Knesset draws its power from the voters. Whoever accepts both rulings together, that handing over the Land is forbidden and that the voter is a partner in what his representatives do, cannot treat his vote as a private matter. That is the conclusion of a reader who sets the two collections side by side, not the words of any one rabbi.',
+    toTerr: 'Giving up land', toEl: 'Knesset elections' },
+};
 function connect(lang) {
   const q = n => EL.find(x => x.n === n);
   const tq = n => TR.sayings.find(x => x.n === n);
@@ -585,22 +617,23 @@ ${quoteHe(q(19).he_quote)}${cite(q(19), true)}
 ${quoteHe(s14.he_quote)}<p class="src"><a href="${pr(nissim.slug)}">${esc(nissim.he.name)}</a>, עמ׳ ${s14.page}</p>
 <p>ממשלה שמוסרת שטח מקבלת את כוחה מהכנסת, והכנסת מקבלת את כוחה מהבוחרים. מי שמקבל את שני הפסקים יחד, שמסירת הארץ אסורה ושהבוחר שותף למעשי נציגיו, אינו יכול לראות בקולו עניין פרטי. זו מסקנה של מי שקורא את שני האוספים זה לצד זה, ולא דבריו של רב מסוים.</p>
 <p><a class="more" href="${url(lang, 'territories/')}">להחזרת שטחים ←</a> &nbsp; <a class="more" href="${url(lang, 'elections/')}">לבחירות לכנסת ←</a></p>`;
+  const k = CN.en, link = (txt, href) => txt.replace('[[', `<a href="${href}" target="_blank" rel="noopener">`).replace(']]', '</a>');
   const en = `
-<h1>Two Questions, One Meeting Point</h1>
-<p>The first collection on this site asks whether any part of the Land of Israel may be handed over. The second asks whether a Jew may take part in the Knesset elections. These are separate questions, answered by two different groups of rabbis. No rabbi appears in both collections, and none of them should be credited with a position on a question he did not answer.</p>
-<p>Even so, the questions meet at one point: the voter himself.</p>
-<h2>The voter sends an agent</h2>
-<p>The central argument of the Zichron BaSefer rabbis is agency. A representative acts in the name of those who chose him, and <a href="${sef41}" target="_blank" rel="noopener">a person’s agent is like himself</a>. So whoever sends a representative to the Knesset becomes a partner in what is done there:</p>
+<h1>${esc(k.title)}</h1>
+<p>${esc(k.p1)}</p>
+<p>${esc(k.p2)}</p>
+<h2>${esc(k.h1)}</h2>
+<p>${link(esc(k.p3), sef41)}</p>
 ${quoteEn(q(30).en_quote)}${cite(q(30), false)}
 ${quoteEn(q(31).en_quote)}${cite(q(31), false)}
-<p>Some will answer that <a href="${sef42}" target="_blank" rel="noopener">there is no agency for a transgression</a>. But these rabbis did not rest on agency alone. They wrote that the voter himself acknowledges the regime and gives it strength, and that is his own act, not his agent’s:</p>
+<p>${link(esc(k.p4), sef42)}</p>
 ${quoteEn(q(19).en_quote)}${cite(q(19), false)}
-<h2>And the Knesset decides about the Land</h2>
-<p>The rabbis of Gedolei Torah al Hachzarat Shetachim ruled that no part of the Land of Israel may be handed over, and that no government has the authority to do it:</p>
-${quoteEn(s14.en_quote)}<p class="src"><a href="${pr(nissim.slug)}">${esc(nissim.en.name)}</a>, p. ${s14.page}</p>
-<p>A government that hands over land draws its power from the Knesset, and the Knesset draws its power from the voters. Whoever accepts both rulings together, that handing over the Land is forbidden and that the voter is a partner in what his representatives do, cannot treat his vote as a private matter. That is the conclusion of a reader who sets the two collections side by side, not the words of any one rabbi.</p>
-<p><a class="more" href="${url(lang, 'territories/')}">Giving up land →</a> &nbsp; <a class="more" href="${url(lang, 'elections/')}">Knesset elections →</a></p>`;
-  return layout(lang, 'connect/', { title: lang === 'he' ? 'שתי שאלות, נקודת מפגש אחת' : 'Two Questions, One Meeting Point', body: `<article class="prose long">${lang === 'he' ? he : en}</article>`, active: 'connect' });
+<h2>${esc(k.h2)}</h2>
+<p>${esc(k.p5)}</p>
+${quoteEn(s14.en_quote)}<p class="src"><a href="${pr(nissim.slug)}">${esc(nissim.en.name)}</a>, ${L.en.page} ${s14.page}</p>
+<p>${esc(k.p6)}</p>
+<p><a class="more" href="${url(lang, 'territories/')}">${esc(k.toTerr)} ${arrow('en')}</a> &nbsp; <a class="more" href="${url(lang, 'elections/')}">${esc(k.toEl)} ${arrow('en')}</a></p>`;
+  return layout(lang, 'connect/', { title: lang === 'he' ? CN.he.title : CN.en.title, body: `<article class="prose long">${lang === 'he' ? he : en}</article>`, active: 'connect' });
 }
 
 function archive(lang) {
@@ -618,7 +651,7 @@ function archive(lang) {
 }
 
 function notFound(lang) {
-  return layout(lang, '', { title: '404', body: `<section class="prose"><h1>${lang === 'he' ? 'הדף לא נמצא' : 'Page not found'}</h1><p><a href="${url(lang)}">${esc(L[lang].site)}</a></p></section>` });
+  return layout(lang, '', { title: '404', body: `<section class="prose"><h1>${esc(L[lang].notFound)}</h1><p><a href="${url(lang)}">${esc(L[lang].site)}</a></p></section>` });
 }
 
 // ---------- write ----------
@@ -631,8 +664,38 @@ function out(rel, html) {
   fs.writeFileSync(f, rel.startsWith('en/') ? html.replace(/\bGod\b/g, 'G-d') : html);
   written.push(rel);
 }
-for (const lang of ['he', 'en']) {
-  const pre = lang === 'he' ? '' : 'en/';
+// ---------- translation packs ----------
+// Every English string on the site is bound to a key. flatten() lists them with their Hebrew counterpart
+// (i18n/source.json, what translators work from); applyPack() puts a translation into the English slots.
+const B = [];
+const bind = (key, he, obj, prop) => { if (typeof obj[prop] === 'string' && obj[prop]) B.push({ key, he: he || '', obj, prop, orig: obj[prop] }); };
+const walk = (pre, en, he, skip) => { for (const k of Object.keys(en)) { const v = en[k], h = he == null ? undefined : he[k]; if (skip && skip(k, v)) continue; if (typeof v === 'string') { if (v.length > 1) bind(`${pre}.${k}`, typeof h === 'string' ? h : '', en, k); } else if (v && typeof v === 'object') walk(`${pre}.${k}`, v, h, skip); } };
+walk('ui', L.en, L.he, k => ['dir', 'other', 'otherName'].includes(k));
+walk('home', H.en, H.he); walk('chart', C.en, C.he); walk('more', OTX.en, OTX.he); walk('connect', CN.en, CN.he);
+COMMON.communities.forEach(c => bind(`comm.${c.id}`, c.he, c, 'en'));
+Object.entries(PLACES).forEach(([k, v]) => { if (usedPlaces.has(k)) bind(`place.${k}`, v.he, v, 'en'); });
+EL.forEach(it => ['name', 'title', 'quote', 'date', 'bio'].forEach(f => bind(`el.${it.n}.${f}`, it['he_' + f], it, 'en_' + f)));
+TR.themes.forEach(x => bind(`tr.theme.${x.id}`, x.he, x, 'en'));
+Object.entries(TR.rabbis).forEach(([k, r]) => ['name', 'short', 'bio', 'context'].forEach(f => bind(`tr.rabbi.${k}.${f}`, r['he_' + f], r, 'en_' + f)));
+TR.sayings.forEach(x => ['quote', 'note'].forEach(f => bind(`tr.say.${x.n}.${f}`, x['he_' + f], x, 'en_' + f)));
+TR.opening.forEach((o, i) => { [['hen', 'hhe', 'title'], ['en', 'he', 'text'], ['nen', 'nhe', 'note'], ['ben', 'bhe', 'bio'], ['plen', 'plhe', 'place']].forEach(([e, h, f]) => bind(`tr.open.${i}.${f}`, o[h], o, e)); (o.list || []).forEach((m, j) => bind(`tr.open.${i}.member.${j}`, m[0], m, 1)); });
+TR.appendix_docs.forEach((d, i) => bind(`tr.appx.${i}`, d.he, d, 'en'));
+bind('tr.pending', TR.pending_bio.he, TR.pending_bio, 'en');
+OT.forEach(o => ['name', 'short', 'title', 'bio', 'quote', 'src'].forEach(f => bind(`more.${o.slug}.${f}`, o['he_' + f], o, 'en_' + f)));
+const flatten = () => B.map(b => ({ k: b.key, he: b.he, en: b.orig }));
+function applyPack(pack, dir) { const missing = []; B.forEach(b => { const v = pack[b.key]; if (typeof v === 'string' && v.trim()) b.obj[b.prop] = v; else { b.obj[b.prop] = b.orig; missing.push(b.key); } }); L.en.dir = dir; return missing; }
+function restore() { B.forEach(b => { b.obj[b.prop] = b.orig; }); L.en.dir = 'ltr'; }
+
+if (process.argv.includes('--source')) {
+  fs.mkdirSync(path.join(ROOT, 'i18n'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'i18n', 'source.json'), JSON.stringify(flatten(), null, 1));
+  console.log(`Wrote i18n/source.json with ${B.length} strings.`); process.exit(0);
+}
+const packOf = c => { const f = path.join(ROOT, 'i18n', c + '.json'); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null; };
+// A language goes on the site only once its pack has passed independent review and is listed in i18n/published.json.
+const PUBLISHED = JSON.parse(fs.readFileSync(path.join(ROOT, 'i18n', 'published.json'), 'utf8'));
+const SITE_LANGS = LANGS.filter(l => l.code === 'he' || l.code === 'en' || (PUBLISHED.includes(l.code) && packOf(l.code)));
+function buildLang(lang, pre) {
   out(pre + 'index.html', home(lang));
   out(pre + 'territories/index.html', territories(lang));
   out(pre + 'elections/index.html', elections(lang));
@@ -642,6 +705,13 @@ for (const lang of ['he', 'en']) {
   out(pre + 'map/index.html', mapPage(lang));
   out(pre + 'connect/index.html', connect(lang));
   out(pre + 'archive/index.html', archive(lang));
+}
+buildLang('he', ''); buildLang('en', 'en/');
+for (const l of SITE_LANGS.filter(l => l.code !== 'he' && l.code !== 'en')) {
+  const missing = applyPack(packOf(l.code), l.dir); CUR = l.code;
+  buildLang('en', l.code + '/');
+  CUR = null; restore();
+  if (missing.length) console.log(`${l.code}: ${missing.length} strings missing, shown in English (first: ${missing.slice(0, 5).join(', ')})`);
 }
 out('404.html', notFound('he'));
 console.log(`Wrote ${written.length} pages; ${people.length} rabbis.`);

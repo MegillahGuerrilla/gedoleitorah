@@ -336,3 +336,17 @@ main.bleed>.wrap{padding-block:28px 8px}
 .cscroll::-webkit-scrollbar{height:14px;-webkit-appearance:none}
 .cscroll::-webkit-scrollbar-track{background:var(--soft)}
 .cscroll::-webkit-scrollbar-thumb{background:var(--gold);border-radius:7px;border:3px solid var(--soft)}
+
+/* language menu */
+.langs{position:relative;font-size:.9rem}
+.langs summary{list-style:none;cursor:pointer;color:var(--goldb);border:1px solid rgba(227,191,98,.55);border-radius:999px;padding:2px 12px;white-space:nowrap}
+.langs summary::-webkit-details-marker{display:none}
+.langs summary::after{content:" ▾";font-size:.75em}
+.langs ul{position:absolute;inset-inline-end:0;top:calc(100% + 6px);z-index:20;list-style:none;margin:0;padding:6px;min-width:150px;background:var(--wood2);border:1px solid var(--goldb);border-radius:10px;box-shadow:0 12px 30px -10px rgba(0,0,0,.6)}
+.langs li a{display:block;padding:7px 12px;border-radius:6px;color:var(--cream);text-decoration:none;text-align:start}
+.langs li a:hover,.langs li a:focus-visible{background:var(--wood);color:var(--goldb)}
+/* scripts the Hebrew and Latin faces don't cover */
+body.ru{--serif:"Noto Serif","Frank Ruhl Libre",Georgia,serif;--sans:"Noto Sans","Heebo","Segoe UI",Arial,sans-serif}
+body.am{--serif:"Noto Serif Ethiopic","Frank Ruhl Libre",serif;--sans:"Noto Sans Ethiopic","Heebo","Segoe UI",sans-serif;line-height:1.75}
+body.am .lchart .nm,body.am .lchart .evt{font-size:11px}
+body.yi{font-size:18px}
