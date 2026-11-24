@@ -319,7 +319,7 @@ const C = {
     eras: { ott: 'השלטון העות׳מאני', brit: 'השלטון הבריטי', lab: 'מפא״י, המערך והעבודה', lik: 'הליכוד', uni: 'ממשלות אחדות', kad: 'קדימה' },
     ev: [[1881, 'פרעות ברוסיה'], [1897, 'הקונגרס הציוני הראשון'], [1912, 'ייסוד אגודת ישראל'], [1917, 'הצהרת בלפור'], [1937, 'ועדת פיל מציעה חלוקה'], [1939, 'השואה', 1945], [1947, 'החלטת החלוקה באו״ם'], [1948, 'הקמת המדינה'],
       [1967, 'מלחמת ששת הימים'], [1973, 'מלחמת יום הכיפורים'], [1978, 'הסכמי קמפ דייוויד'], [1980, 'יוצא ״גדולי תורה על החזרת שטחים״', 0, 1], [1982, 'הושלמה הנסיגה מסיני'], [1993, 'הסכמי אוסלו'], [2005, 'הגירוש מגוש קטיף'], [2009, 'יוצא ״זכרון בספר״', 0, 1]],
-    wv: [[1914, 'מלחמת העולם הראשונה', 1918], [1917, 'המהפכה ברוסיה'], [1929, 'המשבר הכלכלי הגדול'], [1939, 'מלחמת העולם השנייה', 1945], [1969, 'האדם נוחת על הירח'], [1979, 'המהפכה באיראן'], [1989, 'נפילת חומת ברלין'], [1991, 'התפרקות ברית המועצות'], [2001, 'פיגועי 11 בספטמבר'], [2003, 'מלחמת עיראק']],
+    wv: [[1914, 'מלחמת העולם הראשונה', 1918], [1917, 'המהפכה ברוסיה'], [1929, 'המשבר הכלכלי הגדול'], [1939, 'מלחמת העולם השנייה', 1945], [1979, 'המהפכה באיראן'], [1989, 'נפילת חומת ברלין'], [1991, 'התפרקות ברית המועצות'], [2001, 'פיגועי 11 בספטמבר'], [2003, 'מלחמת עיראק']],
   },
   en: {
     h: 'Generation to Generation: Their Lives, Side by Side', p: 'Each bar is one rabbi’s life, from birth to passing, in the color of his circle. The diamond marks the year he spoke. Scroll sideways.',
@@ -328,7 +328,7 @@ const C = {
     eras: { ott: 'Ottoman rule', brit: 'British rule', lab: 'Mapai, Alignment and Labor', lik: 'Likud', uni: 'Unity governments', kad: 'Kadima' },
     ev: [[1881, 'Pogroms in Russia'], [1897, 'First Zionist Congress'], [1912, 'Agudath Israel founded'], [1917, 'Balfour Declaration'], [1937, 'Peel Commission proposes partition'], [1939, 'The Holocaust', 1945], [1947, 'UN partition vote'], [1948, 'The State is declared'],
       [1967, 'Six-Day War'], [1973, 'Yom Kippur War'], [1978, 'Camp David Accords'], [1980, 'Gedolei Torah al Hachzarat Shetachim is published', 0, 1], [1982, 'Sinai withdrawal completed'], [1993, 'Oslo Accords'], [2005, 'Expulsion from Gush Katif'], [2009, 'Zichron BaSefer is published', 0, 1]],
-    wv: [[1914, 'World War I', 1918], [1917, 'Russian Revolution'], [1929, 'The Great Depression begins'], [1939, 'World War II', 1945], [1969, 'Man lands on the moon'], [1979, 'Revolution in Iran'], [1989, 'Fall of the Berlin Wall'], [1991, 'Soviet Union dissolves'], [2001, 'September 11 attacks'], [2003, 'Iraq War']],
+    wv: [[1914, 'World War I', 1918], [1917, 'Russian Revolution'], [1929, 'The Great Depression begins'], [1939, 'World War II', 1945], [1979, 'Revolution in Iran'], [1989, 'Fall of the Berlin Wall'], [1991, 'Soviet Union dissolves'], [2001, 'September 11 attacks'], [2003, 'Iraq War']],
   },
 };
 const ELECTION_DATES = [[1949, 1], [1951, 7], [1955, 7], [1959, 11], [1961, 8], [1965, 11], [1969, 10], [1973, 12], [1977, 5], [1981, 6], [1984, 7], [1988, 11], [1992, 6], [1996, 5], [1999, 5], [2003, 1], [2006, 3], [2009, 2]];
