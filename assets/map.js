@@ -19,7 +19,7 @@
     if (r.born && P[r.born]) (byPlace[r.born] ||= { born: [], served: [] }).born.push(r);
     (r.served || []).forEach(s => { if (P[s]) (byPlace[s] ||= { born: [], served: [] }).served.push(r); });
   });
-  const comms = new Set(Object.keys(D.comms)), colls = new Set(['territories', 'elections']);
+  const comms = new Set(Object.keys(D.comms)), colls = new Set([...document.querySelectorAll('#rmap-colls button')].map(b => b.dataset.k));
   const on = r => comms.has(r.comm) && colls.has(r.coll);
   const col = c => `var(--c-${c})`;
   let k = 1, land = null, selected = null, first = true;

@@ -16,6 +16,11 @@
    "en": "The Edah HaChareidis of Jerusalem"
   },
   {
+   "id": "yeshiva",
+   "he": "ראשי ישיבות ליטא",
+   "en": "Lithuanian yeshiva heads"
+  },
+  {
    "id": "courts",
    "he": "בתי הדין והרבנות הראשית",
    "en": "Israel’s rabbinical courts and Chief Rabbinate"
@@ -499,6 +504,24 @@
    "en": "Bnei Brak",
    "lat": 32.08,
    "lon": 34.83
+  },
+  "birzai": {
+   "he": "בירז׳",
+   "en": "Biržai (Birzh)",
+   "lat": 56.2,
+   "lon": 24.75
+  },
+  "brisk": {
+   "he": "בריסק",
+   "en": "Brest-Litovsk (Brisk)",
+   "lat": 52.1,
+   "lon": 23.7
+  },
+  "baranovich": {
+   "he": "ברנוביץ׳",
+   "en": "Baranovich",
+   "lat": 53.13,
+   "lon": 26.02
   }
  }
 }

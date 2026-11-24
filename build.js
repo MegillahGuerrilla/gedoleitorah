@@ -8,6 +8,7 @@ const COMMON = read('common.json');
 const EL = read('elections.json').filter(x => !x.hold);
 EL.forEach((it, i) => { it.no = i + 1; });
 const TR = read('territories.json');
+const OT = read('others.json');
 const PLACES = COMMON.places;
 const COMM = Object.fromEntries(COMMON.communities.map(c => [c.id, c]));
 const INDEX = false; // flip to true when the site is approved for search engines
@@ -19,7 +20,7 @@ const L = {
   he: {
     dir: 'rtl', site: 'גדולי תורה בשאלות השעה', other: 'en', otherName: 'English',
     tagline: 'דברי גדולי התורה על השאלות שעמדו לפני עם ישראל, בלשונם, עם המקור והתאריך.',
-    nav: { home: 'ראשי', territories: 'החזרת שטחים', elections: 'הבחירות לכנסת', rabbis: 'הרבנים', map: 'מפה', connect: 'הקשר בין השאלות', archive: 'הדפים המקוריים' },
+    nav: { home: 'ראשי', territories: 'החזרת שטחים', elections: 'הבחירות לכנסת', rabbis: 'הרבנים', map: 'מפה', others: 'עוד מגדולי ישראל', connect: 'הקשר בין השאלות', archive: 'הדפים המקוריים' },
     q1: 'שאלה ראשונה', q2: 'שאלה שנייה',
     terrTitle: 'החזרת שטחים', terrQ: 'האם מותר למסור חלק מארץ ישראל?',
     terrMeta: '20 מאמרים של 19 רבנים, מתוך ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980)',
@@ -53,7 +54,7 @@ const L = {
   en: {
     dir: 'ltr', site: 'Torah Leaders on the Questions of the Hour', other: 'he', otherName: 'עברית',
     tagline: 'What the Torah leaders said on the questions facing the Jewish people, in their own words, with source and date.',
-    nav: { home: 'Home', territories: 'Giving up land', elections: 'Knesset elections', rabbis: 'The rabbis', map: 'Map', connect: 'How they connect', archive: 'Original pages' },
+    nav: { home: 'Home', territories: 'Giving up land', elections: 'Knesset elections', rabbis: 'The rabbis', map: 'Map', others: 'More Torah leaders', connect: 'How they connect', archive: 'Original pages' },
     q1: 'First question', q2: 'Second question',
     terrTitle: 'Giving Up Land', terrQ: 'May any part of the Land of Israel be handed over?',
     terrMeta: '20 sayings by 19 rabbis, from Gedolei Torah al Hachzarat Shetachim, Bnei Brak 1980',
@@ -109,14 +110,29 @@ for (const [k, r] of Object.entries(TR.rabbis)) {
     links: [], verify: false,
   });
 }
+for (const o of OT) {
+  people.push({
+    slug: o.slug, coll: 'others', comm: o.community, born: o.born, served: o.served, n: o.n, year: o.year,
+    he: { name: o.he_name, title: o.he_title, when: o.years, bio: o.he_bio, short: o.he_short },
+    en: { name: o.en_name, title: o.en_title, when: o.years, bio: o.en_bio, short: o.en_short },
+    sayings: [{ n: o.n, he: o.he_quote, en: o.en_quote, he_src: o.he_src, en_src: o.en_src }],
+    links: o.links || [], verify: false,
+  });
+}
+const OTX = {
+  he: { title: 'עוד מגדולי ישראל', label: 'בכתביהם', q: 'מה כתבו גדולי ישראל אחרים על אותן שאלות?', meta: 'דברים מתוך ספריהם ומכתביהם, עם המקור',
+    src: 'גדולי ישראל שאינם בשני האוספים, וכתבו על אותן שאלות בספריהם ובמכתביהם. הדברים מובאים בלשונם, עם שם הספר והעמוד. מקומם כאן נפרד, משום שאינם חלק מאחד משני הקבצים שנדפסו.' },
+  en: { title: 'More Torah Leaders', label: 'In their own writings', q: 'What did other Torah leaders write on the same questions?', meta: 'Passages from their books and letters, with the source',
+    src: 'Torah leaders who are not in the two collections and who wrote on the same questions in their own books and letters. Their words are given as they wrote them, with the book and page. They are kept separate here because they are not part of either printed collection.' },
+};
 const bySlug = Object.fromEntries(people.map(p => [p.slug, p]));
-const collName = (lang, c) => c === 'territories' ? L[lang].terrTitle : L[lang].elTitle;
+const collName = (lang, c) => c === 'territories' ? L[lang].terrTitle : c === 'others' ? OTX[lang].title : L[lang].elTitle;
 
 // ---------- layout ----------
 function layout(lang, p, { title, desc, body, og, active, wide, bleed }) {
   const t = L[lang];
   const full = title ? `${title} | ${t.site}` : t.site;
-  const navKeys = ['territories', 'elections', 'rabbis', 'map', 'connect', 'archive'];
+  const navKeys = ['territories', 'elections', 'others', 'rabbis', 'map', 'connect', 'archive'];
   const other = url(t.other, p);
   return `<!doctype html>
 <html lang="${lang}" dir="${t.dir}">
@@ -174,6 +190,7 @@ function together(lang, coll) {
     <p>${g.list.sort((a, b) => a.n - b.n).map(p => `<a href="${url(lang, 'rabbis/' + p.slug + '/')}">${esc(shortName(lang, p))}</a>`).join(' · ')}</p></div>`).join('')}</div></section>`;
 }
 function shortName(lang, p) {
+  if (p.coll === 'others') return p[lang].short;
   if (p.coll === 'territories') { const r = Object.values(TR.rabbis).find(r => r.slug === p.slug); return lang === 'he' ? r.he_short : r.en_short; }
   return lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '') : p.en.name;
 }
@@ -268,7 +285,7 @@ function mapBlock(lang, full) {
       </div>
       <aside id="rmap-info" class="mapinfo" aria-live="polite"><p class="muted">${esc(t.mapPick)}</p></aside>
     </div>
-    <div class="mapfoot"><div id="rmap-colls" role="group" aria-label="${esc0(h.colls)}"><button type="button" data-k="territories" aria-pressed="true">${esc(t.terrTitle)} · ${people.filter(p => p.coll === 'territories').length}</button><button type="button" data-k="elections" aria-pressed="true">${esc(t.elTitle)} · ${people.filter(p => p.coll === 'elections').length}</button></div>${full ? '' : `<a class="maplink" href="${url(lang, 'map/')}">${esc(h.fullMap)} ${lang === 'he' ? '←' : '→'}</a>`}</div>
+    <div class="mapfoot"><div id="rmap-colls" role="group" aria-label="${esc0(h.colls)}"><button type="button" data-k="territories" aria-pressed="true">${esc(t.terrTitle)} · ${people.filter(p => p.coll === 'territories').length}</button><button type="button" data-k="elections" aria-pressed="true">${esc(t.elTitle)} · ${people.filter(p => p.coll === 'elections').length}</button><button type="button" data-k="others" aria-pressed="true">${esc(OTX[lang].title)} · ${people.filter(p => p.coll === 'others').length}</button></div>${full ? '' : `<a class="maplink" href="${url(lang, 'map/')}">${esc(h.fullMap)} ${lang === 'he' ? '←' : '→'}</a>`}</div>
   </div>
 </section>
 <script>window.MAPDATA=${JSON.stringify(data)};</script>
@@ -322,7 +339,7 @@ const LIVES = people.map(p => {
     m = /(\d{4})\)?$/.exec(it.en_date); if (m) s = +m[1];
   } else {
     const m = /^(\d{4})–(\d{4})/.exec(p.he.when || ''); if (m) { b = +m[1]; d = +m[2]; }
-    if (p.sayings.some(x => x.n === 1)) s = 1978;
+    if (p.coll === 'others') s = p.year; else if (p.sayings.some(x => x.n === 1)) s = 1978;
   }
   return { p, b, d, s, book: p.coll === 'territories' };
 });
@@ -415,6 +432,7 @@ function timeline(lang) {
   }
   const decl = TR.opening.find(o => o.kind === 'decl');
   add(1937, { kind: 'doc', title: lang === 'he' ? decl.hhe : decl.hen, quote: lang === 'he' ? decl.he : decl.en });
+  for (const p of people.filter(x => x.coll === 'others')) add(p.year, { kind: 'tr', s: { he_quote: p.sayings[0].he, en_quote: p.sayings[0].en }, p });
   for (const s of TR.sayings) add(s.n === 1 ? 1978 : 1980, { kind: 'tr', s, p: people.find(x => x.coll === 'territories' && x.sayings.some(y => y.n === s.n)) });
   const years = [...new Set([...Object.keys(byYear).map(Number), ...Object.keys(h.ctx).map(Number)])].sort((a, b) => a - b);
   const elCard = e => `<button type="button" class="tcard c-${e.p.comm}" data-n="${e.n}"><img src="/img/zb/t/${e.p.sayings[0].scan}" alt="" loading="lazy" width="420" height="606"><span class="tn">${esc(plain(lang, e.p))}</span></button>`;
@@ -446,6 +464,7 @@ ${timeline(lang)}
 <section class="wrap wide"><h2>${esc(h.twoQ)}</h2><div class="qcards">
 ${card('territories', t.q1, t.terrTitle, t.terrQ, t.terrMeta)}
 ${card('elections', t.q2, t.elTitle, t.elQ, t.elMeta)}
+${card('others', OTX[lang].label, OTX[lang].title, OTX[lang].q, OTX[lang].meta)}
 </div>
 <div class="prose">${t.how.map(x => `<p>${esc(x)}</p>`).join('')}<p><a class="more" href="${url(lang, 'connect/')}">${esc(t.connectTeaser)} ${lang === 'he' ? '←' : '→'}</a></p></div></section>`;
   return layout(lang, '', { title: '', body, active: 'home', bleed: true, og: '/img/zb/00a.jpg' });
@@ -496,6 +515,17 @@ ${together(lang, 'elections')}
   return layout(lang, 'elections/', { title: t.elTitle, desc: t.elQ, body, active: 'elections', og: '/img/zb/00a.jpg' });
 }
 
+function others(lang) {
+  const t = L[lang], x = OTX[lang];
+  const items = people.filter(p => p.coll === 'others').map(p => { const s = p.sayings[0]; return `<li class="say" id="s${s.n}"><div class="saytop"><span class="num">${s.n}</span>${commChip(lang, p.comm)}</div>
+      ${quotes(lang, s.he, s.en)}
+      <p class="who"><a href="${url(lang, 'rabbis/' + p.slug + '/')}">${esc(p[lang].name)}</a><span class="ttl">${esc(p[lang].title)}</span></p>
+      <p class="src">${esc(lang === 'he' ? s.he_src : s.en_src)}</p></li>`; }).join('');
+  const body = `<header class="phead b-others"><p class="qlabel">${esc(x.label)}</p><h1>${esc(x.title)}</h1><p class="qq">${esc(x.q)}</p><p class="srcline">${esc(x.src)}</p></header>
+<section><h2>${esc(t.theSayings)}</h2><ol class="sayings">${items}</ol></section>`;
+  return layout(lang, 'others/', { title: x.title, desc: x.q, body, active: 'others' });
+}
+
 function placeList(lang, p) {
   const t = L[lang], out = [];
   if (p.born && PLACES[p.born]) out.push(`${t.born}${lang === 'he' ? '' : ' '}${esc(PLACES[p.born][lang])}`);
@@ -526,7 +556,7 @@ function rabbisIndex(lang) {
     return `<section class="rindex b-${coll}"><h2><a href="${url(lang, coll + '/')}">${esc(collName(lang, coll))}</a> <span class="count">${ps.length}</span></h2>
     ${COMMON.communities.map(c => { const l = ps.filter(p => p.comm === c.id).sort((a, b) => a.n - b.n); return l.length ? `<h3>${esc(c[lang])}</h3><ul class="rlist">${l.map(p => `<li><a href="${url(lang, 'rabbis/' + p.slug + '/')}"><span class="rn">${esc(lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '') : p.en.name)}</span>${p[lang].title ? `<span class="rt">${esc(p[lang].title)}</span>` : ''}</a></li>`).join('')}</ul>` : ''; }).join('')}</section>`;
   };
-  const body = `<header class="phead"><h1>${esc(t.nav.rabbis)}</h1><p class="lede">${esc(t.rabbisLede)}</p></header><div class="rcols">${block('territories')}${block('elections')}</div>`;
+  const body = `<header class="phead"><h1>${esc(t.nav.rabbis)}</h1><p class="lede">${esc(t.rabbisLede)}</p></header><div class="rcols">${block('territories')}${block('elections')}${block('others')}</div>`;
   return layout(lang, 'rabbis/', { title: t.nav.rabbis, body, active: 'rabbis', wide: true });
 }
 
@@ -603,6 +633,7 @@ for (const lang of ['he', 'en']) {
   out(pre + 'index.html', home(lang));
   out(pre + 'territories/index.html', territories(lang));
   out(pre + 'elections/index.html', elections(lang));
+  out(pre + 'others/index.html', others(lang));
   out(pre + 'rabbis/index.html', rabbisIndex(lang));
   for (const p of people) out(pre + `rabbis/${p.slug}/index.html`, rabbiPage(lang, p));
   out(pre + 'map/index.html', mapPage(lang));
