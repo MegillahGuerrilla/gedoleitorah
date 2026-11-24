@@ -203,10 +203,12 @@ function together(lang, coll) {
     <div class="group c-${g.c.id}"><h3><span class="count">${g.list.length}</span> ${esc(g.c[lang])}</h3>
     <p>${g.list.sort((a, b) => a.n - b.n).map(p => `<a href="${url(lang, 'rabbis/' + p.slug + '/')}">${esc(shortName(lang, p))}</a>`).join(' · ')}</p></div>`).join('')}</div></section>`;
 }
+// a name without its closing honorific, for lists, charts and page titles
+const bare = s => String(s).replace(/\s*(זצוק״ל|זצ״ל)$/, '');
 function shortName(lang, p) {
   if (p.coll === 'others') return p[lang].short;
   if (p.coll === 'territories') return p[lang].short;
-  return lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '') : p.en.name;
+  return bare(p[lang].name);
 }
 
 // ---------- pages ----------
@@ -277,7 +279,7 @@ const H = {
 };
 const usedPlaces = new Set(); people.forEach(p => { if (p.born) usedPlaces.add(p.born); p.served.forEach(s => usedPlaces.add(s)); });
 const usedComms = COMMON.communities.filter(c => people.some(p => p.comm === c.id));
-const plain = (lang, p) => lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '').replace(/\s*זצ״ל$/, '') : p.en.name;
+const plain = (lang, p) => bare(p[lang].name);
 const thumbOf = p => p.sayings[0].scan ? `/img/zb/t/${p.sayings[0].scan}` : null;
 
 function mapBlock(lang, full) {
@@ -563,7 +565,7 @@ ${ctx}
 <section>${says}</section>
 ${links}`;
   const first = p.sayings[0];
-  return layout(lang, `rabbis/${p.slug}/`, { title: d.name.replace(/\s*זצוק״ל$/, ''), desc: lang === 'he' ? first.he : first.en, body, active: 'rabbis', og: first.scan ? `/img/zb/t/${first.scan}` : null });
+  return layout(lang, `rabbis/${p.slug}/`, { title: bare(d.name), desc: lang === 'he' ? first.he : first.en, body, active: 'rabbis', og: first.scan ? `/img/zb/t/${first.scan}` : null });
 }
 
 function rabbisIndex(lang) {
@@ -571,7 +573,7 @@ function rabbisIndex(lang) {
   const block = coll => {
     const ps = people.filter(p => p.coll === coll);
     return `<section class="rindex b-${coll}"><h2><a href="${url(lang, coll + '/')}">${esc(collName(lang, coll))}</a> <span class="count">${ps.length}</span></h2>
-    ${COMMON.communities.map(c => { const l = ps.filter(p => p.comm === c.id).sort((a, b) => a.n - b.n); return l.length ? `<h3>${esc(c[lang])}</h3><ul class="rlist">${l.map(p => `<li><a href="${url(lang, 'rabbis/' + p.slug + '/')}"><span class="rn">${esc(lang === 'he' ? p.he.name.replace(/\s*זצוק״ל$/, '') : p.en.name)}</span>${p[lang].title ? `<span class="rt">${esc(p[lang].title)}</span>` : ''}</a></li>`).join('')}</ul>` : ''; }).join('')}</section>`;
+    ${COMMON.communities.map(c => { const l = ps.filter(p => p.comm === c.id).sort((a, b) => a.n - b.n); return l.length ? `<h3>${esc(c[lang])}</h3><ul class="rlist">${l.map(p => `<li><a href="${url(lang, 'rabbis/' + p.slug + '/')}"><span class="rn">${esc(bare(p[lang].name))}</span>${p[lang].title ? `<span class="rt">${esc(p[lang].title)}</span>` : ''}</a></li>`).join('')}</ul>` : ''; }).join('')}</section>`;
   };
   const body = `<header class="phead"><h1>${esc(t.nav.rabbis)}</h1><p class="lede">${esc(t.rabbisLede)}</p></header><div class="rcols">${block('territories')}${block('elections')}${block('others')}</div>`;
   return layout(lang, 'rabbis/', { title: t.nav.rabbis, body, active: 'rabbis', wide: true });
@@ -640,7 +642,7 @@ function archive(lang) {
   const t = L[lang];
   const cap = f => {
     if (f === '00a') return t.cover; if (f === '00b') return t.titlePage; if (f === '43') return t.note43; if (f === '44') return t.back;
-    const it = EL.find(x => x.n === +f); return `${it.no}. ${lang === 'he' ? it.he_name.replace(/\s*זצוק״ל$/, '') : it.en_name}`;
+    const it = EL.find(x => x.n === +f); return `${it.no}. ${bare(lang === 'he' ? it.he_name : it.en_name)}`;
   };
   const files = ['00a', '00b', ...EL.map(x => String(x.n).padStart(2, '0')), '43', '44'];
   const grid = files.map(f => `<figure><a href="/img/zb/${f}.jpg" target="_blank" rel="noopener"><img src="/img/zb/t/${f}.jpg" alt="${esc0(cap(f))}" loading="lazy" width="420" height="606"></a><figcaption>${esc(cap(f))}</figcaption></figure>`).join('');
