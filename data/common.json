@@ -522,6 +522,12 @@
    "en": "Baranovich",
    "lat": 53.13,
    "lon": 26.02
+  },
+  "nikolaev": {
+   "he": "ניקולייב",
+   "en": "Nikolaev",
+   "lat": 46.975,
+   "lon": 31.995
   }
  }
 }

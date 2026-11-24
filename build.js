@@ -24,7 +24,7 @@ const L = {
     nav: { home: 'ראשי', territories: 'החזרת שטחים', elections: 'הבחירות לכנסת', rabbis: 'הרבנים', map: 'מפה', others: 'עוד מגדולי ישראל', connect: 'הקשר בין השאלות', archive: 'הדפים המקוריים' },
     q1: 'שאלה ראשונה', q2: 'שאלה שנייה',
     terrTitle: 'החזרת שטחים', terrQ: 'האם מותר למסור חלק מארץ ישראל?',
-    terrMeta: '20 מאמרים של 19 רבנים, מתוך ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980)',
+    terrMeta: '20 מאמרים של 19 רבנים, מתוך ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980), ודברים ממקורות נוספים',
     elTitle: 'הבחירות לכנסת', elQ: 'האם מותר להשתתף בבחירות לכנסת?',
     elMeta: '{n} רבנים, מתוך הקונטרס ״זכרון בספר״, ירושלים תשס״ט (2009)',
     toCollection: 'לאוסף', rabbisN: 'רבנים', sayingsN: 'מאמרים', questionsN: 'שאלות',
@@ -34,6 +34,7 @@ const L = {
       'בכל אוסף מצוין מי עמד יחד: רבנים מקהילות ומחוגים שונים, מירושלים ועד התפוצות, שהגיעו לאותה תשובה.',
       'על שתי השאלות השיבו רבנים שונים, ולא הייתה להם דעה אחת על המדינה. ומה מחבר ביניהן? מן הרבנים שאסרו למסור את הארץ יש שכתבו במפורש שהפסק אינו תלוי בדעה על המדינה, שכן יסודו בפיקוח נפש. ולפי רבני האוסף השני, הבוחר ששולח נציג לכנסת שותף למה שהיא מחליטה על הארץ.'],
     connectTeaser: 'שתי שאלות, נקודת מפגש אחת',
+    terrMoreH: 'ממקורות נוספים', terrMoreP: 'דברים מאותן שנים שנדפסו מחוץ לקובץ. המקור מצוין ליד כל אחד.',
     together: 'מי עמד יחד', theSayings: 'הדברים', page: 'עמ׳', inAppendix: 'בנספחים',
     terrSource: 'מתוך הקובץ ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980). מספרי העמודים הם של הספר.',
     elSource: 'מתוך הקונטרס ״זכרון בספר״: דברי גדולי ישראל נגד ההשתתפות בבחירות לכנסת. יצא לאור בירושלים על ידי ״דרכי רבותינו״, לקראת הבחירות של ט״ז בשבט תשס״ט (2009).',
@@ -60,7 +61,7 @@ const L = {
     nav: { home: 'Home', territories: 'Giving up land', elections: 'Knesset elections', rabbis: 'The rabbis', map: 'Map', others: 'More Torah leaders', connect: 'How they connect', archive: 'Original pages' },
     q1: 'First question', q2: 'Second question',
     terrTitle: 'Giving Up Land', terrQ: 'May any part of the Land of Israel be handed over?',
-    terrMeta: '20 sayings by 19 rabbis, from Gedolei Torah al Hachzarat Shetachim, Bnei Brak 1980',
+    terrMeta: '20 sayings by 19 rabbis, from Gedolei Torah al Hachzarat Shetachim, Bnei Brak 1980, with statements from other sources',
     elTitle: 'Knesset Elections', elQ: 'May a Jew take part in the Knesset elections?',
     elMeta: '{n} rabbis, from the pamphlet Zichron BaSefer, Jerusalem 2009',
     toCollection: 'Open the collection', rabbisN: 'rabbis', sayingsN: 'sayings', questionsN: 'questions',
@@ -70,6 +71,7 @@ const L = {
       'Each collection shows who stood together: rabbis of different communities and circles, from Jerusalem to the Diaspora, who reached the same answer.',
       'The two questions were answered by different rabbis, and those rabbis did not share one view of the state. What joins them? Among the rabbis who forbade giving up land, some wrote plainly that the ruling does not depend on one\u2019s view of the state, because it rests on danger to life. And by the ruling of the rabbis of the second collection, the voter who sends a representative to the Knesset is a partner in what it decides about the Land.'],
     connectTeaser: 'Two questions, one meeting point',
+    terrMoreH: 'From other sources', terrMoreP: 'Statements from the same years, printed outside the 1980 collection. The source is given with each.',
     together: 'Who stood together', theSayings: 'The sayings', page: 'p.', inAppendix: 'appendix',
     terrSource: 'From the collection Gedolei Torah al Hachzarat Shetachim (Torah Greats on Returning Territories), Bnei Brak, 5740 (1980). Page numbers are the book’s. English translations were made for this site.',
     elSource: 'From the pamphlet Zichron BaSefer: the words of Torah greats against taking part in the Knesset elections. Published in Jerusalem by Darkei Rabboseinu for the elections of 16 Shevat 5769 (2009). English translations were made for this site.',
@@ -126,6 +128,14 @@ for (const [k, r] of Object.entries(TR.rabbis)) {
       { en: () => s.en_quote, en_src: () => `${L.en.page} ${s.page}${s.appendix ? ` (${L.en.inAppendix})` : ''}`, en_note: () => s.en_note })),
     links: [], verify: false,
   }, { en: () => ({ name: r.en_name, title: '', when: r.years, bio: r.en_bio || TR.pending_bio.en, context: r.en_context, fromBook: !!r.en_bio, short: r.en_short }) }));
+}
+for (const o of TR.more || []) {
+  people.push(lazy({
+    slug: o.slug, coll: 'territories', comm: o.community, born: o.born, served: o.served, n: o.n, year: o.year, more: true,
+    he: { name: o.he_name, title: o.he_title, when: o.years, bio: o.he_bio, short: o.he_short },
+    sayings: [lazy({ n: o.n, he: o.he_quote, he_src: o.he_src }, { en: () => o.en_quote, en_src: () => o.en_src })],
+    links: o.links || [], verify: false,
+  }, { en: () => ({ name: o.en_name, title: o.en_title, when: o.years, bio: o.en_bio, short: o.en_short }) }));
 }
 for (const o of OT) {
   people.push(lazy({
@@ -357,9 +367,9 @@ const LIVES = people.map(p => {
     s = it.year;
   } else {
     const m = /^(\d{4})–(\d{4})/.exec(p.he.when || ''); if (m) { b = +m[1]; d = +m[2]; }
-    if (p.coll === 'others') s = p.year; else if (p.sayings.some(x => x.n === 1)) s = 1978;
+    if (p.coll === 'others' || p.more) s = p.year; else if (p.sayings.some(x => x.n === 1)) s = 1978;
   }
-  return { p, b, d, s, book: p.coll === 'territories' };
+  return { p, b, d, s, book: p.coll === 'territories' && !p.more };
 });
 
 function chart(lang) {
@@ -454,6 +464,7 @@ function timeline(lang) {
   const decl = TR.opening.find(o => o.kind === 'decl');
   add(1937, { kind: 'doc', title: lang === 'he' ? decl.hhe : decl.hen, quote: lang === 'he' ? decl.he : decl.en });
   for (const p of people.filter(x => x.coll === 'others')) add(p.year, { kind: 'tr', s: { he_quote: p.sayings[0].he, en_quote: p.sayings[0].en }, p });
+  for (const p of people.filter(x => x.more)) add(p.year, { kind: 'tr', s: { he_quote: p.sayings[0].he, en_quote: p.sayings[0].en }, p });
   for (const s of TR.sayings) add(s.n === 1 ? 1978 : 1980, { kind: 'tr', s, p: people.find(x => x.coll === 'territories' && x.sayings.some(y => y.n === s.n)) });
   const years = [...new Set([...Object.keys(byYear).map(Number), ...Object.keys(h.ctx).map(Number)])].sort((a, b) => a - b);
   const elCard = e => `<button type="button" class="tcard c-${e.p.comm}" data-n="${e.n}"><img src="/img/zb/t/${e.p.sayings[0].scan}" alt="" loading="lazy" width="420" height="606"><span class="tn">${esc(plain(lang, e.p))}</span></button>`;
@@ -512,11 +523,17 @@ function territories(lang) {
       <p class="who"><a href="${url(lang, 'rabbis/' + p.slug + '/')}">${esc(p[lang].name)}</a></p>
       <p class="src">${t.page} ${s.page}${s.appendix ? ` (${t.inAppendix})` : ''}${note ? ' · ' + esc(note) : ''}</p></li>`;
   }).join('');
+  const moreItems = people.filter(p => p.more).map(p => { const s = p.sayings[0]; return `<li class="say" id="s${s.n}"><div class="saytop">${commChip(lang, p.comm)}</div>
+      ${quotes(lang, s.he, s.en)}
+      <p class="who"><a href="${url(lang, 'rabbis/' + p.slug + '/')}">${esc(p[lang].name)}</a></p>
+      <p class="src">${esc(lang === 'he' ? s.he_src : s.en_src)}</p></li>`; }).join('');
+  const more = moreItems ? `<section><h2>${esc(t.terrMoreH)}</h2><p class="note">${esc(t.terrMoreP)}</p><ol class="sayings">${moreItems}</ol></section>` : '';
   const appx = `<section class="prose"><h2>${esc(t.appendixDocs)}</h2><ul>${TR.appendix_docs.map(d => `<li>${esc(d[lang])} (${t.page} ${d.p})</li>`).join('')}</ul></section>`;
   const body = `<header class="phead b-territories"><p class="qlabel">${esc(t.q1)}</p><h1>${esc(t.terrTitle)}</h1><p class="qq">${esc(t.terrQ)}</p><p class="srcline">${esc(t.terrSource)}</p></header>
 ${together(lang, 'territories')}
 <section><h2>${esc(t.opening)}</h2><div class="docs">${open}</div></section>
 <section><h2>${esc(t.theSayings)}</h2><ol class="sayings">${items}</ol></section>
+${more}
 ${appx}`;
   return layout(lang, 'territories/', { title: t.terrTitle, desc: t.terrQ, body, active: 'territories' });
 }
@@ -556,7 +573,7 @@ function placeList(lang, p) {
 
 function rabbiPage(lang, p) {
   const t = L[lang], d = p[lang];
-  const says = p.sayings.map(s => `<div class="say solo">${quotes(lang, s.he, s.en)}<p class="src">${esc(lang === 'he' ? s.he_src : s.en_src)}${(lang === 'he' ? s.he_note : s.en_note) ? ' · ' + esc(lang === 'he' ? s.he_note : s.en_note) : ''} · <a href="${url(lang, p.coll + '/')}#s${s.n}">${esc(collName(lang, p.coll))}, ${s.no || s.n}</a>${p.verify ? ` · <em>${esc(t.verify)}</em>` : ''}</p>${s.scan ? `<a class="scan" href="/img/zb/${s.scan}" target="_blank" rel="noopener"><img src="/img/zb/t/${s.scan}" alt="${esc0(t.origPage)}" loading="lazy" width="420" height="606"><span>${esc(t.origPage)}</span></a>` : ''}</div>`).join('');
+  const says = p.sayings.map(s => `<div class="say solo">${quotes(lang, s.he, s.en)}<p class="src">${esc(lang === 'he' ? s.he_src : s.en_src)}${(lang === 'he' ? s.he_note : s.en_note) ? ' · ' + esc(lang === 'he' ? s.he_note : s.en_note) : ''} · <a href="${url(lang, p.coll + '/')}#s${s.n}">${esc(collName(lang, p.coll))}${p.more ? '' : ', ' + (s.no || s.n)}</a>${p.verify ? ` · <em>${esc(t.verify)}</em>` : ''}</p>${s.scan ? `<a class="scan" href="/img/zb/${s.scan}" target="_blank" rel="noopener"><img src="/img/zb/t/${s.scan}" alt="${esc0(t.origPage)}" loading="lazy" width="420" height="606"><span>${esc(t.origPage)}</span></a>` : ''}</div>`).join('');
   const links = p.links.length ? `<section class="links"><h2>${esc(t.sources)}</h2><ul>${p.links.map(l => `<li><a href="${esc0(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a></li>`).join('')}</ul></section>` : '';
   const ctx = d.context ? `<aside class="context"><b>${esc(t.note)}</b> ${esc(d.context)}</aside>` : '';
   const when = d.when ? `<p class="when">${esc(d.when)}</p>` : '';
@@ -717,6 +734,7 @@ TR.sayings.forEach(x => ['quote', 'note'].forEach(f => bind(`tr.say.${x.n}.${f}`
 TR.opening.forEach((o, i) => { [['hen', 'hhe', 'title'], ['en', 'he', 'text'], ['nen', 'nhe', 'note'], ['ben', 'bhe', 'bio'], ['plen', 'plhe', 'place']].forEach(([e, h, f]) => bind(`tr.open.${i}.${f}`, o[h], o, e)); (o.list || []).forEach((m, j) => bind(`tr.open.${i}.member.${j}`, m[0], m, 1)); });
 TR.appendix_docs.forEach((d, i) => bind(`tr.appx.${i}`, d.he, d, 'en'));
 bind('tr.pending', TR.pending_bio.he, TR.pending_bio, 'en');
+(TR.more || []).forEach(o => ['name', 'short', 'title', 'bio', 'quote', 'src'].forEach(f => bind(`tr.more.${o.key}.${f}`, o['he_' + f], o, 'en_' + f)));
 OT.forEach(o => ['name', 'short', 'title', 'bio', 'quote', 'src'].forEach(f => bind(`more.${o.slug}.${f}`, o['he_' + f], o, 'en_' + f)));
 const flatten = () => B.map(b => ({ k: b.key, he: b.he, en: b.orig }));
 function applyPack(pack, dir) { const missing = []; B.forEach(b => { const v = pack[b.key]; if (typeof v === 'string' && v.trim()) b.obj[b.prop] = v; else { b.obj[b.prop] = b.orig; missing.push(b.key); } }); L.en.dir = dir; return missing; }

@@ -753,5 +753,31 @@
  "pending_bio": {
   "he": "הדברים מופיעים בנספחים לספר, ולא צורפה להם ביוגרפיה.",
   "en": "This appears in the book's appendix, which doesn't include a biography."
- }
+ },
+ "more": [
+  {
+   "key": "schneerson",
+   "n": 101,
+   "slug": "menachem-mendel-schneerson",
+   "community": "hasidic",
+   "born": "nikolaev",
+   "served": [
+    "brooklyn"
+   ],
+   "he_name": "רבי מנחם מענדל שניאורסון, האדמו״ר מליובאוויטש זצוק״ל",
+   "en_name": "Rabbi Menachem Mendel Schneerson, the Lubavitcher Rebbe",
+   "he_short": "הרבי מליובאוויטש",
+   "en_short": "The Lubavitcher Rebbe",
+   "he_title": "האדמו״ר השביעי של חב״ד־ליובאוויטש",
+   "en_title": "Seventh Rebbe of Chabad-Lubavitch",
+   "years": "1902–1994",
+   "year": 1979,
+   "he_bio": "1902–1994. נולד בניקולייב. משנת תש״א (1941) בברוקלין, ניו יורק, ומשנת תשי״א (1951) האדמו״ר השביעי של חב״ד־ליובאוויטש.",
+   "en_bio": "1902–1994. Born in Nikolaev. In Brooklyn, New York, from 1941, and from 1951 the seventh Rebbe of Chabad-Lubavitch.",
+   "he_quote": "כל הזמן נמנע אני מלכוון דבריי בענין זה לתנועה מסויימת, אפילו לא לאנ״ש וכיו״ב. ומדגיש אני בפירוש הפכו, היינו שזהו ענין הנוגע לכל אחד ואחת מישראל... אף כשגלינו ונתרחקנו, הרי היא ארצנו ואדמתנו... הארץ אשר היא בבעלות המלאה והנצחית של עם בני ישראל... כאו״א לא רק שמותר לו לחוות דעתו בנוגע לארצנו ארץ אבות, אלא שגם מחוייב הוא לעשות זה ובכל התוקף המתאים.",
+   "en_quote": "All this time I have refrained from directing my words on this matter to any particular movement, not even to our own chasidim and the like. I stress explicitly the opposite: this is a matter that concerns every single Jew… Even when we were exiled and removed from it, it is our country and our land… the Land, which is in the full and eternal ownership of the people of Israel… every single one is not only permitted to state his opinion regarding our land, the land of our fathers, but is also obligated to do so, with all due force.",
+   "he_src": "מכתב מי״ג מנחם אב תשל״ט (1979) לאחד הרבנים בירושלים. נדפס ב״דעת תורה בעניני המצב בארץ הקדש״ מאת הרב שלום דב וולפא, עמ׳ 187–188",
+   "en_src": "Letter of 13 Menachem Av 5739 (1979) to a rabbi in Jerusalem. Printed in Da’at Torah be’Inyanei haMatzav be’Eretz haKodesh by Rabbi Shalom Dov Wolpo, pp. 187–188"
+  }
+ ]
 }
