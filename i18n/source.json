@@ -130,6 +130,11 @@
   "en": "Each collection shows who stood together: rabbis of different communities and circles, from Jerusalem to the Diaspora, who reached the same answer."
  },
  {
+  "k": "ui.how.2",
+  "he": "על שתי השאלות השיבו רבנים שונים, ולא הייתה להם דעה אחת על המדינה. ומה מחבר ביניהן? מן הרבנים שאסרו למסור את הארץ יש שכתבו במפורש שהפסק אינו תלוי בדעה על המדינה, שכן יסודו בפיקוח נפש. ולפי רבני האוסף השני, הבוחר ששולח נציג לכנסת שותף למה שהיא מחליטה על הארץ.",
+  "en": "The two questions were answered by different rabbis, and those rabbis did not share one view of the state. What joins them? Among the rabbis who forbade giving up land, some wrote plainly that the ruling does not depend on one’s view of the state, because it rests on danger to life. And by the ruling of the rabbis of the second collection, the voter who sends a representative to the Knesset is a partner in what it decides about the Land."
+ },
+ {
   "k": "ui.connectTeaser",
   "he": "שתי שאלות, נקודת מפגש אחת",
   "en": "Two questions, one meeting point"
@@ -411,8 +416,8 @@
  },
  {
   "k": "home.mapH",
-  "he": "מכל קצות העולם, תשובה אחת",
-  "en": "From Every Corner of the World, One Answer"
+  "he": "שתי שאלות. על כל אחת, תשובה אחת מכל קצות תבל",
+  "en": "Two Questions. On Each, One Answer from Every Corner of the World"
  },
  {
   "k": "home.mapP",
@@ -845,9 +850,49 @@
   "en": "The first collection on this site asks whether any part of the Land of Israel may be handed over. The second asks whether a Jew may take part in the Knesset elections. These are separate questions, answered by two different groups of rabbis. No rabbi appears in both collections, and none of them should be credited with a position on a question he did not answer."
  },
  {
+  "k": "connect.p1b",
+  "he": "לרבני האתר לא הייתה דעה אחת על המדינה. הרב זוין, למשל, כותב ששלוש השבועות אינן אוסרות את מלחמות ישראל, בתשובה ל״גדול בתורה אחד״ שסבר שהן אוסרות. המשותף לרבני האוסף הראשון הוא הפסק עצמו: אדמה שבידי ישראל אסור למוסרה.",
+  "en": "The rabbis on this site did not share one view of the state. Rabbi Zevin, for one, writes that the Three Oaths do not forbid Israel’s wars, in answer to “one great Torah scholar” who held that they do. What the rabbis of the first collection share is the ruling itself: land in Jewish hands may not be handed over."
+ },
+ {
+  "k": "connect.h0",
+  "he": "מתנגדים למדינה, ואוסרים למסור את הארץ",
+  "en": "Opposing the state, and forbidding the surrender of land"
+ },
+ {
+  "k": "connect.p0",
+  "he": "הפסק הזה אינו תלוי בדעתו של הרב על המדינה. כך כתבו רבנים מן האוסף הראשון עצמם:",
+  "en": "That ruling does not depend on a rabbi’s view of the state. Rabbis of the first collection say so themselves:"
+ },
+ {
+  "k": "connect.q1",
+  "he": "הנה זה ברור לכל מבין שאף מי שמתנגד לרעיון הציוני, כמו שרוב גדולי ישראל בזמן שעבר... ומי שאינו מקבל את הסברא שיש אצל כמה מבנ״י שכאילו ח״ו יש אתחלתא דגאולה וכדומה אלא אדרבא... שהוא חושך כפול ומכופל... ודאי שאין לזה שום קשר לשאלה הנז׳ שמשום פיקוח נפשות, ואפילו משום ספק ספיקא של סכנת נפשות הרי יש איסור מפורש בפוסקים ואין מערער ע״ז.",
+  "en": "It is clear to anyone who understands that even one who opposes the Zionist idea, as most of the great rabbis of Israel did in times past… and who does not accept the notion held by some that this is, Heaven forbid, the beginning of the redemption, but holds on the contrary… that it is a doubled and redoubled darkness… certainly this has no connection to the question at hand. For on grounds of danger to life, even a doubt of a doubt of danger to life, there is an explicit prohibition in the poskim, and no one disputes it."
+ },
+ {
+  "k": "connect.q2",
+  "he": "כל ילד יודע שאין הערבים מבחינים בין יהודי מהישוב הישן לבין יהודי מן המחנה החילוני, ואם ח״ו תהא בידם האפשרות, ישמידו את כ״א, בין יהודי ׳נטורי קרתא׳ ובין יהודי ׳מזרחי׳ או ׳מפא״י׳... דעתי זו אינה קשורה כאמור לעמדה פוליטית כלשהי כי אם לדעת תורה: את השטחים אסור להחזיר כי זה יסכן אלפים מישראל.",
+  "en": "Every child knows that the Arabs do not distinguish between a Jew of the old yishuv and a Jew of the secular camp, and if, Heaven forbid, they had the chance, they would destroy every one: a ‘Neturei Karta’ Jew, a ‘Mizrachi’ Jew or a ‘Mapai’ Jew alike… This view of mine, as I said, is tied to no political position, only to Da’at Torah: the territories may not be returned, for that would endanger thousands of Jews."
+ },
+ {
+  "k": "connect.p0b",
+  "he": "וכך מוגדרת התקופה בספר ״דעת תורה״ של הרב שלום דב וולפא, המיוסד על שיחותיו של הרבי מליובאוויטש:",
+  "en": "And this is how the period is defined in Da’at Torah, the book by Rabbi Shalom Dov Wolpo based on the talks of the Lubavitcher Rebbe:"
+ },
+ {
+  "k": "connect.q3",
+  "he": "הצלת נפשות — כן! אפשרות של לימוד תורה וקיום מצות מתוך מנוחה — כן! אבל האם ׳זו משהו׳ בכיוון הגאולה או התחלתה ע״י הקמת השלטון העצמי של היהודים בארה״ק — לא ולא! כי ברור הדבר שאין לזה שום שייכות לגאולה או לאתחלתא דגאולה.",
+  "en": "Rescue of lives: yes! The possibility of Torah study and keeping the mitzvot in tranquility: yes! But is this ‘something’ in the direction of the redemption, or its beginning, through the establishment of the Jews’ own rule in the Holy Land? No and no! For it is clear that this has no connection to the redemption or to the beginning of the redemption."
+ },
+ {
+  "k": "connect.c3",
+  "he": "״דעת תורה בעניני המצב בארץ הקדש״, פרק א׳, עמ׳ 24",
+  "en": "Da’at Torah be’Inyanei haMatzav be’Eretz haKodesh, chapter 1, p. 24"
+ },
+ {
   "k": "connect.p2",
-  "he": "ובכל זאת השאלות נפגשות בנקודה אחת: בבוחר עצמו.",
-  "en": "Even so, the questions meet at one point: the voter himself."
+  "he": "ושתי השאלות עצמן נפגשות בנקודה אחת: בבוחר עצמו.",
+  "en": "The two questions themselves meet at one point: the voter himself."
  },
  {
   "k": "connect.h1",

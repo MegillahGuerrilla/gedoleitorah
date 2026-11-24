@@ -31,7 +31,8 @@ const L = {
     homeLede: 'כאן מרוכזים דברי גדולי התורה על שאלות שעמדו לפני עם ישראל, כל שאלה באוסף משלה: הדברים בלשון אומרם, עם המקור, התאריך והדף המקורי.',
     howTitle: 'איך לקרוא את האתר',
     how: ['כל אוסף עומד בפני עצמו. הוא מביא את דברי הרבנים שהשיבו על שאלה אחת, ואינו מייחס להם עמדה בשאלה האחרת. אין רב שמופיע בשני האוספים.',
-      'בכל אוסף מצוין מי עמד יחד: רבנים מקהילות ומחוגים שונים, מירושלים ועד התפוצות, שהגיעו לאותה תשובה.'],
+      'בכל אוסף מצוין מי עמד יחד: רבנים מקהילות ומחוגים שונים, מירושלים ועד התפוצות, שהגיעו לאותה תשובה.',
+      'על שתי השאלות השיבו רבנים שונים, ולא הייתה להם דעה אחת על המדינה. ומה מחבר ביניהן? מן הרבנים שאסרו למסור את הארץ יש שכתבו במפורש שהפסק אינו תלוי בדעה על המדינה, שכן יסודו בפיקוח נפש. ולפי רבני האוסף השני, הבוחר ששולח נציג לכנסת שותף למה שהיא מחליטה על הארץ.'],
     connectTeaser: 'שתי שאלות, נקודת מפגש אחת',
     together: 'מי עמד יחד', theSayings: 'הדברים', page: 'עמ׳', inAppendix: 'בנספחים',
     terrSource: 'מתוך הקובץ ״גדולי תורה על החזרת שטחים״, בני ברק תש״מ (1980). מספרי העמודים הם של הספר.',
@@ -66,7 +67,8 @@ const L = {
     homeLede: 'This site gathers what the Torah leaders said on questions that came before the Jewish people, each question in a collection of its own: their words as they said them, with the source, the date and the original page.',
     howTitle: 'How to read this site',
     how: ['Each collection stands on its own. It brings the words of the rabbis who answered one question and attributes to them no position on the other. No rabbi appears in both collections.',
-      'Each collection shows who stood together: rabbis of different communities and circles, from Jerusalem to the Diaspora, who reached the same answer.'],
+      'Each collection shows who stood together: rabbis of different communities and circles, from Jerusalem to the Diaspora, who reached the same answer.',
+      'The two questions were answered by different rabbis, and those rabbis did not share one view of the state. What joins them? Among the rabbis who forbade giving up land, some wrote plainly that the ruling does not depend on one\u2019s view of the state, because it rests on danger to life. And by the ruling of the rabbis of the second collection, the voter who sends a representative to the Knesset is a partner in what it decides about the Land.'],
     connectTeaser: 'Two questions, one meeting point',
     together: 'Who stood together', theSayings: 'The sayings', page: 'p.', inAppendix: 'appendix',
     terrSource: 'From the collection Gedolei Torah al Hachzarat Shetachim (Torah Greats on Returning Territories), Bnei Brak, 5740 (1980). Page numbers are the book’s. English translations were made for this site.',
@@ -217,7 +219,7 @@ const H = {
   he: {
     kicker: 'דעת תורה, בלשון אומריה',
     statR: 'רבנים', statC: 'חוגים וקהילות', statP: 'ערים', statK: 'יבשות',
-    mapH: 'מכל קצות העולם, תשובה אחת',
+    mapH: 'שתי שאלות. על כל אחת, תשובה אחת מכל קצות תבל',
     mapP: 'כל נקודה היא עיר שבה נולד אחד הרבנים או כיהן בה, וכל קו הוא דרכו של רב ממקום למקום. הצבע מסמן את החוג שלו. לחצו על נקודה.',
     colls: 'אוסף', zoomIn: 'הגדלה', zoomOut: 'הקטנה', all: 'הכול',
     tlH: 'ציר הזמן', tlP: 'מתי נאמרו הדברים, שנה אחר שנה. לחצו על דף כדי לקרוא אותו.',
@@ -248,7 +250,7 @@ const H = {
   en: {
     kicker: 'Da’at Torah, in their own words',
     statR: 'rabbis', statC: 'circles and communities', statP: 'cities', statK: 'continents',
-    mapH: 'From Every Corner of the World, One Answer',
+    mapH: 'Two Questions. On Each, One Answer from Every Corner of the World',
     mapP: 'Each point is a city where one of the rabbis was born or served, and each line is a rabbi’s path from place to place. The color marks his circle. Tap a point.',
     colls: 'Collection', zoomIn: 'Zoom in', zoomOut: 'Zoom out', all: 'All',
     tlH: 'Timeline', tlP: 'When the words were said, year by year. Tap a page to read it.',
@@ -582,7 +584,15 @@ function rabbisIndex(lang) {
 const CN = {
   he: { title: 'שתי שאלות, נקודת מפגש אחת',
     p1: 'האוסף הראשון באתר עוסק בשאלה אם מותר למסור חלק מארץ ישראל. האוסף השני עוסק בשאלה אם מותר להשתתף בבחירות לכנסת. אלה שתי שאלות נפרדות, ושתי קבוצות שונות של רבנים השיבו עליהן. אף רב אינו מופיע בשני האוספים, ואין לייחס לאיש מהם עמדה בשאלה שלא השיב עליה.',
-    p2: 'ובכל זאת השאלות נפגשות בנקודה אחת: בבוחר עצמו.', h1: 'הבוחר שולח שליח',
+    p1b: 'לרבני האתר לא הייתה דעה אחת על המדינה. הרב זוין, למשל, כותב ששלוש השבועות אינן אוסרות את מלחמות ישראל, בתשובה ל״גדול בתורה אחד״ שסבר שהן אוסרות. המשותף לרבני האוסף הראשון הוא הפסק עצמו: אדמה שבידי ישראל אסור למוסרה.',
+    h0: 'מתנגדים למדינה, ואוסרים למסור את הארץ',
+    p0: 'הפסק הזה אינו תלוי בדעתו של הרב על המדינה. כך כתבו רבנים מן האוסף הראשון עצמם:',
+    q1: 'הנה זה ברור לכל מבין שאף מי שמתנגד לרעיון הציוני, כמו שרוב גדולי ישראל בזמן שעבר... ומי שאינו מקבל את הסברא שיש אצל כמה מבנ״י שכאילו ח״ו יש אתחלתא דגאולה וכדומה אלא אדרבא... שהוא חושך כפול ומכופל... ודאי שאין לזה שום קשר לשאלה הנז׳ שמשום פיקוח נפשות, ואפילו משום ספק ספיקא של סכנת נפשות הרי יש איסור מפורש בפוסקים ואין מערער ע״ז.',
+    q2: 'כל ילד יודע שאין הערבים מבחינים בין יהודי מהישוב הישן לבין יהודי מן המחנה החילוני, ואם ח״ו תהא בידם האפשרות, ישמידו את כ״א, בין יהודי ׳נטורי קרתא׳ ובין יהודי ׳מזרחי׳ או ׳מפא״י׳... דעתי זו אינה קשורה כאמור לעמדה פוליטית כלשהי כי אם לדעת תורה: את השטחים אסור להחזיר כי זה יסכן אלפים מישראל.',
+    p0b: 'וכך מוגדרת התקופה בספר ״דעת תורה״ של הרב שלום דב וולפא, המיוסד על שיחותיו של הרבי מליובאוויטש:',
+    q3: 'הצלת נפשות — כן! אפשרות של לימוד תורה וקיום מצות מתוך מנוחה — כן! אבל האם ׳זו משהו׳ בכיוון הגאולה או התחלתה ע״י הקמת השלטון העצמי של היהודים בארה״ק — לא ולא! כי ברור הדבר שאין לזה שום שייכות לגאולה או לאתחלתא דגאולה.',
+    c3: '״דעת תורה בעניני המצב בארץ הקדש״, פרק א׳, עמ׳ 24',
+    p2: 'ושתי השאלות עצמן נפגשות בנקודה אחת: בבוחר עצמו.', h1: 'הבוחר שולח שליח',
     p3: 'הטיעון המרכזי של רבני ״זכרון בספר״ הוא השליחות. הנציג פועל בשם מי שבחר בו, ו[[שלוחו של אדם כמותו]]. מכאן שמי ששולח נציג לכנסת נעשה שותף למה שנעשה בה:',
     p4: 'יש שיענו ש[[אין שליח לדבר עבירה]]. אבל הרבנים האלה לא נשענו על השליחות בלבד. הם כתבו שהבוחר עצמו מודה בשלטון ונותן לו כוח, וזה מעשה שלו, לא של שלוחו:',
     h2: 'והכנסת מחליטה על הארץ', p5: 'רבני ״גדולי תורה על החזרת שטחים״ קבעו שאסור למסור שום חלק מארץ ישראל, ושאין לשום ממשלה רשות לעשות זאת:',
@@ -590,7 +600,15 @@ const CN = {
     toTerr: 'להחזרת שטחים', toEl: 'לבחירות לכנסת' },
   en: { title: 'Two Questions, One Meeting Point',
     p1: 'The first collection on this site asks whether any part of the Land of Israel may be handed over. The second asks whether a Jew may take part in the Knesset elections. These are separate questions, answered by two different groups of rabbis. No rabbi appears in both collections, and none of them should be credited with a position on a question he did not answer.',
-    p2: 'Even so, the questions meet at one point: the voter himself.', h1: 'The voter sends an agent',
+    p1b: 'The rabbis on this site did not share one view of the state. Rabbi Zevin, for one, writes that the Three Oaths do not forbid Israel\u2019s wars, in answer to \u201cone great Torah scholar\u201d who held that they do. What the rabbis of the first collection share is the ruling itself: land in Jewish hands may not be handed over.',
+    h0: 'Opposing the state, and forbidding the surrender of land',
+    p0: 'That ruling does not depend on a rabbi\u2019s view of the state. Rabbis of the first collection say so themselves:',
+    q1: 'It is clear to anyone who understands that even one who opposes the Zionist idea, as most of the great rabbis of Israel did in times past\u2026 and who does not accept the notion held by some that this is, Heaven forbid, the beginning of the redemption, but holds on the contrary\u2026 that it is a doubled and redoubled darkness\u2026 certainly this has no connection to the question at hand. For on grounds of danger to life, even a doubt of a doubt of danger to life, there is an explicit prohibition in the poskim, and no one disputes it.',
+    q2: 'Every child knows that the Arabs do not distinguish between a Jew of the old yishuv and a Jew of the secular camp, and if, Heaven forbid, they had the chance, they would destroy every one: a \u2018Neturei Karta\u2019 Jew, a \u2018Mizrachi\u2019 Jew or a \u2018Mapai\u2019 Jew alike\u2026 This view of mine, as I said, is tied to no political position, only to Da\u2019at Torah: the territories may not be returned, for that would endanger thousands of Jews.',
+    p0b: 'And this is how the period is defined in Da\u2019at Torah, the book by Rabbi Shalom Dov Wolpo based on the talks of the Lubavitcher Rebbe:',
+    q3: 'Rescue of lives: yes! The possibility of Torah study and keeping the mitzvot in tranquility: yes! But is this \u2018something\u2019 in the direction of the redemption, or its beginning, through the establishment of the Jews\u2019 own rule in the Holy Land? No and no! For it is clear that this has no connection to the redemption or to the beginning of the redemption.',
+    c3: 'Da\u2019at Torah be\u2019Inyanei haMatzav be\u2019Eretz haKodesh, chapter 1, p. 24',
+    p2: 'The two questions themselves meet at one point: the voter himself.', h1: 'The voter sends an agent',
     p3: 'The central argument of the Zichron BaSefer rabbis is agency. A representative acts in the name of those who chose him, and [[a person\u2019s agent is like himself]]. So whoever sends a representative to the Knesset becomes a partner in what is done there:',
     p4: 'Some will answer that [[there is no agency for a transgression]]. But these rabbis did not rest on agency alone. They wrote that the voter himself acknowledges the regime and gives it strength, and that is his own act, not his agent\u2019s:',
     h2: 'And the Knesset decides about the Land', p5: 'The rabbis of Gedolei Torah al Hachzarat Shetachim ruled that no part of the Land of Israel may be handed over, and that no government has the authority to do it:',
@@ -603,11 +621,20 @@ function connect(lang) {
   const pr = slug => url(lang, 'rabbis/' + slug + '/');
   const cite = (it, he) => `<p class="src"><a href="${pr(it.slug)}">${esc(he ? bySlug[it.slug].he.name : bySlug[it.slug].en.name)}</a>, ${esc(he ? it.he_date : it.en_date)}</p>`;
   const s14 = tq(14), nissim = people.find(p => p.coll === 'territories' && p.sayings.some(s => s.n === 14));
+  const tp = key => people.find(p => p.coll === 'territories' && p.slug === TR.rabbis[key].slug);
+  const tcite = (key, pg, he) => `<p class="src"><a href="${pr(tp(key).slug)}">${esc(bare(he ? tp(key).he.name : tp(key).en.name))}</a>, ${he ? 'עמ׳' : L.en.page} ${pg}</p>`;
   const sef41 = 'https://www.sefaria.org/Kiddushin.41b', sef42 = 'https://www.sefaria.org/Kiddushin.42b';
   const he = `
 <h1>שתי שאלות, נקודת מפגש אחת</h1>
 <p>האוסף הראשון באתר עוסק בשאלה אם מותר למסור חלק מארץ ישראל. האוסף השני עוסק בשאלה אם מותר להשתתף בבחירות לכנסת. אלה שתי שאלות נפרדות, ושתי קבוצות שונות של רבנים השיבו עליהן. אף רב אינו מופיע בשני האוספים, ואין לייחס לאיש מהם עמדה בשאלה שלא השיב עליה.</p>
-<p>ובכל זאת השאלות נפגשות בנקודה אחת: בבוחר עצמו.</p>
+<p>${esc(CN.he.p1b)}</p>
+<h2>${esc(CN.he.h0)}</h2>
+<p>${esc(CN.he.p0)}</p>
+${quoteHe(CN.he.q1)}${tcite('trebnik', 69, true)}
+${quoteHe(CN.he.q2)}${tcite('sawitzki', 76, true)}
+<p>${esc(CN.he.p0b)}</p>
+${quoteHe(CN.he.q3)}<p class="src">${esc(CN.he.c3)}</p>
+<p>${esc(CN.he.p2)}</p>
 <h2>הבוחר שולח שליח</h2>
 <p>הטיעון המרכזי של רבני ״זכרון בספר״ הוא השליחות. הנציג פועל בשם מי שבחר בו, ו<a href="${sef41}?lang=he" target="_blank" rel="noopener">שלוחו של אדם כמותו</a>. מכאן שמי ששולח נציג לכנסת נעשה שותף למה שנעשה בה:</p>
 ${quoteHe(q(30).he_quote)}${cite(q(30), true)}
@@ -623,6 +650,13 @@ ${quoteHe(s14.he_quote)}<p class="src"><a href="${pr(nissim.slug)}">${esc(nissim
   const en = `
 <h1>${esc(k.title)}</h1>
 <p>${esc(k.p1)}</p>
+<p>${esc(k.p1b)}</p>
+<h2>${esc(k.h0)}</h2>
+<p>${esc(k.p0)}</p>
+${quoteEn(k.q1)}${tcite('trebnik', 69, false)}
+${quoteEn(k.q2)}${tcite('sawitzki', 76, false)}
+<p>${esc(k.p0b)}</p>
+${quoteEn(k.q3)}<p class="src">${esc(k.c3)}</p>
 <p>${esc(k.p2)}</p>
 <h2>${esc(k.h1)}</h2>
 <p>${link(esc(k.p3), sef41)}</p>
