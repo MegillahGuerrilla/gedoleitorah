@@ -4,3 +4,5 @@ node_modules/
 i18n/tmp-*/
 i18n/??.json
 !i18n/es.json
+!i18n/fr.json
+!i18n/ru.json
