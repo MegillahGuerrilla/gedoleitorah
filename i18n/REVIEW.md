@@ -5,15 +5,15 @@ You are the independent reviewer. Someone else translated the pack. You have not
 ## Files
 
 - `/home/claude/gedoleitorah/i18n/BRIEF.md`: the rules the translator was given. Read it first; they bind you too.
-- `/home/claude/gedoleitorah/i18n/source.json`: 609 items, `{"k", "he", "en"}`. The Hebrew is the original for the rabbis' words and for the 1980 book's biographies.
-- `/home/claude/gedoleitorah/i18n/<code>.json`: the translation to review. **Correct it in place.** Keep it one flat JSON object with all 609 keys.
+- `/home/claude/gedoleitorah/i18n/source.json`: 623 items, `{"k", "he", "en"}`. The Hebrew is the original for the rabbis' words and for the 1980 book's biographies.
+- `/home/claude/gedoleitorah/i18n/<code>.json`: the translation to review. **Correct it in place.** Keep it one flat JSON object with all 623 keys.
 - `node /home/claude/gedoleitorah/i18n/check.js <code>` must print `OK` when you finish.
 
 Do not edit any other file. Do not run the site build. Do not use git.
 
 ## How to review
 
-Go through **all 609 items in order**, comparing each translation with its Hebrew and English. Do not sample. For each item ask:
+Go through **all 623 items in order**, comparing each translation with its Hebrew and English. Do not sample. For each item ask:
 
 1. **Meaning.** Does it say what the Hebrew says: nothing added, nothing dropped, nothing softened or sharpened? For the rabbis' quotes (`el.N.quote`, `tr.say.N.quote`, `tr.open.N.text`, `more.*.quote`) check against the Hebrew word by word. A halachic ruling that becomes milder or harsher in translation is a serious error.
 2. **Facts.** Names, places, years, book titles, posts held: all match the source.

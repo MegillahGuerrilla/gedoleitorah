@@ -607,5 +607,19 @@
  "more.elchanan-wasserman.title": "Rosh yeshivá de Ohel Torá, Baranovich",
  "more.elchanan-wasserman.bio": "1874–1941. Uno de los más grandes discípulos del Jafetz Jaim, rosh yeshivá de Ohel Torá en Baranovich desde 1921 y uno de los dirigentes de Agudat Israel. Autor de Kovetz Shiurim y Kovetz Hearos. Fue asesinado por la santificación del Nombre de D-os en Kovno, en Tamuz de 5701 (julio de 1941).",
  "more.elchanan-wasserman.quote": "En estos días nuestros, los judíos han elegido para sí dos idolatrías a las que ofrecen sus sacrificios, y son: el socialismo y el nacionalismo. La doctrina del nuevo nacionalismo puede definirse con suma brevedad: ‘Seamos como todas las naciones’.",
- "more.elchanan-wasserman.src": "Ikvesa DeMeshija, sección 21. Escrito en ídish; traducción al hebreo de Rabí Moshé Scheinfeld, editorial Netzaj, Bnei Brak 5749 (1989), págs. 35–36"
+ "more.elchanan-wasserman.src": "Ikvesa DeMeshija, sección 21. Escrito en ídish; traducción al hebreo de Rabí Moshé Scheinfeld, editorial Netzaj, Bnei Brak 5749 (1989), págs. 35–36",
+ "home.stone.hint": "Toque la piedra",
+ "home.stone.open": "Abrir la piedra: {n} facetas, un rabino en cada una",
+ "home.stone.kicker": "La piedra de la corona",
+ "home.stone.h": "{n} rabinos, una faceta para cada uno",
+ "home.stone.upper": "Mitad superior",
+ "home.stone.lower": "Mitad inferior",
+ "home.stone.top": "La faceta superior",
+ "home.stone.topNote": "Asesinado por la santificación del Nombre de D-os en 1941, antes de que se planteara cualquiera de las dos preguntas",
+ "home.stone.more": "Leer la declaración completa",
+ "home.stone.prev": "Anterior",
+ "home.stone.next": "Siguiente",
+ "home.stone.auto": "Gira sola",
+ "home.stone.names": "Nombres en las facetas",
+ "home.stone.aria": "Un diamante tallado de {n} facetas. Cada faceta lleva el nombre de un rabino. Los botones Anterior y Siguiente traen sus declaraciones una tras otra."
 }

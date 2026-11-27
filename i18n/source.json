@@ -425,6 +425,76 @@
   "en": "continents"
  },
  {
+  "k": "home.stone.hint",
+  "he": "געו באבן",
+  "en": "Touch the stone"
+ },
+ {
+  "k": "home.stone.open",
+  "he": "פתיחת האבן: {n} פאות, רב אחד על כל פאה",
+  "en": "Open the stone: {n} facets, one rabbi on each"
+ },
+ {
+  "k": "home.stone.kicker",
+  "he": "האבן שבכתר",
+  "en": "The stone from the crown"
+ },
+ {
+  "k": "home.stone.h",
+  "he": "{n} רבנים, פאה לכל אחד",
+  "en": "{n} rabbis, one facet each"
+ },
+ {
+  "k": "home.stone.upper",
+  "he": "החצי העליון",
+  "en": "Upper half"
+ },
+ {
+  "k": "home.stone.lower",
+  "he": "החצי התחתון",
+  "en": "Lower half"
+ },
+ {
+  "k": "home.stone.top",
+  "he": "הפאה העליונה",
+  "en": "The top facet"
+ },
+ {
+  "k": "home.stone.topNote",
+  "he": "נהרג על קידוש השם בשנת תש״א, קודם שנשאלו שתי השאלות",
+  "en": "Killed for the sanctification of G-d’s name in 1941, before either question was asked"
+ },
+ {
+  "k": "home.stone.more",
+  "he": "לדברים המלאים",
+  "en": "Read the full statement"
+ },
+ {
+  "k": "home.stone.prev",
+  "he": "הקודם",
+  "en": "Previous"
+ },
+ {
+  "k": "home.stone.next",
+  "he": "הבא",
+  "en": "Next"
+ },
+ {
+  "k": "home.stone.auto",
+  "he": "מסתובבת מעצמה",
+  "en": "Turns by itself"
+ },
+ {
+  "k": "home.stone.names",
+  "he": "שמות על הפאות",
+  "en": "Names on the facets"
+ },
+ {
+  "k": "home.stone.aria",
+  "he": "יהלום מלוטש בן {n} פאות. על כל פאה שמו של רב אחד. הכפתורים ״הקודם״ ו״הבא״ מביאים את דבריהם בזה אחר זה.",
+  "en": "A cut diamond with {n} facets. Each facet carries the name of one rabbi. The Previous and Next buttons bring their statements one after another."
+ },
+ {
   "k": "home.mapH",
   "he": "שתי שאלות. על כל אחת, תשובה אחת מכל קצות תבל",
   "en": "Two Questions. On Each, One Answer from Every Corner of the World"

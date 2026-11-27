@@ -232,11 +232,12 @@ main.bleed>.wrap{padding-block:28px 8px}
 
 .heroband{position:relative;overflow:hidden;color:var(--cream);text-align:center;
   background:radial-gradient(ellipse 46% 60% at 50% 36%,rgba(236,160,50,.34),rgba(236,160,50,0) 70%),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 2px,transparent 2px 9px,rgba(255,220,160,.025) 9px 10px,transparent 10px 23px),linear-gradient(180deg,#3d2315 0%,#2a170d 55%,#1c0f08 100%)}
-.heroband::before{content:"";position:absolute;inset:0;background:url(/assets/ark.svg) center 46%/auto 122% no-repeat;opacity:.3;pointer-events:none}
-.heroband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,15,8,0) 55%,rgba(20,10,5,.75) 100%);pointer-events:none}
-.heroband .hero2{position:relative;z-index:1;min-height:clamp(400px,52vw,600px);display:flex;flex-direction:column;justify-content:center;align-items:center;padding-block:40px 34px!important}
+.heroband{--aw:clamp(520px,78vw,940px)}
+.heroband::before{content:"";position:absolute;inset:-12px 0 0;background:url(/assets/ark.svg) center top/var(--aw) auto no-repeat;opacity:.55;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 36%,rgba(0,0,0,.3) 58%,rgba(0,0,0,.14) 100%);mask-image:linear-gradient(180deg,#000 0,#000 36%,rgba(0,0,0,.3) 58%,rgba(0,0,0,.14) 100%)}
+.heroband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,15,8,0) 48%,rgba(20,10,5,.8) 100%);pointer-events:none}
+.heroband .hero2{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding-block:calc(var(--aw)*.455) 40px!important}
 .heroband .kicker{color:var(--goldb);font-size:1.05rem;letter-spacing:.08em}
-.heroband h1{color:#fff7e6;font-size:clamp(2.4rem,7.5vw,4.4rem);text-shadow:0 2px 18px rgba(20,8,0,.9),0 0 2px rgba(20,8,0,.9);max-width:16ch}
+.heroband h1{color:#fff7e6;font-size:clamp(2rem,5.2vw,3.5rem);text-shadow:0 2px 18px rgba(20,8,0,.9),0 0 2px rgba(20,8,0,.9);max-width:22ch}
 .heroband h1::after{content:"";display:block;width:min(260px,60%);height:26px;margin:14px auto 0;background:url(/assets/flourish.svg) center/contain no-repeat;filter:brightness(1.6)}
 .heroband .stats{justify-content:center;color:#e2d2b2;margin-top:14px;text-shadow:0 1px 8px rgba(20,8,0,.9)}
 .heroband .stats b{color:var(--goldb)}
@@ -264,7 +265,7 @@ main.bleed>.wrap{padding-block:28px 8px}
 .tdoc{border-color:#cdb98a;border-inline-start-color:var(--terr)}
 .phead h1::after{content:"";display:block;width:200px;max-width:70%;height:20px;margin-top:6px;background:url(/assets/flourish.svg) center/contain no-repeat}
 @media (prefers-color-scheme:dark){.yr .y{color:var(--goldb)}.tcard,.tcard img,.qcard,.tdoc{border-color:var(--line)}.maphead h2::after,.tlhead h2::after,.orn::after,.phead h1::after{filter:brightness(1.5)}}
-@media (max-width:640px){.heroband::before{background-size:auto 104%;background-position:center 40%}.heroband .hero2{min-height:430px}}
+
 
 /* map panel: quote under each name */
 .mapinfo li a{align-items:start}
@@ -350,3 +351,45 @@ body.ru{--serif:"Noto Serif","Frank Ruhl Libre",Georgia,serif;--sans:"Noto Sans"
 body.am{--serif:"Noto Serif Ethiopic","Frank Ruhl Libre",serif;--sans:"Noto Sans Ethiopic","Heebo","Segoe UI",sans-serif;line-height:1.75}
 body.am .lchart .nm,body.am .lchart .evt{font-size:11px}
 body.yi{font-size:18px}
+
+/* The stone: one cut diamond, a facet for each rabbi. Small in the crown of the Aron; full size on velvet under it. */
+.jewel{position:absolute;left:50%;top:calc(var(--aw)*.2775 - 12px);width:calc(var(--aw)*.19);aspect-ratio:1;transform:translate(-50%,-50%);background:none;border:0;padding:0;cursor:pointer;border-radius:50%;z-index:2}
+.jewel::before{content:"";position:absolute;inset:-22%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,226,150,.38),rgba(255,226,150,0));pointer-events:none}
+.jewel canvas{position:relative;display:block;width:100%;height:100%}
+.jewel:focus-visible{outline:2px solid var(--goldb);outline-offset:4px}
+.stonehint{margin:0 0 6px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--goldb)}
+.jewel[hidden]~.hero2 .stonehint{visibility:hidden}
+.stonestage{--st-el:#e5b462;--st-tr:#9bb6ff;--st-ot:#d9d9e6;--st-ink:#f1e9d6;--st-mute:#a9b0cc;--st-hair:#2b3766;scroll-margin-top:96px;color:var(--st-ink);
+  background:radial-gradient(120% 90% at 34% 46%,#1c2c62 0%,var(--velvet) 46%,#060a1a 100%)}
+.stonegrid{max-width:1180px;margin:0 auto;padding:28px 16px 30px;display:grid;gap:8px 40px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-areas:"head head" "stone words" "bar bar";align-items:center}
+.stonehead{grid-area:head}
+.skick{margin:0 0 6px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--goldb)}
+.stonehead h2{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3vw,2.2rem);color:var(--st-ink);border:0;padding:0}
+.stonehead h2::after{content:none}
+.stonecv{grid-area:stone;min-width:0}
+#st-gem{display:block;width:100%;aspect-ratio:1/.92;max-height:640px;touch-action:pan-y;cursor:grab;outline-offset:4px}
+#st-gem.dragging{cursor:grabbing}
+#st-gem:focus-visible{outline:2px solid var(--goldb)}
+.stonewords{grid-area:words;min-width:0;display:flex;flex-direction:column;gap:14px;min-height:22rem;justify-content:center;transition:opacity .28s ease}
+.stonewords.swap{opacity:0}
+.schip{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--st-mute)}
+.schip i{flex:none;width:11px;height:11px;transform:rotate(45deg);background:var(--c,var(--goldb))}
+.stonewords h3{margin:0;font-family:var(--serif);font-size:clamp(1.35rem,2.4vw,1.8rem);line-height:1.2;color:var(--st-ink)}
+.smeta{margin:0;color:var(--st-mute);font-size:.95rem}
+.squote{margin:0;font-family:var(--serif);font-size:clamp(1.12rem,1.7vw,1.32rem);line-height:1.55;border-inline-start:2px solid var(--c,var(--goldb));padding-inline-start:16px}
+.smore{align-self:flex-start;color:var(--goldb);text-underline-offset:3px}
+.stonebar{grid-area:bar;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between;border-top:1px solid var(--st-hair);padding-top:16px;margin-top:8px}
+.slegend{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0;list-style:none;font-size:.9rem;color:var(--st-mute)}
+.slegend li{display:flex;align-items:center;gap:8px}
+.slegend i{flex:none;width:10px;height:10px;transform:rotate(45deg)}.slegend .sw-el{background:var(--st-el)}.slegend .sw-tr{background:var(--st-tr)}
+.slegend b{color:var(--st-ink);font-weight:500}
+.sctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.sctl button,.sctl label{font:inherit;font-size:.88rem;color:var(--st-ink);background:transparent;border:1px solid var(--st-hair);border-radius:999px;padding:6px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.sctl button:hover,.sctl label:hover,.sctl button[aria-pressed="true"]{border-color:var(--goldb)}
+.sctl button[aria-pressed="true"]{color:var(--goldb)}
+.sctl button:focus-visible,.sctl label:focus-within,.smore:focus-visible{outline:2px solid var(--goldb);outline-offset:3px}
+.sctl input{accent-color:var(--goldb);margin:0}
+[dir="rtl"] .stonehint,[dir="rtl"] .skick,[dir="rtl"] .schip,.am .stonehint,.am .skick,.am .schip{letter-spacing:0}
+@media (max-width:820px){.stonegrid{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "stone" "words" "bar";gap:10px}.stonewords{min-height:17rem;justify-content:flex-start}#st-gem{aspect-ratio:1/1}}
+@media (max-width:640px){.stonestage{scroll-margin-top:0}}
+@media (prefers-reduced-motion:reduce){.stonewords{transition:none}}

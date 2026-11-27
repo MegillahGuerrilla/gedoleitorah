@@ -229,6 +229,14 @@ const H = {
   he: {
     kicker: 'דעת תורה, בלשון אומריה',
     statR: 'רבנים', statC: 'חוגים וקהילות', statP: 'ערים', statK: 'יבשות',
+    stone: {
+      hint: 'געו באבן', open: 'פתיחת האבן: {n} פאות, רב אחד על כל פאה',
+      kicker: 'האבן שבכתר', h: '{n} רבנים, פאה לכל אחד',
+      upper: 'החצי העליון', lower: 'החצי התחתון', top: 'הפאה העליונה',
+      topNote: 'נהרג על קידוש השם בשנת תש״א, קודם שנשאלו שתי השאלות',
+      more: 'לדברים המלאים', prev: 'הקודם', next: 'הבא', auto: 'מסתובבת מעצמה', names: 'שמות על הפאות',
+      aria: 'יהלום מלוטש בן {n} פאות. על כל פאה שמו של רב אחד. הכפתורים ״הקודם״ ו״הבא״ מביאים את דבריהם בזה אחר זה.',
+    },
     mapH: 'שתי שאלות. על כל אחת, תשובה אחת מכל קצות תבל',
     mapP: 'כל נקודה היא עיר שבה נולד אחד הרבנים או כיהן בה, וכל קו הוא דרכו של רב ממקום למקום. הצבע מסמן את החוג שלו. לחצו על נקודה.',
     colls: 'אוסף', zoomIn: 'הגדלה', zoomOut: 'הקטנה', all: 'הכול',
@@ -260,6 +268,14 @@ const H = {
   en: {
     kicker: 'Da’at Torah, in their own words',
     statR: 'rabbis', statC: 'circles and communities', statP: 'cities', statK: 'continents',
+    stone: {
+      hint: 'Touch the stone', open: 'Open the stone: {n} facets, one rabbi on each',
+      kicker: 'The stone from the crown', h: '{n} rabbis, one facet each',
+      upper: 'Upper half', lower: 'Lower half', top: 'The top facet',
+      topNote: 'Killed for the sanctification of G-d’s name in 1941, before either question was asked',
+      more: 'Read the full statement', prev: 'Previous', next: 'Next', auto: 'Turns by itself', names: 'Names on the facets',
+      aria: 'A cut diamond with {n} facets. Each facet carries the name of one rabbi. The Previous and Next buttons bring their statements one after another.',
+    },
     mapH: 'Two Questions. On Each, One Answer from Every Corner of the World',
     mapP: 'Each point is a city where one of the rabbis was born or served, and each line is a rabbi’s path from place to place. The color marks his circle. Tap a point.',
     colls: 'Collection', zoomIn: 'Zoom in', zoomOut: 'Zoom out', all: 'All',
@@ -488,8 +504,27 @@ function timeline(lang) {
 function home(lang) {
   const t = L[lang], h = H[lang];
   const card = (k, label, title, q, meta) => `<a class="qcard b-${k}" href="${url(lang, k + '/')}"><span class="qlabel">${esc(label)}</span><span class="qtitle">${esc(title)}</span><span class="qq">${esc(q)}</span><span class="qmeta">${esc(meta)}</span><span class="qgo">${esc(t.toCollection)} ${arrow(lang)}</span></a>`;
-  const body = `<section class="heroband"><div class="wrap wide hero2"><p class="kicker">${esc(h.kicker)}</p><h1>${esc(t.site)}</h1>
+  // the stone: a facet for each rabbi, set in the crown of the Aron and shown full size under it
+  const s = h.stone, N = people.length, nOf = x => x.replace('{n}', N);
+  const cutq = (q, n) => { q = String(q).replace(/\s+/g, ' ').trim(); if (q.length <= n) return q; const c = q.slice(0, n); return c.slice(0, c.lastIndexOf(' ')).replace(/[\s,;:.…–-]+$/, '') + '…'; };
+  const plainName = x => String(x).replace(/\s*(זצוק״ל|זצ״ל|הי״ד|שליט״א|זי״ע|ז״ל)$/, '');
+  const stoneData = people.map(p => { const v = p[lang], nm = plainName(v.name);
+    return { g: p.coll === 'elections' ? 'el' : p.coll === 'territories' ? 'tr' : 'ot', u: url(lang, `rabbis/${p.slug}/`), n: v.name, f: nm.includes(',') ? '' : nm, s: v.short ? plainName(v.short) : '', t: [v.title, p.coll === 'others' ? s.topNote : ''].filter(Boolean).join(' · '), q: cutq(p.sayings[0][lang], lang === 'he' ? 210 : 250) }; });
+  const cnt = g => stoneData.filter(d => d.g === g).length;
+  const stoneFont = { ru: "'Noto Serif'", am: "'Noto Serif Ethiopic'" }[code(lang)];
+  const STONE = { d: stoneData, font: `${stoneFont ? stoneFont + ',' : ''}'Frank Ruhl Libre',David,'Times New Roman',serif`,
+    t: { upper: s.upper, lower: s.lower, el: t.elTitle, tr: t.terrTitle, top: s.top } };
+  const stone = `<section class="stonestage" id="stone" hidden><div class="stonegrid">
+<div class="stonehead"><p class="skick">${esc(s.kicker)}</p><h2>${esc(nOf(s.h))}</h2></div>
+<div class="stonecv"><canvas id="st-gem" tabindex="0" role="img" aria-label="${esc0(nOf(s.aria))}"></canvas></div>
+<div class="stonewords" id="st-words" aria-live="off"><span class="schip" id="st-chip"><i></i><span></span></span><h3 id="st-name"></h3><p class="smeta" id="st-meta"></p><p class="squote" id="st-quote"></p><a class="smore" id="st-more" href="${url(lang, 'rabbis/')}">${esc(s.more)} ${arrow(lang)}</a></div>
+<div class="stonebar"><ul class="slegend"><li><i class="sw-el"></i><b>${esc(t.elTitle)}</b><span>${esc(s.upper)} · ${cnt('el')}</span></li><li><i class="sw-tr"></i><b>${esc(t.terrTitle)}</b><span>${esc(s.lower)} · ${cnt('tr')}</span></li></ul>
+<div class="sctl"><button type="button" id="st-prev">${esc(s.prev)}</button><button type="button" id="st-next">${esc(s.next)}</button><button type="button" id="st-auto" aria-pressed="true">${esc(s.auto)}</button><label for="st-names"><input type="checkbox" id="st-names" checked><span>${esc(s.names)}</span></label></div></div>
+</div></section>
+<script>window.STONE=${JSON.stringify(STONE).replace(/</g, '\\u003c')};</script><script src="/assets/diamond.js"></script>`;
+  const body = `<section class="heroband"><button type="button" class="jewel" id="st-jewelbtn" aria-label="${esc0(nOf(s.open))}" hidden><canvas id="st-jewel"></canvas></button><div class="wrap wide hero2"><p class="stonehint">${esc(s.hint)}</p><p class="kicker">${esc(h.kicker)}</p><h1>${esc(t.site)}</h1>
 <div class="stats"><span><b>${people.length}</b> ${h.statR}</span><span><b>${usedComms.length}</b> ${h.statC}</span><span><b>${usedPlaces.size}</b> ${h.statP}</span><span><b>6</b> ${h.statK}</span></div></div></section>
+${stone}
 ${mapBlock(lang, false)}
 ${chart(lang)}
 ${timeline(lang)}
@@ -708,12 +743,12 @@ function notFound(lang) {
 }
 
 // ---------- write ----------
-const VER = Object.fromEntries(['site.css', 'map.js', 'home.js'].map(a => [a, require('crypto').createHash('md5').update(fs.readFileSync(path.join(ROOT, 'assets', a))).digest('hex').slice(0, 8)]));
+const VER = Object.fromEntries(['site.css', 'map.js', 'home.js', 'diamond.js'].map(a => [a, require('crypto').createHash('md5').update(fs.readFileSync(path.join(ROOT, 'assets', a))).digest('hex').slice(0, 8)]));
 const written = [];
 function out(rel, html) {
   const f = path.join(ROOT, rel);
   fs.mkdirSync(path.dirname(f), { recursive: true });
-  html = html.replace(/\/assets\/(site\.css|map\.js|home\.js)"/g, (m, a) => `/assets/${a}?v=${VER[a]}"`);
+  html = html.replace(/\/assets\/(site\.css|map\.js|home\.js|diamond\.js)"/g, (m, a) => `/assets/${a}?v=${VER[a]}"`);
   fs.writeFileSync(f, rel.startsWith('en/') ? html.replace(/\bGod\b/g, 'G-d') : html);
   written.push(rel);
 }
