@@ -609,7 +609,7 @@
  "more.elchanan-wasserman.quote": "De nos jours, les Juifs se sont choisi deux idolâtries auxquelles ils offrent leurs sacrifices, à savoir : le socialisme et le nationalisme. La doctrine du nouveau nationalisme peut se définir de la manière la plus concise : “Soyons comme toutes les nations.”",
  "more.elchanan-wasserman.src": "« Ikveta DiMechi’ha », section 21. Écrit en yiddish ; traduction hébraïque de Rabbi Moché Scheinfeld, éditions Netsa’h, Bnei Brak 5749 (1989), p. 35–36",
  "home.stone.hint": "Touchez la pierre",
- "home.stone.open": "Ouvrir la pierre : {n} facettes, un rabbin sur chacune",
+ "home.stone.open": "Ouvrir la pierre : {n} facettes, un rabbin sur chacune",
  "home.stone.kicker": "La pierre de la couronne",
  "home.stone.h": "{n} rabbins, une facette pour chacun",
  "home.stone.upper": "Moitié supérieure",
@@ -621,5 +621,5 @@
  "home.stone.next": "Suivant",
  "home.stone.auto": "Tourne d’elle-même",
  "home.stone.names": "Noms sur les facettes",
- "home.stone.aria": "Un diamant taillé de {n} facettes. Chaque facette porte le nom d’un rabbin. Les boutons Précédent et Suivant font venir leurs propos l’un après l’autre."
+ "home.stone.aria": "Un diamant taillé à {n} facettes. Chaque facette porte le nom d’un rabbin. Les boutons « Précédent » et « Suivant » font venir les propos des rabbins l’un après l’autre."
 }
