@@ -233,7 +233,7 @@ main.bleed>.wrap{padding-block:28px 8px}
 .heroband{position:relative;overflow:hidden;color:var(--cream);text-align:center;
   background:radial-gradient(ellipse 46% 60% at 50% 36%,rgba(236,160,50,.34),rgba(236,160,50,0) 70%),repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 2px,transparent 2px 9px,rgba(255,220,160,.025) 9px 10px,transparent 10px 23px),linear-gradient(180deg,#3d2315 0%,#2a170d 55%,#1c0f08 100%)}
 .heroband{--aw:clamp(520px,78vw,940px)}
-.heroband::before{content:"";position:absolute;inset:-12px 0 0;background:url(/assets/ark.svg) center top/var(--aw) auto no-repeat;opacity:.55;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 36%,rgba(0,0,0,.3) 58%,rgba(0,0,0,.14) 100%);mask-image:linear-gradient(180deg,#000 0,#000 36%,rgba(0,0,0,.3) 58%,rgba(0,0,0,.14) 100%)}
+.heroband::before{content:"";position:absolute;inset:-12px 0 0;background:url(/assets/ark.svg?v=2) center top/var(--aw) auto no-repeat;opacity:.55;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 36%,rgba(0,0,0,.3) 58%,rgba(0,0,0,.14) 100%);mask-image:linear-gradient(180deg,#000 0,#000 36%,rgba(0,0,0,.3) 58%,rgba(0,0,0,.14) 100%)}
 .heroband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,15,8,0) 48%,rgba(20,10,5,.8) 100%);pointer-events:none}
 .heroband .hero2{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding-block:calc(var(--aw)*.455) 40px!important}
 .heroband .kicker{color:var(--goldb);font-size:1.05rem;letter-spacing:.08em}
