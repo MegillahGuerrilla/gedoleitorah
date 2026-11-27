@@ -359,7 +359,7 @@ body.yi{font-size:18px}
 .jewel:focus-visible{outline:2px solid var(--goldb);outline-offset:4px}
 .stonehint{margin:0 0 6px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--goldb)}
 .jewel[hidden]~.hero2 .stonehint{visibility:hidden}
-.stonestage{--st-el:#e5b462;--st-tr:#9bb6ff;--st-ot:#d9d9e6;--st-ink:#f1e9d6;--st-mute:#a9b0cc;--st-hair:#2b3766;scroll-margin-top:96px;color:var(--st-ink);
+.stonestage{--st-el:#e5b462;--st-tr:#9bb6ff;--st-ot:#d9d9e6;--st-ink:#f1e9d6;--st-mute:#a9b0cc;--st-hair:#2b3766;scroll-margin-top:112px;color:var(--st-ink);
   background:radial-gradient(120% 90% at 34% 46%,#1c2c62 0%,var(--velvet) 46%,#060a1a 100%)}
 .stonegrid{max-width:1180px;margin:0 auto;padding:28px 16px 30px;display:grid;gap:8px 40px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-areas:"head head" "stone words" "bar bar";align-items:center}
 .stonehead{grid-area:head}
